@@ -1,0 +1,39 @@
+.img-overlay {
+  background: #000000 !important;
+  opacity: 0.75 !important;
+}
+
+.btn-style {
+  -webkit-transform: rotate(90deg) !important;
+          transform: rotate(90deg) !important;
+  margin-top: -50% !important;
+  margin-right: -19.5% !important;
+  -webkit-box-align: center !important;
+      -ms-flex-align: center !important;
+          align-items: center !important;
+  text-align: center !important;
+  font-family: Century Gothic !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-size: 16px !important;
+  line-height: 22px !important;
+}
+
+._signup_btn {
+  background: #ffffff !important;
+  color: #ff0000 !important;
+}
+
+._login_btn {
+  color: #fbfbfb !important;
+  background-color: #828282;
+}
+
+._dot_color {
+  color: #ff0000;
+}
+
+.form-control {
+  border-radius: 0;
+}
+/*# sourceMappingURL=style.css.map */
