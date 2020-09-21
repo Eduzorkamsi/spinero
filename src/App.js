@@ -8,7 +8,8 @@ import Home from "./pages/Home";
 import LatestCollection from "./pages/LatestCollection";
 import MenCollection from "./pages/MenCollection";
 import WomenCollection from "./pages/WomenCollection";
-
+import Cart from "./pages/Cart";
+import Wishlist from "./pages/Wishlist"
 
 function App() {
   return (
@@ -21,6 +22,8 @@ function App() {
         <Route path="/collections" component={LatestCollection} />
         <Route path="/men" component={MenCollection} />
         <Route path="/women" component={WomenCollection} />
+        <Route path="/cart" component={Cart}/>
+        <Route path="/wishlist" component={Wishlist}/>
       </Switch>
     </Router>
   );

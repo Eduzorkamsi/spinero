@@ -3,6 +3,7 @@ import Footer from "../../components/Footer";
 import { CollectionHeader } from "../../components/Header";
 import { redirect } from "../../utils";
 import { menCollection } from "./data";
+import Filter from "../../components/Filter"
 
 export default function MenCollection() {
   return (
@@ -14,7 +15,9 @@ export default function MenCollection() {
     </div>
     <div className="container">
       <div className="row">
-        <div className="col-md-4 col-lg-3 col-sm-4">col-md-4</div>
+        <div className="col-md-4 col-lg-3 col-sm-4">
+          <Filter></Filter>
+        </div>
 
         <div className="col-md-8 col-lg-8 col-sm-8 pt-5 mt-5">
           <p className="h2" style={{ fontWeight: "bold", color: "#4F4F4F", lineHeight: "59px" }}>

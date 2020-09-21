@@ -1,0 +1,34 @@
+.cart_second_nav{
+    display: flex;
+    flex-direction: row;
+    margin-left: 210px;
+    }
+
+    .continue_shopping>a{
+   
+    color: red;
+    text-align: right;
+        }
+
+    div>.continue_shopping{
+        float: right;
+        line-height: 23.92px;
+        margin-left: 940px;
+    }
+
+    .cart_third_nav{
+        background: #FBFBFB;
+        margin-left: 210px;
+        display: flex;
+        justify-content: space-between;
+
+    }
+.fill>.cart_item{
+    text-align: center;
+    float: right;
+}
+
+.cart_ul {
+    display: flex;
+    flex-direction: row;
+}
