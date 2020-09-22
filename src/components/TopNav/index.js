@@ -121,10 +121,10 @@ export const LoginTopNav = () => {
                 <NavLink class="nav-link ml-4" to="#">
                   <img alt="logo" className="logo" src={require("../../assets/icons/search.svg")} />
                 </NavLink>
-                <NavLink class="nav-link ml-4" to="#">
+                <NavLink class="nav-link ml-4" to="wishlist">
                   <img alt="logo" className="logo" src={require("../../assets/icons/love.svg")} />
                 </NavLink>
-                <NavLink class="nav-link ml-4" to="#">
+                <NavLink class="nav-link ml-4" to="cart">
                   <img alt="logo" className="logo" src={require("../../assets/icons/cart.svg")} />
                 </NavLink>
                 <NavLink class="nav-link ml-4" to="/login">

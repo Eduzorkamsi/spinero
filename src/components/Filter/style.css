@@ -27,12 +27,42 @@ ul .filter_li {
     color: #0D0D0D;
 }
 
+ul .filter_li2 {
+    line-height: 38px;
+    border-bottom: 1px solid #E0E0E0;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14.75px;
+  
+    color: #0D0D0D;
+}
+
+ul .filter_li3 {
+    line-height: 38px;
+    border-bottom: 1px solid #E0E0E0;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14.75px;
+  
+    color: #0D0D0D;
+}
+
+ul .filter_li4 {
+    line-height: 38px;
+    border-bottom: 1px solid #E0E0E0;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14.75px;
+  
+    color: #0D0D0D;
+}
+
 ul ul li {
     color: #828282;
     font-style: normal;
     font-weight: normal;
     font-size: 14.75px;
-    display: none; 
+   
    
 }
 
@@ -45,4 +75,16 @@ ul li i{
 .filter_button{
     display: flex;
     flex-direction: column;
+}
+
+.filter_button>.btn-outline-secondary {
+    color: #FFFFFF;
+    border-color: #0D0D0D;
+    background: #0D0D0D;
+}
+
+.filter_button>a {
+    color: #828282;
+    text-decoration: underline;
+    background-color: transparent;
 }
