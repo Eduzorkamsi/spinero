@@ -9,6 +9,9 @@ import "./style.css";
 const Filter = () => {
     return (
         <>
+
+            <div className="filter_section">
+           
                 <ul>
                     
                     <li className="filter_li" >Gender
