@@ -1,19 +1,51 @@
-import React from "react";
-import {LoginTopNav} from "../../components/TopNav"
+import React, { useState, useEffect } from "react";
+import { LoginTopNav } from "../../components/TopNav"
 import signin from "../../assets/images/sigin2.png";
 import Facebook from "../../assets/icons/Facebook.svg";
 import Google from "../../assets/icons/Google.svg";
 import "./style.css";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
+import { bindActionCreators } from "redux";
+import * as actionCreators from "../../redux/actions";
+import { connect } from "react-redux";
+import constants from "../../constants";
+import qs from "qs";
 
-function LogIn() {
+
+function LogIn(props) {
   const history = useHistory();
+  const location = useLocation();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const doLogin = e => {
+    e.preventDefault();
+    props.login({
+      username: email,
+      password: password
+    }, () => { history.push('/') });
+  };
+
   const handleLoginClick = (e) => {
     history.push("/login");
   };
   const handleSignInClick = (e) => {
     history.push("/signin");
   };
+
+  useEffect(() => {
+    const query = qs.parse(location.search, { ignoreQueryPrefix: true });
+    if (query.code && query.type) {
+      props.socialLogin(query.type, location.search, () => { history.push('/') });
+    }
+
+    let token = localStorage.getItem('token');
+    //TODO you should actually hit the verify endpoint to verify this token.
+    if (token) {
+      history.push('/')
+    }
+
+  }, []);
 
   return (
     <>
@@ -45,11 +77,15 @@ function LogIn() {
               <h3 className="font-weight-bolder text-center pb-3">Log in and assess our discounts.</h3>
               <div className="row">
                 <div className=" col-sm-12 col-xs-12 d-flex justify-content-center">
-                  <img src={Facebook} alt="facebook" className="px-1 " />
-                  <img src={Google} alt="google" className="px-1" />
+                  <a href={`${constants.BASE_API}/auth/facebook`}>
+                    <img src={Facebook} alt="facebook" className="px-1 " />
+                  </a>
+                  <a href={`${constants.BASE_API}/auth/google`}>
+                    <img src={Google} alt="google" className="px-1" />
+                  </a>
                 </div>
                 <div className=" col-sm-12 col-xs-12 mt-5">
-                  <form>
+                  <form onSubmit={doLogin}>
                     <div class="form-group mx-sm-4 mb-2 px-5">
                       <label for="email">
                         <span
@@ -61,7 +97,7 @@ function LogIn() {
                           Email <span className="_dot_color">*</span>
                         </span>
                       </label>
-                      <input type="email" class="form-control" id="email" placeholder="john@gmail.com" />
+                      <input type="email" required value={email} onChange={e => setEmail(e.target.value)} class="form-control" id="email" placeholder="john@gmail.com" />
                     </div>
 
                     <div class="form-group mx-sm-4 mb-2 px-5">
@@ -75,18 +111,18 @@ function LogIn() {
                           Password <span className="_dot_color">*</span>
                         </span>
                       </label>
-                      <input type="password" class="form-control" id="password" placeholder="*****" />
+                      <input type="password" required value={password} onChange={e => setPassword(e.target.value)} class="form-control" id="password" placeholder="*****" />
+                    </div>
+                    <div className="d-flex justify-content-center pt-5">
+                      <button
+                        type="submit"
+                        class="btn btn-dark btn-lg px-5 "
+                        style={{ backgroundColor: "#000", fontWeight: "bold", color: "#FBFBFB" }}
+                      >
+                        Log In
+                    </button>
                     </div>
                   </form>
-                  <div className="d-flex justify-content-center pt-5">
-                    <button
-                      type="button"
-                      class="btn btn-dark btn-lg px-5 "
-                      style={{ backgroundColor: "#000", fontWeight: "bold", color: "#FBFBFB" }}
-                    >
-                      Log In
-                    </button>
-                  </div>
                 </div>
               </div>
             </div>
@@ -97,4 +133,10 @@ function LogIn() {
   );
 }
 
-export default LogIn;
+const mapStateToProps = state => ({
+  ...state.user
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators(actionCreators, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(LogIn);

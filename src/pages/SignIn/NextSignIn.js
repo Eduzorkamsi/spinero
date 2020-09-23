@@ -1,17 +1,42 @@
-import React from "react";
-import {LoginTopNav} from "../../components/TopNav"
+import React, { useState, useEffect } from "react";
+import { LoginTopNav } from "../../components/TopNav"
 import signin from "../../assets/images/sigin2.png";
 import "./style.css";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
+import { bindActionCreators } from "redux";
+import * as actionCreators from "../../redux/actions";
+import { connect } from "react-redux";
 
-function NextSignIn() {
+function NextSignIn(props) {
   const history = useHistory();
+  const location = useLocation();
+  const [password, setPassword] = useState("");
+  const [passwordConfirm, setPasswordConfirm] = useState("");
+
   const handleLoginClick = e => {
     history.push("/login")
-  }
+  };
   const handleSignInClick = e => {
     history.push("/")
-  }
+  };
+
+  const doRegister = (e) => {
+    e.preventDefault();
+    if (password !== passwordConfirm) {
+      alert("Please confirm your password");
+      return;
+    }
+
+    let { firstName, lastName, email } = location.state;
+    let data = {
+      name: `${firstName} ${lastName}`,
+      username: email,
+      email,
+      password
+    };
+    props.register(data, () => { history.push('/') });
+  };
+
   return (
     <>
       <div className="container-fluid">
@@ -42,7 +67,7 @@ function NextSignIn() {
               <h3 className="font-weight-bolder text-center pb-3">Create a secure passsword</h3>
               <div className="row">
                 <div className=" col-sm-12 col-xs-12 mt-5">
-                  <form>
+                  <form onSubmit={doRegister}>
                     <div class="form-group mx-sm-4 mb-2 px-5">
                       <label for="password">
                         <span
@@ -54,7 +79,7 @@ function NextSignIn() {
                           Password <span className="_dot_color">*</span>
                         </span>
                       </label>
-                      <input type="password" class="form-control" id="password" placeholder="*****" />
+                      <input type="password" value={password} onChange={e => setPassword(e.target.value)} required class="form-control" id="password" placeholder="*****" />
                     </div>
                     <div class="form-group mx-sm-4 mb-2 px-5">
                       <label for="confirmPassword">
@@ -64,22 +89,22 @@ function NextSignIn() {
                             fontFamily: "Century Gothic"
                           }}
                         >
-                         Confirm Password <span className="_dot_color">*</span>
+                          Confirm Password <span className="_dot_color">*</span>
                         </span>
                       </label>
-                      <input type="password" class="form-control" id="confirmPassword" placeholder="******" />
+                      <input type="password" value={passwordConfirm} onChange={e => setPasswordConfirm(e.target.value)} required class="form-control" id="confirmPassword" placeholder="******" />
+                    </div>
+                    <div className="d-flex justify-content-center pt-5">
+                      <button
+                        type="submit"
+                        class="btn btn-dark btn-lg px-5"
+                        style={{ backgroundColor: "#000", fontWeight: "bold", color: "#FBFBFB" }}
+                      >
+                        Sign In
+                    </button>
                     </div>
                   </form>
 
-                  <div className="d-flex justify-content-center pt-5">
-                    <button
-                      type="button"
-                      class="btn btn-dark btn-lg px-5"
-                      style={{ backgroundColor: "#000", fontWeight: "bold" , color:"#FBFBFB"}}
-                    >
-                      Sign In
-                    </button>
-                  </div>
                 </div>
               </div>
             </div>
@@ -90,4 +115,10 @@ function NextSignIn() {
   );
 }
 
-export default NextSignIn;
+const mapStateToProps = state => ({
+  ...state.user
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators(actionCreators, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(NextSignIn);
