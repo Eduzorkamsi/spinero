@@ -6,10 +6,9 @@ import NextSignIn from "./pages/SignIn/NextSignIn";
 import LogIn from "./pages/LogIn";
 import Home from "./pages/Home";
 import LatestCollection from "./pages/LatestCollection";
-import MenCollection from "./pages/MenCollection";
-import WomenCollection from "./pages/WomenCollection";
 import Cart from "./pages/Cart";
 import Wishlist from "./pages/Wishlist"
+import Collections from "./pages/Collections";
 
 function App() {
   return (
@@ -20,10 +19,9 @@ function App() {
         <Route path="/next-signup" component={NextSignIn} />
         <Route path="/login" component={LogIn} />
         <Route path="/collections" component={LatestCollection} />
-        <Route path="/men" component={MenCollection} />
-        <Route path="/women" component={WomenCollection} />
         <Route path="/cart" component={Cart}/>
         <Route path="/wishlist" component={Wishlist}/>
+        <Route path="/category/:categoryId" component={Collections} />
       </Switch>
     </Router>
   );
