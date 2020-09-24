@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./style.css";
 import { CollectionHeader } from "../../components/Header";
-import { latestCollection } from "./data";
-import { redirect } from "../../utils";
 import Footer from "../../components/Footer";
 import Filter from "../../components/Filter"
+import { bindActionCreators } from "redux";
+import * as actionCreators from "../../redux/actions/product";
+import { connect } from "react-redux";
 
 
-const  LatestCollection=() => {
+const LatestCollection = (props) => {
+  useEffect(() => {
+    props.getLatestCollection(1);
+  }, []);
+
   return (
     <>
       <div className="container-fluid">
@@ -19,8 +24,8 @@ const  LatestCollection=() => {
         <div className="row">
           <div className="col-md-4 col-lg-3 col-sm-4">
             <Filter></Filter>
-          
-          
+
+
           </div>
 
           <div className="col-md-8 col-lg-8 col-sm-8 pt-5 mt-5">
@@ -32,18 +37,18 @@ const  LatestCollection=() => {
               aenean condimentum auctor aliquet.{" "}
             </p>
             <div className="row row-cols-1 row-cols-md-3 pt-3">
-              {latestCollection.map((data, index) => {
+              {(props.latestProducts || []).map((data, index) => {
                 return (
-                  <div className="col mb-4" key={index} onClick={() => redirect(data.path)}>
+                  <div className="col mb-4" key={index} onClick={() => { }}>
                     <div class="card" id="item_card">
-                      <img src={data.photo} class="card-img-top" alt="items" />
+                      <img src={data.images[0].url} class="card-img-top" alt="items" />
                       <div class="card-body _card-content-padding">
-                        <p className="card-title">{data.info}</p>
+                        <p className="card-title">{data.name}</p>
                         <p class="card-text" style={{ fontWeight: "bold" }}>
                           $ {data.price}
                         </p>
                         <p style={{ color: "#FF0000", textDecorationLine: "underline", fontWeight: "bold" }}>
-                          {data.option}
+                          Add to Bag
                         </p>
                       </div>
                     </div>
@@ -59,4 +64,10 @@ const  LatestCollection=() => {
   );
 }
 
-export default LatestCollection;
+const mapStateToProps = state => ({
+  ...state.product
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators(actionCreators, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(LatestCollection);

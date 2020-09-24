@@ -20,3 +20,24 @@ export const getProductsByCategoryType = categoryType => dispatch => {
     });
   });
 };
+
+export const getLatestCollection = pageNumb => dispatch => {
+  dispatch({
+    type: Constants.REQUEST(Constants.LATEST_COLLECTIONS),
+    isLoading: true
+  });
+  return Axios.get(`${Constants.BASE_API}/api/product/search/latest?page=${pageNumb}`).then((res) => res.data && res.data.data).then((data = {}) => {
+    dispatch({
+      type: Constants.REQUEST_SUCCESS(Constants.LATEST_COLLECTIONS),
+      payload: data.items,
+      isLoading: false
+    });
+    return data.items
+  }).catch(error => {
+    dispatch({
+      type: Constants.REQUEST_FAILURE(Constants.LATEST_COLLECTIONS),
+      error,
+      isLoading: false
+    });
+  });
+};
