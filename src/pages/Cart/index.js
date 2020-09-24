@@ -3,6 +3,7 @@ import Footer from "../../components/Footer";
 import TopNav from "../../components/TopNav";
 import "./style.css";
 import image from "../../assets/images/girl.png"
+import { NavLink } from "react-router-dom";
 // import{cart} from './data'
 // import { Link } from "react-router-dom";
 
@@ -76,7 +77,7 @@ const Cart = () => {
 </div>
             
               <div className="div3">
-                  <a classname="check_cart" href="">Checkout</a>
+                  <NavLink to="/CartLogin" classname="check_cart" href="">Checkout</NavLink>
 <div className="cart_total">
     $1000
 </div>

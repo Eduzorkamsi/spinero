@@ -10,6 +10,8 @@ import MenCollection from "./pages/MenCollection";
 import WomenCollection from "./pages/WomenCollection";
 import Cart from "./pages/Cart";
 import Wishlist from "./pages/Wishlist"
+import CartLogin from "./pages/CartLogin"
+import CartDeliveryInfo from "./pages/CartDeliveryInfo";
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
         <Route path="/women" component={WomenCollection} />
         <Route path="/cart" component={Cart}/>
         <Route path="/wishlist" component={Wishlist}/>
+        <Route path="/CartLogin" component={CartLogin}/>
+        <Route path="/CartDeliveryInfo" component={CartDeliveryInfo}/>
       </Switch>
     </Router>
   );

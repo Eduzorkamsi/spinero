@@ -1,0 +1,69 @@
+.pagination-circular li.current {
+    border: 1px solid #0D0D0D;
+    ;
+    background: #0D0D0D;
+    border-radius: 5000px;
+    padding: 0.285em 0.8em;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.pagination-circular li.disabled {
+    border: 1px solid #BDBDBD;
+    background: #BDBDBD;
+    padding: 0.285em 0.8em;
+    border-radius: 5000px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+
+}
+
+.pagination-circular a {
+    border-radius: 5000px;
+    background: #BDBDBD;
+    padding: 0.285em 0.8em;
+    border: 1px solid #BDBDBD;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.pagination-circular li:not(.disabled):hover a {
+    background: #0D0D0D;
+    color: #fefefe;
+}
+
+.pagination-circular li a {
+    transition: background 0.15s ease-in, color 0.15s ease-in;
+}
+
+.pagination_section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 106px;
+   
+}
+
+.pagination-circular>li{
+    margin-right: 105px;
+}

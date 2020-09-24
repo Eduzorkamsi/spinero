@@ -1,0 +1,36 @@
+.cart_login_content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.cart_guest{
+    margin-right: 10px;
+}
+.cart_box {
+    width: 350px;
+    height: 66px;
+    left: 355px;
+    top: 266px;
+    /* Light Grey */
+    background: #FBFBFB;
+}
+
+.cart_box2 {
+    width: 350px;
+    height: 322px;
+    left: 355px;
+    top: 342px;
+    margin-top: 10px;
+    /* Light Grey */
+    background: #FBFBFB;
+}
+
+.cart_box3 {
+    width: 350px;
+    height: 66px;
+    left: 355px;
+    top: 266px;
+    margin-top: 10px;
+    /* Light Grey */
+    background: #FBFBFB;
+}
