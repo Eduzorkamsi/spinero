@@ -1,12 +1,32 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import "./style.css";
+import { connect } from "react-redux";
+import * as actionCreators from "../../redux/actions";
+import { bindActionCreators } from "redux";
 
-export default function  TopNav() {
+function TopNav(props) {
   const history = useHistory();
+
   const handleOnLogoClick = (e) => {
     history.push("/");
+  };
+
+  useEffect(() => {
+    props.getCategoryTypes();
+  }, []);
+
+  const showCategoryTypes = () => {
+    return props.categoryTypes.map((categoryType, i) => {
+      return (
+        <li className="nav-item">
+          <NavLink className="nav-link flex-shrink-0 ml-5 titlecase-text" activeClassName="current" to={{ pathname: `/category/${categoryType._id}`, state: categoryType }}>
+            {categoryType.name.toLowerCase()}
+          </NavLink>
+        </li>
+      )
+    });
   };
 
   return (
@@ -34,17 +54,9 @@ export default function  TopNav() {
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            <li className="nav-item ml-5">
-              <NavLink className="nav-link flex-shrink-0 " activeClassName="current" to="/women">
-                Women
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link ml-5 flex-shrink-0" activeClassName="current" to="/men">
-                Men
-              </NavLink>
-            </li>
-
+            {
+              showCategoryTypes()
+            }
             <li className="nav-item">
               <NavLink className="nav-link ml-5 flex-shrink-0" activeClassName="current" to="/collections">
                 Latest Collection
@@ -81,6 +93,13 @@ export default function  TopNav() {
     </>
   );
 }
+
+const mapStateToProps = state => ({
+  ...state.home
+});
+const mapDispatchToProps = dispatch => bindActionCreators(actionCreators, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(TopNav)
 
 export const LoginTopNav = () => {
   const history = useHistory();
