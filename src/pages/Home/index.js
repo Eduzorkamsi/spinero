@@ -1,13 +1,74 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { bindActionCreators } from "redux";
+import * as actionCreators from "../../redux/actions";
+import { connect } from "react-redux";
 import "./style.css";
 import Header from "../../components/Header";
-import { latestCollection, womenCollection } from "./data";
+import { latestCollection } from "./data";
 import { redirect } from "../../utils";
 import Card from "../../components/Card";
 import Footer from "../../components/Footer";
 import { Link } from "react-router-dom";
+import Axios from "axios";
+import constants from "../../constants";
 
-const Home = () => {
+const Home = (props) => {
+  const [categoryProducts, setCategoryProducts] = useState({});
+  const getCategoryProducts = name => {
+    return (categoryProducts[name.toLowerCase()] || { items: [] }).items.map(product => {
+      return (
+        <div className="col mb-4" key={product._id} onClick={() => { }}>
+          <div class="card" id="item_card">
+            <img src={product.images[0].url} class="card-img-top" alt="items" />
+            <div class="card-body _card-content-padding">
+              <p className="card-title">{product.name}</p>
+              <p class="card-text" style={{ fontWeight: "bold" }}>
+                $ {product.price}
+              </p>
+              <p style={{ color: "#FF0000", textDecorationLine: "underline", fontWeight: "bold" }}>
+                Add to Bag
+              </p>
+            </div>
+          </div>
+        </div>
+      );
+    })
+  };
+
+  const getProductsByCategory = (category) => {
+    return Axios.get(`${constants.BASE_API}/api/product/categoryType/${category}`).then(res => res.data && res.data.data);
+  };
+
+  const setUpCategoryProducts = () => {
+    if (props.categoryTypes) {
+      const tasks = props.categoryTypes.map(ct => getProductsByCategory(ct._id));
+
+      Promise.all(tasks)
+        .then(result => {
+          const types = props.categoryTypes.reduce((acc, ct, i) => {
+            acc[ct.name.toLowerCase()] = {
+              id: ct._id,
+              items: result[i].items,
+              info: ct
+            };
+            return acc;
+          }, {});
+          return types;
+        })
+        .then(types => {
+          setCategoryProducts(types);
+        });
+    }
+  };
+
+  useEffect(() => {
+    props.getCategoryTypes();
+  }, []);
+
+  useEffect(() => {
+    setUpCategoryProducts();
+  }, [props.categoryTypes]);
+
   return (
     <>
       <div className="container-fluid">
@@ -18,6 +79,7 @@ const Home = () => {
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquet maecenas at leo sit Sit on lorem if you know me"
             }
             buttonTitle={"Shop Now"}
+            categoryTypes={props.categoryTypes}
           />
         </div>
       </div>
@@ -73,31 +135,20 @@ const Home = () => {
               </div>
               <div className="col-lg-2 col-md-6 col-sm-6 col-xs-6  ">
                 <div className="d-flex justify-content-around">
-                  <p style={{ color: "#FF0000", textDecorationLine: "underline", fontWeight: "bold" }}>
-                    Check it Out
-                  </p>
+                  <Link
+                    to={{
+                      pathname: `/category/${(categoryProducts["women"] || { id: "" }).id}`,
+                      state: (categoryProducts["women"] || { info: {} }).info
+                    }}
+                    style={{ color: "#FF0000", fontWeight: "bold" }}
+                  >
+                    Check it out
+                  </Link>
                 </div>
               </div>
             </div>
             <div className="row row-cols-1 row-cols-md-4 pt-3">
-              {womenCollection.map((data, index) => {
-                return (
-                  <div className="col mb-4" key={index} onClick={() => redirect(data.path)}>
-                    <div class="card" id="item_card">
-                      <img src={data.photo} class="card-img-top" alt="items" />
-                      <div class="card-body _card-content-padding">
-                        <p className="card-title">{data.info}</p>
-                        <p class="card-text" style={{ fontWeight: "bold" }}>
-                          $ {data.price}
-                        </p>
-                        <p style={{ color: "#FF0000", textDecorationLine: "underline", fontWeight: "bold" }}>
-                          {data.option}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
+              {getCategoryProducts("women")}
             </div>
           </div>
         </div>
@@ -120,33 +171,20 @@ const Home = () => {
               </div>
               <div className="col-lg-2 col-md-6 col-sm-6 col-xs-6  ">
                 <div className="d-flex justify-content-around">
-                <Link to="/men">
-                <p style={{ color: "#FF0000", textDecorationLine: "underline", fontWeight: "bold" }}>
-                  Check it Out
-                </p>
-              </Link>
+                  <Link
+                    to={{
+                      pathname: `/category/${(categoryProducts["men"] || { id: "" }).id}`,
+                      state: (categoryProducts["men"] || { info: {} }).info
+                    }}
+                    style={{ color: "#FF0000", fontWeight: "bold" }}
+                  >
+                    Check it out
+                  </Link>
                 </div>
               </div>
             </div>
             <div className="row row-cols-1 row-cols-md-4 pt-3">
-              {womenCollection.map((data, index) => {
-                return (
-                  <div className="col mb-4" key={index} onClick={() => redirect(data.path)}>
-                    <div class="card" id="item_card">
-                      <img src={data.photo} class="card-img-top" alt="items" />
-                      <div class="card-body _card-content-padding">
-                        <p className="card-title">{data.info}</p>
-                        <p class="card-text" style={{ fontWeight: "bold" }}>
-                          $ {data.price}
-                        </p>
-                        <p style={{ color: "#FF0000", textDecorationLine: "underline", fontWeight: "bold" }}>
-                          {data.option}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
+              {getCategoryProducts("men")}
             </div>
           </div>
         </div>
@@ -156,4 +194,10 @@ const Home = () => {
   );
 };
 
-export default Home;
+const mapStateToProps = state => ({
+  ...state.home
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators(actionCreators, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

@@ -7,6 +7,14 @@
   pointer-events: none;
 }
 
+.capitalize-text {
+  text-transform: uppercase;
+}
+
+.titlecase-text {
+  text-transform: capitalize;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

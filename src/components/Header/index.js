@@ -2,15 +2,15 @@ import React from "react";
 import TopNav from "../../components/TopNav";
 import "./style.css";
 
-export default function Header({ title, body, buttonTitle }) {
+export default function Header({ title, body, buttonTitle, categoryTypes }) {
   return (
     <>
       <div className="container-fluid">
-        <TopNav />
+        <TopNav categoryTypes={categoryTypes} />
         <div className="row">
           <div className="col-lg-12 col-md-12 header-banner">
             <div className="content">
-              <p className="h1 d-flex justify-content-center" style={{ fontWeight: "bold", color: "#fff" }}>
+              <p className="h1 d-flex justify-content-center titlecase-text" style={{ fontWeight: "bold", color: "#fff" }}>
                 {title}
               </p>
               <div className="d-flex justify-content-center">
@@ -47,7 +47,7 @@ export const CollectionHeader = ({ title }) => {
           <div className="col-lg-12 col-md-12 header-banner">
             <div className="content">
               <p
-                className="h1 d-flex justify-content-center"
+                className="h1 d-flex justify-content-center titlecase-text"
                 style={{
                   fontWeight: "bold",
                   color: "#fff",

@@ -1,15 +1,28 @@
-import React from "react";
-import {LoginTopNav} from "../../components/TopNav"
+import React, { useState, useEffect } from "react";
+import { LoginTopNav } from "../../components/TopNav"
 import signin from "../../assets/images/sigin2.png";
 import Facebook from "../../assets/icons/Facebook.svg";
 import Google from "../../assets/icons/Google.svg";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import "./style.css";
+import constants from "../../constants";
+import qs from "qs";
 
-function SignIn() {
+function SignIn(props) {
   const history = useHistory();
+  const location = useLocation();
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+
   const handleNextBtnClick = (e) => {
-    history.push("/next-signup");
+    e.preventDefault();
+    history.push({
+      pathname: "/next-signup",
+      state: {
+        firstName, lastName, email
+      }
+    });
   };
   const handleLoginClick = (e) => {
     history.push("/login");
@@ -17,6 +30,20 @@ function SignIn() {
   const handleSignInClick = (e) => {
     history.push("/signin");
   };
+
+  useEffect(() => {
+    const query = qs.parse(location.search, { ignoreQueryPrefix: true })
+    if (query.code && query.type) {
+      props.socialLogin(query.type, location.search, () => { history.push('/') });
+    }
+
+    let token = localStorage.getItem('token');
+    //TODO you should actually hit the verify endpoint to verify this token.
+    if (token) {
+      history.push('/')
+    }
+
+  }, []);
 
   return (
     <>
@@ -48,11 +75,15 @@ function SignIn() {
               <h3 className="font-weight-bolder text-center pb-3">Create Account</h3>
               <div className="row">
                 <div className=" col-sm-12 col-xs-12 d-flex justify-content-center">
-                  <img src={Facebook} alt="facebook" className="px-1 " />
-                  <img src={Google} alt="google" className="px-1" />
+                  <a href={`${constants.BASE_API}/auth/facebook`}>
+                    <img src={Facebook} alt="facebook" className="px-1 " />
+                  </a>
+                  <a href={`${constants.BASE_API}/auth/google`}>
+                    <img src={Google} alt="google" className="px-1" />
+                  </a>
                 </div>
                 <div className=" col-sm-12 col-xs-12 mt-5">
-                  <form>
+                  <form onSubmit={handleNextBtnClick}>
                     <div class="form-group mx-sm-4 mb-2 px-5">
                       <label for="firstName">
                         <span
@@ -64,7 +95,7 @@ function SignIn() {
                           First Name <span className="_dot_color">*</span>
                         </span>
                       </label>
-                      <input type="text" class="form-control" id="firstName" placeholder="john Doe" />
+                      <input type="text" value={firstName} onChange={e => setFirstName(e.target.value)} required class="form-control" id="firstName" placeholder="john Doe" />
                     </div>
                     <div class="form-group mx-sm-4 mb-2 px-5">
                       <label for="lastName">
@@ -77,7 +108,7 @@ function SignIn() {
                           Last Name <span className="_dot_color">*</span>
                         </span>
                       </label>
-                      <input type="text" class="form-control" id="lastName" placeholder="john Doe" />
+                      <input type="text" value={lastName} onChange={e => setLastName(e.target.value)} required class="form-control" id="lastName" placeholder="john Doe" />
                     </div>
 
                     <div class="form-group mx-sm-4 mb-2 px-5">
@@ -91,27 +122,27 @@ function SignIn() {
                           Email <span className="_dot_color">*</span>
                         </span>
                       </label>
-                      <input type="email" class="form-control" id="email" placeholder="john@gmail.com" />
+                      <input type="email" value={email} onChange={e => setEmail(e.target.value)} required class="form-control" id="email" placeholder="john@gmail.com" />
+                    </div>
+                    <div className="d-flex justify-content-center pt-5">
+                      <p>Already have an account? </p>{" "}
+                      <span
+                        style={{
+                          color: "red",
+                          fontWeight: "normal",
+                          cursor: "pointer"
+                        }}
+                        onClick={handleLoginClick}
+                      >
+                        Log In
+                    </span>
+                    </div>
+                    <div className="d-flex justify-content-center pt-5">
+                      <button type="submit" class="btn btn-dark btn-lg px-5 ">
+                        Next
+                      </button>
                     </div>
                   </form>
-                  <div className="d-flex justify-content-center pt-5">
-                    <p>Already have an account? </p>{" "}
-                    <span
-                      style={{
-                        color: "red",
-                        fontWeight: "normal",
-                        cursor: "pointer"
-                      }}
-                      onClick={handleLoginClick}
-                    >
-                      Log In
-                    </span>
-                  </div>
-                  <div className="d-flex justify-content-center pt-5">
-                    <button type="button" class="btn btn-dark btn-lg px-5 " onClick={handleNextBtnClick}>
-                      Next
-                    </button>
-                  </div>
                 </div>
               </div>
             </div>
