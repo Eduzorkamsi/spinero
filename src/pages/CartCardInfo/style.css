@@ -1,0 +1,103 @@
+.payment_method_content {
+    display: flex;
+    flex-direction: row;
+}
+
+.payment_method {
+    margin-right: 20px;
+    margin-left: 166px;
+}
+
+.card_box1 {
+    width: 634px;
+    height: 66px;
+    left: 166px;
+    top: 266px;
+    /* Light Grey */
+    background: #FBFBFB;
+    padding: 20px;
+}
+
+.card_box1 p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+    /* identical to box height, or 162% */
+    color: #000000;
+}
+
+.card_box2 {
+    width: 634px;
+    height: 393px;
+    left: 166px;
+    top: 342px;
+    /* Light Grey */
+    background: #FBFBFB;
+    margin-top: 10px;
+    padding: 20px;
+}
+
+.payment_method_content {
+    margin-bottom: 120px;
+}
+
+.visa_logo {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.paypal_logo {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.master_logo {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.stripe_logo {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.payment_text {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 26px;
+    /* identical to box height, or 162% */
+    display: flex;
+    align-items: center;
+    /* Colors/Neutral/Black */
+    color: #151522;
+    margin-left: 20px;
+}
+
+.card_box3 {
+    width: 635px;
+    height: 66px;
+    left: 165px;
+    top: 745px;
+    /* Light Grey */
+    background: #FBFBFB;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card_box3 .card_next {
+    font-weight: bold;
+    font-size: 19.5px;
+    line-height: 24px;
+    text-decoration-line: underline;
+    /* Red */
+    color: #FF0000;
+    border: none;
+    background: none;
+}

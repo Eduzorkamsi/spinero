@@ -45,7 +45,7 @@ const CartLogin = () => {
                             </form>
                         </div>
                         <div className="cart_box4">
-                            <NavLink to="/CartDeliveryInfo" className="user_check" >Checkout</NavLink>
+                            <NavLink to="/CartMultiStepForm" className="user_check" >Checkout</NavLink>
                         </div>
                     </div>
                 </div>

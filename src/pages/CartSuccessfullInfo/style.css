@@ -1,0 +1,43 @@
+.cart_successful_content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.successful_text1 h3{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 37.25px;
+    line-height: 46px;
+    color: #0D0D0D;
+    margin-top: 46px;
+}
+
+.successful_text2{
+    margin-top: 20px;
+}
+
+.successful_text2 h4{
+    font-style: normal;
+font-weight: bold;
+font-size: 19.5px;
+line-height: 24px;
+color: #151522;
+}
+
+.successful_text3{
+    width: 325px;
+height: 78px;
+margin-top: 20px;
+margin-bottom: 40px;
+}
+
+.successful_text3 p{
+    font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 26px;
+color: #0D0D0D;
+text-align: center;
+}

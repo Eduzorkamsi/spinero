@@ -11,6 +11,8 @@ import Wishlist from "./pages/Wishlist"
 import CartLogin from "./pages/CartLogin"
 import CartDeliveryInfo from "./pages/CartDeliveryInfo";
 import Collections from "./pages/Collections";
+import CartMultiStepForm from "./pages/CartMultiStepForm";
+import CartSuccessfulInfo from "./pages/CartSuccessfullInfo";
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
         <Route path="/CartLogin" component={CartLogin}/>
         <Route path="/CartDeliveryInfo" component={CartDeliveryInfo}/>
         <Route path="/category/:categoryId" component={Collections} />
+        <Route path="/CartMultiStepForm" component={CartMultiStepForm}/>
+        <Route path="/CartSuccessfulInfo" component={CartSuccessfulInfo}/>
       </Switch>
     </Router>
   );

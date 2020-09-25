@@ -1,0 +1,94 @@
+.billing_content {
+    display: flex;
+    flex-direction: row;
+}
+
+.billing_box1 {
+    width: 634px;
+    height: 66px;
+    margin-left: 166px;
+    margin-right: 10px;
+    padding: 20px;
+    /* Light Grey */
+    background: #FBFBFB;
+}
+
+.billing_box1 p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+    /* identical to box height, or 162% */
+    color: #000000;
+}
+
+.billing_box2 {
+    width: 634px;
+    height: 335px;
+    /* Light Grey */
+    background: #FBFBFB;
+    margin-top: 10px;
+    margin-left: 166px;
+    padding: 20px;
+}
+
+.billing_box3 {
+    width: 634px;
+    height: 66px;
+    left: 166px;
+    top: 717px;
+    /* Light Grey */
+    background: #FBFBFB;
+    margin-top: 10px;
+    margin-left: 166px;
+    padding: 20px;
+}
+
+.billing_box3 p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+    /* identical to box height, or 162% */
+    color: #000000;
+}
+
+.billing_box4 {
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: 166px;
+}
+
+.billing_box5 {
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: 166px;
+    margin-bottom: 120px;
+    width: 635px;
+    height: 66px;
+    /* Light Grey */
+    background: #FBFBFB;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.billing_box5 .billing_next {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 19.5px;
+    line-height: 24px;
+    /* identical to box height */
+    text-decoration-line: underline;
+    /* Red */
+    color: #FF0000;
+    border: none;
+    background: none;
+}
+
+.card_muted_text {
+    display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-left: 10px;
+}

@@ -1,0 +1,102 @@
+.delivery_progress_section {
+    margin-top: 40px;
+    margin-bottom: 80px;
+}
+
+/* straight line */
+
+.progress-indicator {
+    list-style: none;
+    width: 30%;
+    margin: 0 auto;
+    padding: 0;
+    display: table;
+    table-layout: fixed;
+}
+
+/* design for the circle */
+
+.progress-indicator>li {
+    position: relative;
+    display: table-cell;
+    text-align: center;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 16px;
+    /* identical to box height, or 133% */
+    /* Gray 3 */
+    color: #828282;
+}
+
+/* textv postitioning */
+
+.progress-indicator>li span {
+    position: absolute;
+    color: #e6e6e6;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    letter-spacing: 0.05px;
+}
+
+.progress-indicator>li::before {
+    content: attr(data-step);
+    display: block;
+    margin: 0 auto;
+    background: #e6e6e6;
+    width: 1.5em;
+    height: 1.5em;
+    text-align: center;
+    margin-bottom: 0.25em;
+    line-height: 1.5em;
+    border-radius: 100%;
+    position: relative;
+    z-index: 1000;
+}
+
+.progress-indicator>li::after {
+    content: '';
+    position: absolute;
+    display: block;
+    background: #e6e6e6;
+    width: 100%;
+    height: 0.15em;
+    top: 50%;
+    -webkit-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    transform: translateY(-100%);
+    left: 50%;
+    margin-left: 1.5em\9;
+    z-index: 0;
+}
+
+.progress-indicator>li:last-child:after {
+    display: none;
+}
+
+.progress-indicator>li.is-complete {
+    color: #4F4F4F;
+}
+
+.progress-indicator>li.is-complete::before, .progress-indicator>li.is-complete::after {
+    color: #fefefe;
+    background: #4F4F4F;
+}
+
+.progress-indicator>li.is-complete span {
+    color: #4F4F4F;
+}
+
+.progress-indicator>li.is-current {
+    color: #0D0D0D;
+}
+
+.progress-indicator>li.is-current::before {
+    color: #fefefe;
+    background:#0D0D0D;
+}
+
+.progress-indicator>li.is-current span {
+    color:#0D0D0D;
+}

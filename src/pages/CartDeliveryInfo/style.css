@@ -31,11 +31,7 @@ line-height: 26px;
 color: #000000;
 }
 
-.delivery_box2{
-    background: #FBFBFB;
-    margin-top: 10px;
-    padding: 20px;
-}
+
 
 .delivery_box3{
     width: 635px;
@@ -65,6 +61,8 @@ text-decoration-line: underline;
 /* Red */
 
 color: #FF0000;
+border: none;
+    background: none;
 }
 
 

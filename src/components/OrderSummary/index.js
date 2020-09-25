@@ -46,10 +46,19 @@ const OrderSummary = () => {
 
 </div>
 <div className="delivery_box6">
-
+<div className="order_totals">
+    <h4>Sub-total</h4>
+    <h4>Delivery</h4>
+    <h4>Total</h4>
+</div>
+<div className="number_totals">
+    <h4>$1,000</h4>
+    <h4>$500</h4>
+    <h4>$1,500</h4>
+</div>
 </div>
 <div className="delivery_box7">
-<NavLink to="/CartCardinfo">Check Out</NavLink>
+<NavLink className="box7_checkout" to="/CartSuccessfulInfo">Check Out</NavLink>
 </div>
         </>
     )
