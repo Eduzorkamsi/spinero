@@ -1,16 +1,17 @@
 import React from "react";
 import Footer from "../../components/Footer";
-import CartPagination from "../../components/Pagination";
+
 import TopNav from "../../components/TopNav";
 import CartProgress from "../../components/CartProgress"
 import "./style.css";
+import { NavLink } from "react-router-dom";
 
 const CartLogin = () => {
     return (
         <>
             <div className="cart_login_section">
                 <TopNav></TopNav>
-                <CartPagination></CartPagination>
+                <CartProgress></CartProgress>
                 <div className="cart_login_content">
                     <div className="cart_guest">
                         <div className="cart_box">
@@ -21,7 +22,7 @@ const CartLogin = () => {
                             <p>Please, log in to save your details.</p>
                         </div>
                         <div className="cart_box3">
-                            <a href="">Checkout as a Guest</a>
+                            <a className="guest_check" href="">Checkout as a Guest</a>
                         </div>
                     </div>
                     <div className="cart_existing_user">
@@ -32,22 +33,19 @@ const CartLogin = () => {
                             <form>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Email address</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"></input>
-                                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="emailaddress@us.com"></input>
+
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Password</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1"></input>
+                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="password"></input>
                                 </div>
-                                <div class="form-group form-check">
-                                    <input type="checkbox" class="form-check-input" id="exampleCheck1"></input>
-                                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                                </div>
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <h3>Forgot Password?</h3>
+                                <h3>Don't have an account? <a href="">Sign up</a></h3>
                             </form>
                         </div>
-                        <div className="cart_box3">
-<a href="">Checkout</a>
+                        <div className="cart_box4">
+                            <NavLink to="/CartDeliveryInfo" className="user_check" >Checkout</NavLink>
                         </div>
                     </div>
                 </div>

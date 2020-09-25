@@ -8,12 +8,9 @@ import Home from "./pages/Home";
 import LatestCollection from "./pages/LatestCollection";
 import Cart from "./pages/Cart";
 import Wishlist from "./pages/Wishlist"
-<<<<<<< HEAD
 import CartLogin from "./pages/CartLogin"
 import CartDeliveryInfo from "./pages/CartDeliveryInfo";
-=======
 import Collections from "./pages/Collections";
->>>>>>> 9b263184d1114dc8efd7316dce2c1b14a8d70c1a
 
 function App() {
   return (
@@ -26,12 +23,9 @@ function App() {
         <Route path="/collections" component={LatestCollection} />
         <Route path="/cart" component={Cart}/>
         <Route path="/wishlist" component={Wishlist}/>
-<<<<<<< HEAD
         <Route path="/CartLogin" component={CartLogin}/>
         <Route path="/CartDeliveryInfo" component={CartDeliveryInfo}/>
-=======
         <Route path="/category/:categoryId" component={Collections} />
->>>>>>> 9b263184d1114dc8efd7316dce2c1b14a8d70c1a
       </Switch>
     </Router>
   );

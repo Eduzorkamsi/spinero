@@ -1,5 +1,5 @@
 import React from "react";
-
+import { NavLink } from "react-router-dom";
 import "./style.css";
 
 const CartPagination = () => {
@@ -9,7 +9,7 @@ const CartPagination = () => {
                 <ul class="pagination pagination-circular" role="navigation" aria-label="Pagination">
     
                     <li class="current">1</li>
-                    <li><a href="#" aria-label="Page 2">2</a></li>
+                    <li><NavLink to="/CartDeliveryInfo" aria-label="Page 2">2</NavLink></li>
                     <li><a href="#" aria-label="Page 3">3</a></li>
 
 
