@@ -15,6 +15,14 @@
   text-transform: capitalize;
 }
 
+.no-border {
+  border: none;
+}
+
+.no-background {
+  background: none;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
