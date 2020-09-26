@@ -3,12 +3,14 @@ import user from "./user";
 import home from "./home";
 import product from "./product";
 import cart from "./cart";
+import order from "./order";
 
 const rootReducers = combineReducers({
   user,
   home,
   product,
-  cart
+  cart,
+  order
 });
 
 export default rootReducers;
