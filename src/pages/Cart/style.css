@@ -58,7 +58,6 @@ div>.continue_shopping {
 
 .div2 {
     width: 1110px;
-    height: 512px;
     padding-left: 40px;
     padding-right: 40px;
     margin-left: 210px;
@@ -102,7 +101,7 @@ div>.continue_shopping {
     margin-left: 40px;
     margin-top: 10px;
     border: 1px solid #BA2222;
-    background: #BA2222;
+    /* background: #BA2222; */
 }
 
 img.mr-3 {

@@ -2,13 +2,15 @@ import React from "react";
 import Footer from "../../components/Footer";
 import TopNav from "../../components/TopNav";
 import "./style.css";
-import image from "../../assets/images/girl.png"
 import { NavLink } from "react-router-dom";
+import { bindActionCreators } from "redux";
+import * as actionCreators from "../../redux/actions";
+import { connect } from "react-redux";
 // import{cart} from './data'
 // import { Link } from "react-router-dom";
 
 
-const Cart = () => {
+const Cart = (props) => {
     return (
         <>
             <div className="cart_section">
@@ -16,77 +18,83 @@ const Cart = () => {
                 <div className="cart_second_nav">
                     <h3>Cart</h3>
                     <div className="continue_shopping">
-                        <a href="">Continue Shopping</a>
+                        <NavLink to="/">Continue Shopping</NavLink>
                     </div>
-
                 </div>
                 <div className="div1">
                     <ul className="cart_ul">
                         <li className="cart_li">
                             Item
-              </li>
+                        </li>
                         <li className="cart_li">
                             Colour
-              </li>
+                        </li>
                         <li className="cart_li">
                             Size
-              </li>
+                        </li>
                         <li className="cart_li">
                             Quantity
-              </li>
+                        </li>
                         <li className="cart_li">
                             Price
-              </li>
-
-           
+                        </li>
                     </ul>
-
-
                 </div>
-<div className="div2">
-
-<ul class="list-unstyled">
-                    <li class="media">
-                        <img src={image} class="mr-3" alt=""></img>
-                        <div className="media_text">
-                            <p>Women’s Turtle Neck</p>
-                        </div>
-                        <div class="media-body">
-                            <li className="div4"></li>
-                            <li className="li_text">S</li>
-                            <li> <i class="fas fa-plus"></i> 1 <i class="fas fa-minus"></i></li>
-                            <li>$500</li>
-                            <i class="fas fa-times"></i>
-                        </div>
-                    </li>
-                    <li class="media my-4">
-                        <img src={image} class="mr-3" alt=""></img>
-                        <div className="media_text">
-                            <p>Women’s Turtle Neck</p>
-                        </div>
-                        <div class="media-body">
-                        <li className="div4"></li>
-                        <li className="li_text">S</li>
-                            <li> <i class="fas fa-plus"></i>1 <i class="fas fa-minus"></i></li>
-                            <li>$500</li> 
-                            <i class="fas fa-times"></i></div>
-                    </li>
-
-                </ul>
-    
-</div>
-            
-              <div className="div3">
-                  <NavLink to="/CartLogin" classname="check_cart" href="">Checkout</NavLink>
-<div className="cart_total">
-    $1000
-</div>
-              </div>
+                <div className="div2">
+                    <ul class="list-unstyled">
+                        {props.cart.products.map((product, i) => (
+                            <li class="media" key={i}>
+                                <img src={product.image} class="mr-3" alt=""></img>
+                                <div className="media_text">
+                                    <p>{product.name}</p>
+                                </div>
+                                <div class="media-body">
+                                    <li className="div4" style={{ background: `${product.color}` }}></li>
+                                    <li className="li_text">{product.size}</li>
+                                    <li>
+                                        <button
+                                            type="button"
+                                            className="no-border no-background"
+                                            onClick={() => { props.addToCart(product) }}
+                                        >
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                        {product.quantity}
+                                        <button
+                                            type="button"
+                                            className="no-border no-background"
+                                            onClick={() => { props.removeOneFromCart(product.id) }}
+                                        >
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                    </li>
+                                    <li>${product.price}</li>
+                                    <button
+                                        type="button"
+                                        className="no-border no-background"
+                                        onClick={() => { props.removeFromCart(product.id) }}
+                                    ><i class="fas fa-times"></i></button>
+                                </div>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+                <div className="div3">
+                    <NavLink to="/CartMultiStepForm" classname="check_cart" href="">Checkout</NavLink>
+                    <div className="cart_total">
+                        ${props.cart.amount}
+                    </div>
+                </div>
                 <Footer></Footer>
-
             </div>
         </>
     );
 };
 
-export default Cart;
+const mapStateToProps = state => ({
+    cart: state.cart
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators(actionCreators, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Cart);

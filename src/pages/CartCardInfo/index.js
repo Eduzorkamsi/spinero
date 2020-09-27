@@ -6,7 +6,7 @@ import CartProgressDelivery from "../../components/CartProgressDelivery";
 import OrderSummary from "../../components/OrderSummary";
 import Footer from "../../components/Footer";
 
-const CartCardInfo = ({ navigation }) => {
+const CartCardInfo = ({ navigation, shippingInformation, billingInformation }) => {
     const { next } = navigation;
     return (
         <>
@@ -19,42 +19,26 @@ const CartCardInfo = ({ navigation }) => {
                             <p>Choose your payment method</p>
                         </div>
                         <div className="card_box2">
-                            <div className="visa_logo">
-                                <img alt="logo" className="paymentlogo" src={require("../../assets/icons/Visa.svg")} />
-                                <div className="payment_text">
-                                    <h6>Visa</h6>
-                                </div>
-                            </div>
-                            <div className="master_logo">
-                                <img alt="logo" className="logo" src={require("../../assets/icons/Mastercard.svg")} />
-                                <div className="payment_text">
-                                    <h6>Mastercard</h6>
-                                </div>
-                            </div>
                             <div className="paypal_logo">
-                                <img alt="logo" className="logo" src={require("../../assets/icons/Paypal.svg")} />
-                                <div className="payment_text">
-                                    <h6>Paypal</h6>
-                                </div>
+                                <button type="button" className="no-border no-background">
+                                    <img alt="logo" className="logo" src={require("../../assets/icons/Paypal.svg")} />
+                                    <div className="payment_text">
+                                        <h6>Paypal</h6>
+                                    </div>
+                                </button>
                             </div>
                             <div className="stripe_logo">
-                                <img alt="logo" className="logo" src={require("../../assets/icons/Stripe.svg")} />
-                                <div className="payment_text">
-                                    <h6>Stripe</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="card_box3">
-                            <div>
-                                <button className="card_next" onClick={next}>Next</button>
+                                <button type="button" className="no-border no-background" onClick={next}>
+                                    <img alt="logo" className="logo" src={require("../../assets/icons/Stripe.svg")} />
+                                    <div className="payment_text">
+                                        <h6>Stripe</h6>
+                                    </div>
+                                </button>
                             </div>
                         </div>
                     </div>
-
-
-
                     <div className="cart_order_summary">
-                        <OrderSummary></OrderSummary>
+                        <OrderSummary shippingInformation={shippingInformation} billingInformation={billingInformation} />
                     </div>
                 </div>
 

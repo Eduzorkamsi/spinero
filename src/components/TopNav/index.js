@@ -20,7 +20,7 @@ function TopNav(props) {
   const showCategoryTypes = () => {
     return props.categoryTypes.map((categoryType, i) => {
       return (
-        <li className="nav-item">
+        <li className="nav-item" key={i}>
           <NavLink className="nav-link flex-shrink-0 ml-5 titlecase-text" activeClassName="current" to={{ pathname: `/category/${categoryType._id}`, state: categoryType }}>
             {categoryType.name.toLowerCase()}
           </NavLink>

@@ -1,5 +1,6 @@
 export default {
   BASE_API: "https://spinero-dev.tk",
+  STRIPE_KEY: "pk_test_SHtOo1jkIwAZFyZ4lVT5IA4f00kUrIiuUG",
   REQUEST: type => `${type}_REQUEST`,
   REQUEST_FAILURE: type => `${type}_REQUEST_FAILURE`,
   REQUEST_SUCCESS: type => `${type}_SUCCESS`,
@@ -12,6 +13,7 @@ export default {
   MAKE_ORDER: "MAKE_ORDER",
   ADD_TO_CART: "ADD_TO_CART",
   REMOVE_FROM_CART: "REMOVE_FROM_CART",
+  REMOVE_ONE_FROM_CART: "REMOVE_ONE_FROM_CART",
   GET_CART: "GET_CART",
   GET_CART_COUNT: "GET_CART_COUNT",
   GET_CART_PRICE: "GET_CART_PRICE",

@@ -25,9 +25,22 @@ const Home = (props) => {
               <p class="card-text" style={{ fontWeight: "bold" }}>
                 $ {product.price}
               </p>
-              <p style={{ color: "#FF0000", textDecorationLine: "underline", fontWeight: "bold" }}>
-                Add to Bag
-              </p>
+              <button
+                className="add-to-cart"
+                type="button"
+                onClick={() => {
+                  props.addToCart(
+                    {
+                      id: product._id,
+                      name: product.name,
+                      price: product.price,
+                      color: "red",
+                      size: "M",
+                      image: product.images[0].url
+                    }
+                  )
+                }}
+              >Add to Bag</button>
             </div>
           </div>
         </div>

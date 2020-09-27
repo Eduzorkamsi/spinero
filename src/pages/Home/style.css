@@ -5,8 +5,22 @@
   font-weight: bold;
   font-size: 19.5px;
   -webkit-text-decoration-line: underline;
-          text-decoration-line: underline;
+  text-decoration-line: underline;
   color: #ffffff;
   cursor: pointer;
 }
+
 /*# sourceMappingURL=style.css.map */
+
+.add-to-cart {
+  border: none;
+  color: rgb(255, 0, 0);
+  text-decoration-line: underline;
+  background: none;
+  font-weight: bold;
+}
+
+.add-to-cart:active, .add-to-cart:focus {
+  border: none;
+  outline: none;
+}
