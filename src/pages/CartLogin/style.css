@@ -1,40 +1,26 @@
 .cart_login_content {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
-}
-
-.cart_guest {
-    margin-right: 10px;
-}
-
-.cart_box {
-    width: 350px;
-    height: 66px;
-    left: 355px;
-    top: 266px;
-    /* Light Grey */
-    background: #FBFBFB;
+    align-items: center;
 }
 
 .cart_box>h6 {
     font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 26px;
-    color: #000000;
-    padding: 20px;
+    font-weight: bold;
+    font-size: 19.5px;
+    line-height: 24px;
+    /* identical to box height */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    /* Colors/Neutral/Black */
+    color: #151522;
 }
 
 .cart_box2 {
-    width: 350px;
-    height: 270px;
-    left: 355px;
-    top: 342px;
-    margin-top: 10px;
-    /* Light Grey */
-    background: #FBFBFB;
-    padding: 20px;
+    width: 325px;
+    margin-top: 20px;
 }
 
 .cart_box2>p {
@@ -43,69 +29,18 @@
     font-size: 16px;
     line-height: 26px;
     /* or 162% */
-    color: #000000;
+    text-align: center;
+    /* Black */
+    color: #0D0D0D;
 }
 
-.cart_box2 label {
-    font-style: normal;
-    font-weight: bold;
-    font-size: 15px;
-    line-height: 20px;
-    /* identical to box height, or 133% */
-    display: flex;
-    align-items: center;
-    /* Colors/Neutral/Black */
-    color: #151522;
-}
-
-.cart_box2 h3 {
-    font-style: normal;
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 26px;
-    /* identical to box height, or 162% */
-    display: flex;
-    align-items: center;
-    /* Gray 2 */
-    color: #4F4F4F;
-}
-
-.cart_box2 a {
-    color: #FF0000;
-}
-
-.cart_box3 {
-    width: 350px;
-    height: 66px;
-    left: 355px;
-    top: 266px;
-    margin-top: 10px;
-    margin-bottom: 120px;
-    /* Light Grey */
-    background: #FBFBFB;
-}
-
-.cart_box3 a {
-    font-style: normal;
-    font-weight: bold;
-    font-size: 19.5px;
-    line-height: 24px;
-    /* identical to box height */
-    text-decoration-line: underline;
-    /* Red */
-    color: #FF0000;
-    display: flex;
-    justify-content: center;
-    padding-top: 20px;
-}
 
 .cart_box4 {
     background: #BDBDBD;
     width: 350px;
     height: 66px;
-    left: 355px;
-    top: 266px;
-    margin-top: 10px;
+  
+    margin-top: 40px;
     margin-bottom: 120px;
 }
 
