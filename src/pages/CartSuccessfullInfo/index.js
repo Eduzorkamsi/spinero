@@ -2,6 +2,7 @@ import React from "react";
 import CartProgressSuccessful from "../../components/CartProgressSuccessful";
 import Footer from "../../components/Footer";
 import TopNav from "../../components/TopNav";
+import { NavLink } from "react-router-dom";
 import "./style.css";
 
 const CartSuccessfulInfo = () => {
@@ -24,6 +25,10 @@ const CartSuccessfulInfo = () => {
 <div className="successful_text3">
 <p>Thank you so much for purchase! Your order has shipped and should arrive shortly.</p>
 </div>
+
+<div className="successful_text4">
+                            <NavLink to="/" className="takemehome" >Take me Home</NavLink>
+                        </div>
         </div>
         <Footer></Footer>
         </>
