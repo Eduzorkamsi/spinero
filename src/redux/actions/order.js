@@ -26,13 +26,41 @@ export const createStripeCharge = details => dispatch => {
   });
 };
 
-export const makeOrder = (orderDetails) => dispatch => {
+export const authorizePayPalPayment = (paypalOrderId, orderId) => dispatch => {
+  dispatch({
+    type: Constants.REQUEST(Constants.OAUTHORIZE_PAYPAL_PAYMENT),
+    isLoading: true
+  });
+
+  const token = localStorage.getItem('token');
+
+  return Axios.put(`${Constants.BASE_API}/api/payment/authorizePayPalOrder`, { paypalOrderId, orderId }, {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  }).then(res => res.data && res.data.data)
+    .then((data = {}) => {
+      dispatch({
+        type: Constants.REQUEST_SUCCESS(Constants.OAUTHORIZE_PAYPAL_PAYMENT),
+        payload: data,
+        isLoading: false
+      });
+    }).catch(error => {
+      dispatch({
+        type: Constants.REQUEST_FAILURE(Constants.OAUTHORIZE_PAYPAL_PAYMENT),
+        error,
+        isLoading: false
+      });
+    });
+};
+
+export const makeOrder = (orderDetails, runAfter) => dispatch => {
   dispatch({
     type: Constants.REQUEST(Constants.MAKE_ORDER),
     isLoading: true
   });
   let token = localStorage.getItem('token');
-  Axios.post(`${Constants.BASE_API}/api/order`, orderDetails, {
+  return Axios.post(`${Constants.BASE_API}/api/order`, orderDetails, {
     headers: {
       Authorization: `Bearer ${token}`
     }
@@ -42,6 +70,10 @@ export const makeOrder = (orderDetails) => dispatch => {
       payload: data,
       isLoading: false
     });
+
+    if (runAfter && typeof runAfter === "function") {
+      return runAfter(data);
+    }
   }).catch(error => {
     dispatch({
       type: Constants.REQUEST_FAILURE(Constants.MAKE_ORDER),
