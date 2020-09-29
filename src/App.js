@@ -13,6 +13,7 @@ import CartDeliveryInfo from "./pages/CartDeliveryInfo";
 import Collections from "./pages/Collections";
 import CartMultiStepForm from "./pages/CartMultiStepForm";
 import CartSuccessfulInfo from "./pages/CartSuccessfullInfo";
+import ProductDetails from "./pages/ProductDetails";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path="/category/:categoryId" component={Collections} />
         <Route path="/CartMultiStepForm" component={CartMultiStepForm}/>
         <Route path="/CartSuccessfulInfo" component={CartSuccessfulInfo}/>
+        <Route path="/ProductDetails" component={ProductDetails}/>
       </Switch>
     </Router>
   );

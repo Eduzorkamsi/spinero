@@ -10,44 +10,34 @@
     margin-top: 240px;
     background: #FBFBFB;
     line-height: 18px;
-    padding-left: 31px;
+   
+}
+
+.collapse .card-body{
+    background: #FBFBFB;
 }
 
 ul {
     list-style: none;
 }
 
-ul .filter_li {
-    line-height: 38px;
-    border-bottom: 1px solid #E0E0E0;
+.mb-0 .text-left{
+   
+   
     font-style: normal;
     font-weight: bold;
     font-size: 14.75px;
   
     color: #0D0D0D;
+}
+
+.collapse .card-body ul li{
+    line-height: 18px;
+margin-bottom: 20px;
+color: #828282;
 }
 
 ul .filter_li2 {
-    line-height: 38px;
-    border-bottom: 1px solid #E0E0E0;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 14.75px;
-  
-    color: #0D0D0D;
-}
-
-ul .filter_li3 {
-    line-height: 38px;
-    border-bottom: 1px solid #E0E0E0;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 14.75px;
-  
-    color: #0D0D0D;
-}
-
-ul .filter_li4 {
     line-height: 38px;
     border-bottom: 1px solid #E0E0E0;
     font-style: normal;
@@ -75,16 +65,28 @@ ul li i{
 .filter_button{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .filter_button>.btn-outline-secondary {
     color: #FFFFFF;
     border-color: #0D0D0D;
     background: #0D0D0D;
+    width: 194px;
+    height: 50px;
+    margin: 30px;
 }
 
 .filter_button>a {
     color: #828282;
     text-decoration: underline;
     background-color: transparent;
+    margin-bottom: 30px;
 }
+
+.size_show{
+    margin-left: 20px;
+}
+
+/* ------- */

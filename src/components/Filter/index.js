@@ -10,23 +10,39 @@ const Filter = () => {
     return (
         <>
 
-            <div className="filter_section">
-           
-                <ul>
-                    
-                    <li className="filter_li" >Gender
-                    <i class="fas fa-plus first"></i>
-                    </li>
+   <div className="filter_section">
 
-                    {/* <i class="fal fa-minus"></i> */}
-                    <ul className="gender_show">
+   
+            <div class="accordion" id="accordionExample">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                               Gender
+        </button>
+                        </h2>
+                    </div>
+
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div class="card-body">
+                        <ul className="gender_show">
                         <li>Men <span class="label-count">(6)</span></li>
                         <li>Women<span class="label-count">(6)</span></li>
                     </ul>
-                    <li className="filter_li2">Categories
-                    <i class="fas fa-plus second"></i>
-                    </li>
-
+      </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Categories
+        </button>
+                        </h2>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                        <div class="card-body">
+                           
                     <ul className="categ_show">
                         <li>Shirts <span class="label-count">(6)</span></li>
                         <li>Skirts <span class="label-count">(6)</span></li>
@@ -35,10 +51,20 @@ const Filter = () => {
                         <li>Gowns <span class="label-count">(6)</span></li>
                         <li>Vests <span class="label-count">(6)</span></li>
                     </ul>
-                    <li className="filter_li3">Sizes
-                    <i class="fas fa-plus third"></i>
-                    </li>
-                    <ul className="size_show">
+      </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingThree">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                               Sizes
+        </button>
+                        </h2>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                        <div class="card-body">
+                        <ul className="size_show">
                         <li> <input type="checkbox" class="form-check-input" id="exampleCheck1"></input>
                             <label class="form-check-label" for="exampleCheck1">XS</label> <span class="label-count">(6)</span></li>
                         <li> <input type="checkbox" class="form-check-input" id="exampleCheck1"></input>
@@ -56,20 +82,32 @@ const Filter = () => {
                         <li> <input type="checkbox" class="form-check-input" id="exampleCheck1"></input>
                             <label class="form-check-label" for="exampleCheck1">4XL</label><span class="label-count">(6)</span></li>
                     </ul >
-                    <li className="filter_li4">Price
-                    <i class="fas fa-plus fourth"></i>
-                    </li>
-                    <ul className="price_show">
+      </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingFour">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                Price
+        </button>
+                        </h2>
+                    </div>
+                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                        <div class="card-body">
+                        <ul className="price_show">
                         <li><input class="form-control" type="text" placeholder="From"></input></li>
                         <li><input class="form-control" type="text" placeholder="To"></input></li>
                     </ul>
-                    <div className="filter_button">
+      </div>
+                    </div>
+                </div>
+                <div className="filter_button">
                         <button class="btn btn-outline-secondary" type="button">Apply Filters</button>
 
                         <a href="">Clear Filter</a>
                     </div>
-
-                </ul>
+            </div>
 
             </div>
         </>
