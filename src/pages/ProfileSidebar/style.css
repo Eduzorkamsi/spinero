@@ -1,0 +1,58 @@
+.profile_sidebar {
+    margin-left: 165px;
+    margin-right: 30px;
+    margin-top: 40px;
+}
+
+.profile_sidebar .sidebar1 {
+    background: #FBFBFB;
+    width: 350px;
+    height: 209px;
+    margin-bottom: 10px;
+    padding: 37px;
+}
+
+.sidebar_subhead {
+    display: flex;
+    flex-direction: row;
+}
+
+.profile_active {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height */
+    text-decoration-line: underline;
+    /* Red */
+    color: #FF0000;
+    margin-top: 20px;
+}
+
+.profile {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height */
+    text-decoration-line: underline;
+    /* Gray 2 */
+    color: #4F4F4F;
+    margin-top: 20px;
+}
+
+.sidebar_subhead img{
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.sidebar1 p{
+    font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 26px;
+/* or 162% */
+
+
+color: #000000;
+}

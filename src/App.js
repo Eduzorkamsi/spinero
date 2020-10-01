@@ -14,6 +14,10 @@ import Collections from "./pages/Collections";
 import CartMultiStepForm from "./pages/CartMultiStepForm";
 import CartSuccessfulInfo from "./pages/CartSuccessfullInfo";
 import ProductDetails from "./pages/ProductDetails";
+import ProfileSidebar from "./pages/ProfileSidebar";
+import ProfilePersonalInfo from "./pages/ProfilePersonalInfo";
+import ProfileCart from "./pages/ProfileCart";
+import ProfilePayment from "./pages/ProfilePayment";
 
 function App() {
   return (
@@ -32,6 +36,10 @@ function App() {
         <Route path="/CartMultiStepForm" component={CartMultiStepForm}/>
         <Route path="/CartSuccessfulInfo" component={CartSuccessfulInfo}/>
         <Route path="/ProductDetails" component={ProductDetails}/>
+        <Route path="/ProfileSidebar" component={ProfileSidebar}/>
+        <Route path="/ProfilePersonalInfo" component={ProfilePersonalInfo}/>
+        <Route path="/ProfileCart" component={ProfileCart}/>
+        <Route path="/ProfilePayment" component={ProfilePayment}/>
       </Switch>
     </Router>
   );

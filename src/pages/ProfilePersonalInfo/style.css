@@ -1,0 +1,36 @@
+.profile_person_info_details{
+    display: flex;
+    flex-direction: row;
+}
+
+.profile_picture {
+    display: flex;
+    flex-direction: row;
+}
+
+.profile_picture h5 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height */
+    text-decoration-line: underline;
+    /* Gray 3 */
+    color: #828282;
+}
+
+.profile_box1 {
+    width: 730px;
+    height: 66px;
+    /* Light Grey */
+    background: #FBFBFB;
+}
+
+.profile_box1 p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+    /* identical to box height, or 162% */
+    color: #000000;
+}
