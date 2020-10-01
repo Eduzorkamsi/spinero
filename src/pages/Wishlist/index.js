@@ -1,12 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Footer from "../../components/Footer";
 import TopNav from "../../components/TopNav";
 import "./style.css";
 import image from "../../assets/images/girl.png"
-// import { Link } from "react-router-dom";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+import * as actionCreators from "../../redux/actions/wishlist";
+import { NavLink, useHistory } from "react-router-dom";
 
+const Wishlist = (props) => {
+    const history = useHistory();
 
-const Wishlist = () => {
+    useEffect(() => {
+        props.getUserWishlist();
+    }, []);
+
     return (
         <>
             <div className="wish_section">
@@ -15,149 +23,54 @@ const Wishlist = () => {
                     <div className="wishlist_second_nav">
                         <h3>Wishlist</h3>
                         <div className="wishlist_continue_shopping">
-                            <a href="">Continue Shopping</a>
+                            <NavLink to="/">Continue Shopping</NavLink>
                         </div>
                     </div>
-
-                    <div className="wishlist_div1">
-                        <img src={image} className="wishlist_image" alt=""></img>
-                        <div className="two">
-                            <i class="fas fa-times"></i>
-                            <h3>Women’s Turtle Neck</h3>
-                            <h4>$500</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Egestas cras lectus magna sodales aenean condimentum auctor aliquet. </p>
-                            <div className="color_palette">
-                                <ul>
-                                    <li className="color1"></li>
-                                    <li className="color2"></li>
-                                    <li className="color3"></li>
-                                    <li className="color4"></li>
-                                    <li className="color5"></li>
-                                    <li className="color6"></li>
-                                </ul>
+                    {
+                        (props?.wishlist || []).map(product => (
+                            <div key={product._id} className="wishlist_div1">
+                                <img src={product.images[0].url} className="wishlist_image" alt="" onClick={() => {
+                                    history.push(`/ProductDetails/${product._id}`, product);
+                                }} />
+                                <div className="two">
+                                    <button type="button" className="no-border no-background remove-item" onClick={() => { props.removeWishlistItem(product._id) }}><i class="fas fa-times"></i></button>
+                                    <button type="button" className="no-border no-background card-title" onClick={() => {
+                                        history.push(`/ProductDetails/${product._id}`, product);
+                                    }} ><h3>{product.name}</h3></button>
+                                    <h4>${product.price}</h4>
+                                    <p>{product.description}</p>
+                                    <div className="color_palette">
+                                        <ul>
+                                            {
+                                                product.colours.map((colour, i) => (
+                                                    <li key={i} className="color1" style={{ background: `${colour}`, border: "1px solid" }}></li>
+                                                ))
+                                            }
+                                        </ul>
+                                    </div>
+                                    <div className="wishlist_size">
+                                        <ul>
+                                            {
+                                                product.sizes.map((size, i) => (
+                                                    <li className="capitalize-text" key={i}>{size}</li>
+                                                ))
+                                            }
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
-                            <div className="wishlist_size">
-                                <ul>
-                                    <li>S</li>
-                                    <li>M</li>
-                                    <li>L</li>
-                                    <li>XL</li>
-                                    <li>XXL</li>
-                                </ul>
-                            </div>
-                        </div>
-
-
-                    </div>
-
-
-
-
-                    <div className="wishlist_div1">
-                        <img src={image} className="wishlist_image" alt=""></img>
-                        <div className="two">
-                            <i class="fas fa-times"></i>
-                            <h3>Women’s Turtle Neck</h3>
-                            <h4>$500</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Egestas cras lectus magna sodales aenean condimentum auctor aliquet. </p>
-                            <div className="color_palette">
-                                <ul>
-                                    <li className="color1"></li>
-                                    <li className="color2"></li>
-                                    <li className="color3"></li>
-                                    <li className="color4"></li>
-                                    <li className="color5"></li>
-                                    <li className="color6"></li>
-                                </ul>
-                            </div>
-                            <div className="wishlist_size">
-                                <ul>
-                                    <li>S</li>
-                                    <li>M</li>
-                                    <li>L</li>
-                                    <li>XL</li>
-                                    <li>XXL</li>
-                                </ul>
-                            </div>
-                        </div>
-
-
-                    </div>
-                    <div className="wishlist_div1">
-                        <img src={image} className="wishlist_image" alt=""></img>
-                        <div className="two">
-                            <i class="fas fa-times"></i>
-                            <h3>Women’s Turtle Neck</h3>
-                            <h4>$500</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Egestas cras lectus magna sodales aenean condimentum auctor aliquet. </p>
-                            <div className="color_palette">
-                                <ul>
-                                    <li className="color1"></li>
-                                    <li className="color2"></li>
-                                    <li className="color3"></li>
-                                    <li className="color4"></li>
-                                    <li className="color5"></li>
-                                    <li className="color6"></li>
-                                </ul>
-                            </div>
-                            <div className="wishlist_size">
-                                <ul>
-                                    <li>S</li>
-                                    <li>M</li>
-                                    <li>L</li>
-                                    <li>XL</li>
-                                    <li>XXL</li>
-                                </ul>
-                            </div>
-                        </div>
-
-
-                    </div>
-
-                    <div className="wishlist_div4">
-                        <img src={image} className="wishlist_image" alt=""></img>
-                        <div className="two">
-                            <i class="fas fa-times"></i>
-                            <h3>Women’s Turtle Neck</h3>
-                            <h4>$500</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Egestas cras lectus magna sodales aenean condimentum auctor aliquet. </p>
-                            <div className="color_palette">
-                                <ul>
-                                    <li className="color1"></li>
-                                    <li className="color2"></li>
-                                    <li className="color3"></li>
-                                    <li className="color4"></li>
-                                    <li className="color5"></li>
-                                    <li className="color6"></li>
-                                </ul>
-                            </div>
-                            <div className="wishlist_size">
-                                <ul>
-                                    <li>S</li>
-                                    <li>M</li>
-                                    <li>L</li>
-                                    <li>XL</li>
-                                    <li>XXL</li>
-                                </ul>
-                            </div>
-                        </div>
-
-
-                    </div>
-
-
+                        ))
+                    }
                 </div>
-
-
                 <Footer></Footer>
-
             </div>
         </>
     );
 };
+const mapStateToProps = state => ({
+    wishlist: state?.user?.wishlist
+});
 
-export default Wishlist;
+const mapDispatchToProps = dispatch => bindActionCreators(actionCreators, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Wishlist);

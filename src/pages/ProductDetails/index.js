@@ -101,7 +101,7 @@ const ProductDetails = (props) => {
                 <ul>
                   {
                     product?.colours?.map((colour, i) => (
-                      <li className="product_color1" onClick={() => { setColour(colour) }} style={{ background: `${colour}` }}></li>
+                      <li key={i} className="product_color1" onClick={() => { setColour(colour) }} style={{ background: `${colour}` }}></li>
                     ))
                   }
                 </ul>

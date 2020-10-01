@@ -29,7 +29,7 @@ export const addToWishlist = (product) => dispatch => {
     });
 }
 
-export const deleteWishlist = (productId) => dispatch => {
+export const removeWishlistItem = (productId) => dispatch => {
   dispatch({
     type: Constants.REQUEST(Constants.REMOVE_FROM_WISHLIST),
     isLoading: true
