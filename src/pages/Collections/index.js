@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Footer from "../../components/Footer";
 import { CollectionHeader } from "../../components/Header";
 import Filter from "../../components/Filter"
-import { useRouteMatch, useLocation } from 'react-router-dom';
+import { useRouteMatch, useLocation, useHistory } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import * as actionCreators from "../../redux/actions";
 import { connect } from 'react-redux';
@@ -10,8 +10,9 @@ import { connect } from 'react-redux';
 function CategoryCollections(props) {
   const urlParams = useRouteMatch();
   const location = useLocation();
+  const history = useHistory();
   const [products, setProducts] = useState();
-  
+
   const { categoryId } = urlParams.params;
   const categoryInfo = location.state;
   const categoryName = (categoryInfo.name || "").toLowerCase();
@@ -47,15 +48,32 @@ function CategoryCollections(props) {
                 return (
                   <div className="col mb-4" key={index} onClick={() => { }}>
                     <div class="card" id="item_card">
-                      <img src={data.images[0].url} class="card-img-top" alt="items" />
+                      <img src={data.images[0].url} class="card-img-top" alt="items" onClick={() => {
+                        history.push(`/ProductDetails/${data._id}`, data);
+                      }} />
                       <div class="card-body">
-                        <p className="card-title">{data.name}</p>
+                        <button type="button" className="no-border no-background card-title" onClick={() => {
+                          history.push(`/ProductDetails/${data._id}`, data);
+                        }} >{data.name}</button>
                         <p class="card-text" style={{ fontWeight: "bold" }}>
                           $ {data.price}
                         </p>
-                        <p style={{ color: "#FF0000", textDecorationLine: "underline", fontWeight: "bold" }}>
-                          Add to Bag
-                        </p>
+                        <button
+                          className="add-to-cart"
+                          type="button"
+                          onClick={() => {
+                            props.addToCart(
+                              {
+                                id: data._id,
+                                name: data.name,
+                                price: data.price,
+                                color: "red",
+                                size: "M",
+                                image: data.images[0].url
+                              }
+                            )
+                          }}
+                        >Add to Bag</button>
                       </div>
                     </div>
                   </div>

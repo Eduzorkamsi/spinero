@@ -8,20 +8,25 @@ import { latestCollection } from "./data";
 import { redirect } from "../../utils";
 import Card from "../../components/Card";
 import Footer from "../../components/Footer";
-import { Link } from "react-router-dom";
+import { Link, NavLink as button, useHistory } from "react-router-dom";
 import Axios from "axios";
 import constants from "../../constants";
 
 const Home = (props) => {
+  const history = useHistory();
   const [categoryProducts, setCategoryProducts] = useState({});
   const getCategoryProducts = name => {
     return (categoryProducts[name.toLowerCase()] || { items: [] }).items.map(product => {
       return (
-        <div className="col mb-4" key={product._id} onClick={() => { }}>
+        <div className="col mb-4" key={product._id}>
           <div class="card" id="item_card">
-            <img src={product.images[0].url} class="card-img-top" alt="items" />
+            <img src={product.images[0].url} class="card-img-top" alt="items" onClick={() => {
+              history.push(`/ProductDetails/${product._id}`, product);
+            }} />
             <div class="card-body _card-content-padding">
-              <p className="card-title">{product.name}</p>
+              <button type="button" className="no-border no-background card-title" onClick={() => {
+                history.push(`/ProductDetails/${product._id}`, product);
+              }} >{product.name}</button>
               <p class="card-text" style={{ fontWeight: "bold" }}>
                 $ {product.price}
               </p>

@@ -31,7 +31,7 @@ function App() {
         <Route path="/category/:categoryId" component={Collections} />
         <Route path="/CartMultiStepForm" component={CartMultiStepForm}/>
         <Route path="/CartSuccessfulInfo" component={CartSuccessfulInfo}/>
-        <Route path="/ProductDetails" component={ProductDetails}/>
+        <Route path="/ProductDetails/:productId" component={ProductDetails}/>
       </Switch>
     </Router>
   );

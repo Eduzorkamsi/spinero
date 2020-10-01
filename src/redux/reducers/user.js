@@ -50,6 +50,23 @@ export default (state = {}, action) => {
         error: action.error
       }
     }
+    case Constants.REQUEST(Constants.GET_USER_WISHLIST):
+      return {
+        ...state,
+        isLoading: action.isLoading
+      }
+    case Constants.REQUEST_SUCCESS(Constants.GET_USER_WISHLIST):
+      return {
+        ...state,
+        wishlist: action.payload,
+        isLoading: action.isLoading
+      }
+    case Constants.REQUEST_FAILURE(Constants.GET_USER_WISHLIST):
+      return {
+        ...state,
+        isLoading: action.isLoading,
+        error: action.error
+      }
     default: {
       return state;
     }

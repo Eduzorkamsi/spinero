@@ -2,15 +2,14 @@ import React from "react";
 import Footer from "../../components/Footer";
 import TopNav from "../../components/TopNav";
 import "./style.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import { bindActionCreators } from "redux";
 import * as actionCreators from "../../redux/actions";
 import { connect } from "react-redux";
-// import{cart} from './data'
-// import { Link } from "react-router-dom";
 
 
 const Cart = (props) => {
+    const history = useHistory();
     return (
         <>
             <div className="cart_section">
@@ -44,9 +43,13 @@ const Cart = (props) => {
                     <ul class="list-unstyled">
                         {props.cart.products.map((product, i) => (
                             <li class="media" key={i}>
-                                <img src={product.image} class="mr-3" alt=""></img>
+                                <img src={product.image} class="mr-3" alt="" onClick={() => {
+                                    history.push(`/ProductDetails/${product.id}`);
+                                }} />
                                 <div className="media_text">
-                                    <p>{product.name}</p>
+                                    <button type="button" className="no-background no-border media_text_button" onClick={() => {
+                                        history.push(`/ProductDetails/${product.id}`);
+                                    }}>{product.name}</button>
                                 </div>
                                 <div class="media-body">
                                     <li className="div4" style={{ background: `${product.color}` }}></li>
