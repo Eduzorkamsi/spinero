@@ -130,6 +130,17 @@ img.mr-3 {
     color: #333333;
 }
 
+.media_text_button {
+    margin-left: -165px;
+    margin-bottom: 0px;
+    margin-top: 210px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 26px;
+    color: #333333;
+}
+
 .media-body li .fa-plus {
     font-size: 8px;
     color: #828282;

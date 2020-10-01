@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="container ">
           <div className="row">
             <div className="col-md-12 ">
-              <ul class="foote_bottom_ul_amrc">
+              <ul className="foote_bottom_ul_amrc">
                 <li>
                   <Link to="/">Home</Link>
                 </li>
@@ -27,7 +27,7 @@ const Footer = () => {
           </div>
           <div className="row">
             <div className="col-md-12 ">
-              <ul class="foote_bottom_ul_amrc d-flex justify-content-center">
+              <ul className="foote_bottom_ul_amrc d-flex justify-content-center">
                 <li>
                   <Link to="/">About</Link>
                 </li>
@@ -39,7 +39,7 @@ const Footer = () => {
           </div>
           <div className="row">
             <div className="col-md-12">
-              <ul class="foote_bottom_ul_amrc ">
+              <ul className="foote_bottom_ul_amrc ">
                 <li>
                   <Link to="#">
                     <img alt="socials" src={require("../../assets/icons/ig.svg")} />

@@ -20,9 +20,9 @@ const CartDeliveryInfo = ({ navigation, shippingInformation, billingInformation,
                         </div>
                         <form onSubmit={e => { e.preventDefault(); next(); }}>
                             <CartForm addressInformation={shippingInformation} handleInputChange={handleInputChange}>
-                                <div class="form-check">
-                                    <input class="form-check-input" value={shippingInformation.saveShippingInformation} onChange={e => handleInputChange(e.target.checked, "saveShippingInformation")} type="checkbox" id="gridCheck" />
-                                    <label class="form-check-label" for="gridCheck">
+                                <div className="form-check">
+                                    <input className="form-check-input" value={shippingInformation.saveShippingInformation} onChange={e => handleInputChange(e.target.checked, "saveShippingInformation")} type="checkbox" id="gridCheck" />
+                                    <label className="form-check-label" for="gridCheck">
                                         Save Shipping Information
                                     </label>
                                 </div>

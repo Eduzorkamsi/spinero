@@ -78,27 +78,27 @@ const CartBillingInfo = (props) => {
                                 <p>Card Details</p>
                             </div>
                             <div className="billing_box2">
-                                <div class="form-column">
-                                    <div class="form-group">
+                                <div className="form-column">
+                                    <div className="form-group">
                                         <label for="inputName">Cardholder name</label>
-                                        <input type="text" class="form-control" id="inputName" placeholder="Ned Nwokolo" required></input>
+                                        <input type="text" className="form-control" id="inputName" placeholder="Ned Nwokolo" required></input>
                                     </div>
-                                    <div class="form-group">
+                                    <div className="form-group">
                                         <label for="inputNumber">Card number</label>
                                         <CardNumberElement className="form-control" id="inputNumber" placeholder="5399xxxxxxx" required />
                                     </div>
                                 </div>
-                                <div class="form-row">
-                                    <div class="form-group col-md-4">
+                                <div className="form-row">
+                                    <div className="form-group col-md-4">
                                         <label for="inputExpiry">Month</label>
                                         <CardExpiryElement className="form-control" id="inputExpiry" />
                                     </div>
-                                    <div class="form-group col-md-2">
+                                    <div className="form-group col-md-2">
                                         <label for="inputCVV">CVV</label>
                                         <CardCVCElement className="form-control" id="inputCVV" />
                                     </div>
                                     <div className="card_muted_text">
-                                        <small class="form-text text-muted">Number at the back of the card</small>
+                                        <small className="form-text text-muted">Number at the back of the card</small>
                                     </div>
                                     <div className="col-md-4 d-flex">
                                         <div style={{ display: "flex", alignSelf: "flex-end", marginBottom: "5vh" }}>

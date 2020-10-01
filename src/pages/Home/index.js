@@ -8,21 +8,26 @@ import { latestCollection } from "./data";
 import { redirect } from "../../utils";
 import Card from "../../components/Card";
 import Footer from "../../components/Footer";
-import { Link } from "react-router-dom";
+import { Link, NavLink as button, useHistory } from "react-router-dom";
 import Axios from "axios";
 import constants from "../../constants";
 
 const Home = (props) => {
+  const history = useHistory();
   const [categoryProducts, setCategoryProducts] = useState({});
   const getCategoryProducts = name => {
     return (categoryProducts[name.toLowerCase()] || { items: [] }).items.map(product => {
       return (
-        <div className="col mb-4" key={product._id} onClick={() => { }}>
-          <div class="card" id="item_card">
-            <img src={product.images[0].url} class="card-img-top" alt="items" />
-            <div class="card-body _card-content-padding">
-              <p className="card-title">{product.name}</p>
-              <p class="card-text" style={{ fontWeight: "bold" }}>
+        <div className="col mb-4" key={product._id}>
+          <div className="card" id="item_card">
+            <img src={product.images[0].url} className="card-img-top" alt="items" onClick={() => {
+              history.push(`/ProductDetails/${product._id}`, product);
+            }} />
+            <div className="card-body _card-content-padding">
+              <button type="button" className="no-border no-background card-title" onClick={() => {
+                history.push(`/ProductDetails/${product._id}`, product);
+              }} >{product.name}</button>
+              <p className="card-text" style={{ fontWeight: "bold" }}>
                 $ {product.price}
               </p>
               <button
@@ -121,10 +126,10 @@ const Home = (props) => {
           {latestCollection.map((data, index) => {
             return (
               <div className="col mb-4 pr-2" key={index} onClick={() => redirect(data.path)}>
-                <div class="card ">
-                  <img class="card-img img-responsive" src={data.photo} alt="cardIamge" />
-                  <div class="card-img-overlay text-white d-flex flex-column justify-content-center ">
-                    <h4 class="card-title text-center" id="_cardText">
+                <div className="card ">
+                  <img className="card-img img-responsive" src={data.photo} alt="cardIamge" />
+                  <div className="card-img-overlay text-white d-flex flex-column justify-content-center ">
+                    <h4 className="card-title text-center" id="_cardText">
                       {data.info}
                     </h4>
                   </div>

@@ -34,7 +34,7 @@ const OrderSummary = (props) => {
                     return (
                         <div className="delivery_box5" key={product.id}>
                             <div className="order_section_images">
-                                <img src={product.image} class="order_image" alt={`${product.name}`}></img>
+                                <img src={product.image} className="order_image" alt={`${product.name}`}></img>
                             </div>
                             <div className="order_section_details">
                                 <h3>{product.name}</h3>
