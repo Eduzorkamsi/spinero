@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./style.css";
 import { CollectionHeader } from "../../components/Header";
 import Footer from "../../components/Footer";
@@ -9,6 +9,8 @@ import { connect } from "react-redux";
 
 
 const LatestCollection = (props) => {
+  const [products, setProducts] = useState();
+
   useEffect(() => {
     props.getLatestCollection(1);
   }, []);
@@ -23,7 +25,7 @@ const LatestCollection = (props) => {
       <div className="container">
         <div className="row">
           <div className="col-md-4 col-lg-3 col-sm-4">
-            <Filter></Filter>
+            <Filter setProducts={setProducts} />
 
 
           </div>
@@ -37,7 +39,7 @@ const LatestCollection = (props) => {
               aenean condimentum auctor aliquet.{" "}
             </p>
             <div className="row row-cols-1 row-cols-md-3 pt-3">
-              {(props.latestProducts || []).map((data, index) => {
+              {(products || props.latestProducts || []).map((data, index) => {
                 return (
                   <div className="col mb-4" key={index} onClick={() => { }}>
                     <div class="card" id="item_card">

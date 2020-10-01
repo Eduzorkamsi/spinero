@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Footer from "../../components/Footer";
 import { CollectionHeader } from "../../components/Header";
 import Filter from "../../components/Filter"
@@ -10,13 +10,16 @@ import { connect } from 'react-redux';
 function CategoryCollections(props) {
   const urlParams = useRouteMatch();
   const location = useLocation();
+  const [products, setProducts] = useState();
+  
   const { categoryId } = urlParams.params;
   const categoryInfo = location.state;
   const categoryName = (categoryInfo.name || "").toLowerCase();
 
   useEffect(() => {
     props.getProductsByCategoryType(categoryId);
-  }, []);
+    setProducts();
+  }, [categoryId]);
 
   return (
     <>
@@ -28,7 +31,7 @@ function CategoryCollections(props) {
       <div className="container">
         <div className="row">
           <div className="col-md-4 col-lg-3 col-sm-4">
-            <Filter></Filter>
+            <Filter gender={categoryName} setProducts={setProducts} categoryType={categoryId} />
           </div>
 
           <div className="col-md-8 col-lg-8 col-sm-8 pt-5 mt-5">
@@ -40,7 +43,7 @@ function CategoryCollections(props) {
             aenean condimentum auctor aliquet.{" "}
             </p>
             <div className="row row-cols-1 row-cols-md-3 pt-3">
-              {props.product.categoryTypeProducts.map((data, index) => {
+              {(products || props.product.categoryTypeProducts).map((data, index) => {
                 return (
                   <div className="col mb-4" key={index} onClick={() => { }}>
                     <div class="card" id="item_card">
