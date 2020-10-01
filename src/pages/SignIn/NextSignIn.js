@@ -50,14 +50,14 @@ function NextSignIn(props) {
               style={{ height: "100vh", width: "200vh" }}
             />
             <div
-              class="btn-group btn-group-lg float-right btn-style "
+              className="btn-group btn-group-lg float-right btn-style "
               role="group"
               aria-label="Basic example"
             >
-              <button type="button" class="btn  px-5 _login_btn" onClick={handleLoginClick}>
+              <button type="button" className="btn  px-5 _login_btn" onClick={handleLoginClick}>
                 Log in
               </button>
-              <button type="button" class="btn  px-5 _signup_btn" onClick={handleSignInClick}>
+              <button type="button" className="btn  px-5 _signup_btn" onClick={handleSignInClick}>
                 Sign Up
               </button>
             </div>
@@ -68,7 +68,7 @@ function NextSignIn(props) {
               <div className="row">
                 <div className=" col-sm-12 col-xs-12 mt-5">
                   <form onSubmit={doRegister}>
-                    <div class="form-group mx-sm-4 mb-2 px-5">
+                    <div className="form-group mx-sm-4 mb-2 px-5">
                       <label for="password">
                         <span
                           style={{
@@ -79,9 +79,9 @@ function NextSignIn(props) {
                           Password <span className="_dot_color">*</span>
                         </span>
                       </label>
-                      <input type="password" value={password} onChange={e => setPassword(e.target.value)} required class="form-control" id="password" placeholder="*****" />
+                      <input type="password" value={password} onChange={e => setPassword(e.target.value)} required className="form-control" id="password" placeholder="*****" />
                     </div>
-                    <div class="form-group mx-sm-4 mb-2 px-5">
+                    <div className="form-group mx-sm-4 mb-2 px-5">
                       <label for="confirmPassword">
                         <span
                           style={{
@@ -92,12 +92,12 @@ function NextSignIn(props) {
                           Confirm Password <span className="_dot_color">*</span>
                         </span>
                       </label>
-                      <input type="password" value={passwordConfirm} onChange={e => setPasswordConfirm(e.target.value)} required class="form-control" id="confirmPassword" placeholder="******" />
+                      <input type="password" value={passwordConfirm} onChange={e => setPasswordConfirm(e.target.value)} required className="form-control" id="confirmPassword" placeholder="******" />
                     </div>
                     <div className="d-flex justify-content-center pt-5">
                       <button
                         type="submit"
-                        class="btn btn-dark btn-lg px-5"
+                        className="btn btn-dark btn-lg px-5"
                         style={{ backgroundColor: "#000", fontWeight: "bold", color: "#FBFBFB" }}
                       >
                         Sign In

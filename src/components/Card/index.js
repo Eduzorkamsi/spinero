@@ -8,10 +8,10 @@ const Card = () => {
       <div className="container">
         <div className="row">
           <div className="col-md-12" style={{ border: "1px solid #E0E0E0", padding: "2%" }}>
-            <div class="card" style={{ border: "none" }}>
-              <div class="row no-gutters">
-                <div class="col-sm-5">
-                  <img class="card-img" src={cardImage} alt="Suresh Dasari Card" />
+            <div className="card" style={{ border: "none" }}>
+              <div className="row no-gutters">
+                <div className="col-sm-5">
+                  <img className="card-img" src={cardImage} alt="Suresh Dasari Card" />
                 </div>
                 <div className="col-sm-7 ">
                   <div className="card-body " style={{ marginLeft: "10%", paddingTop: "10%" }}>
@@ -27,7 +27,7 @@ const Card = () => {
                     </p>
                     <button
                       type="button"
-                      class="btn btn-dark btn-lg px-5 "
+                      className="btn btn-dark btn-lg px-5 "
                       style={{ backgroundColor: "#0D0D0D", color: "#fff" }}
                     >
                      Shop Now

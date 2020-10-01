@@ -19,15 +19,15 @@ const Home = (props) => {
     return (categoryProducts[name.toLowerCase()] || { items: [] }).items.map(product => {
       return (
         <div className="col mb-4" key={product._id}>
-          <div class="card" id="item_card">
+          <div className="card" id="item_card">
             <img src={product.images[0].url} className="card-img-top" alt="items" onClick={() => {
               history.push(`/ProductDetails/${product._id}`, product);
             }} />
-            <div class="card-body _card-content-padding">
+            <div className="card-body _card-content-padding">
               <button type="button" className="no-border no-background card-title" onClick={() => {
                 history.push(`/ProductDetails/${product._id}`, product);
               }} >{product.name}</button>
-              <p class="card-text" style={{ fontWeight: "bold" }}>
+              <p className="card-text" style={{ fontWeight: "bold" }}>
                 $ {product.price}
               </p>
               <button
@@ -126,10 +126,10 @@ const Home = (props) => {
           {latestCollection.map((data, index) => {
             return (
               <div className="col mb-4 pr-2" key={index} onClick={() => redirect(data.path)}>
-                <div class="card ">
-                  <img class="card-img img-responsive" src={data.photo} alt="cardIamge" />
-                  <div class="card-img-overlay text-white d-flex flex-column justify-content-center ">
-                    <h4 class="card-title text-center" id="_cardText">
+                <div className="card ">
+                  <img className="card-img img-responsive" src={data.photo} alt="cardIamge" />
+                  <div className="card-img-overlay text-white d-flex flex-column justify-content-center ">
+                    <h4 className="card-title text-center" id="_cardText">
                       {data.info}
                     </h4>
                   </div>

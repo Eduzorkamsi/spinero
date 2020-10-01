@@ -32,7 +32,7 @@ function TopNav(props) {
   return (
     <>
       <nav className="container top-navigation navbar navbar-expand-lg navbar-light py-4 backgroundColor_">
-        <Link class="navbar-brand" to="#">
+        <Link className="navbar-brand" to="#">
           <img
             alt="logo"
             className="logo"
@@ -41,7 +41,7 @@ function TopNav(props) {
           />
         </Link>
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-toggle="collapse"
           data-target="#navbarSupportedContent"
@@ -49,11 +49,11 @@ function TopNav(props) {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav mr-auto">
             {
               showCategoryTypes()
             }
@@ -63,7 +63,7 @@ function TopNav(props) {
               </NavLink>
             </li>
 
-            <li class="nav-item  ">
+            <li className="nav-item  ">
               <NavLink className="nav-link px-5 ml-5" activeClassName="current" to="/">
                 Home
               </NavLink>
@@ -71,18 +71,18 @@ function TopNav(props) {
           </ul>
 
           <div className="my-2 my-lg-0">
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-              <div class="navbar-nav">
-                <NavLink class="nav-link ml-4" to="#">
+            <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div className="navbar-nav">
+                <NavLink className="nav-link ml-4" to="#">
                   <img alt="logo" className="logo" src={require("../../assets/icons/search.svg")} />
                 </NavLink>
-                <NavLink class="nav-link ml-4" to="/wishlist">
+                <NavLink className="nav-link ml-4" to="/wishlist">
                   <img alt="logo" className="logo" src={require("../../assets/icons/love.svg")} />
                 </NavLink>
-                <NavLink class="nav-link ml-4" to="/cart">
+                <NavLink className="nav-link ml-4" to="/cart">
                   <img alt="logo" className="logo" src={require("../../assets/icons/cart.svg")} />
                 </NavLink>
-                <NavLink class="nav-link ml-4" to="/login">
+                <NavLink className="nav-link ml-4" to="/login">
                   <img alt="logo" className="logo" src={require("../../assets/icons/Family.svg")} />
                 </NavLink>
               </div>
@@ -110,7 +110,7 @@ export const LoginTopNav = () => {
   return (
     <>
       <nav className="container top-navigation navbar navbar-expand-lg navbar-light py-4 backgroundColor_">
-        <Link class="navbar-brand" to="#">
+        <Link className="navbar-brand" to="#">
           <img
             alt="logo"
             className="logo"
@@ -119,7 +119,7 @@ export const LoginTopNav = () => {
           />
         </Link>
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-toggle="collapse"
           data-target="#navbarSupportedContent"
@@ -127,26 +127,26 @@ export const LoginTopNav = () => {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav mr-auto">
           </ul>
 
           <div className="my-2 my-lg-0">
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-              <div class="navbar-nav">
-                <NavLink class="nav-link ml-4" to="#">
+            <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div className="navbar-nav">
+                <NavLink className="nav-link ml-4" to="#">
                   <img alt="logo" className="logo" src={require("../../assets/icons/search.svg")} />
                 </NavLink>
-                <NavLink class="nav-link ml-4" to="wishlist">
+                <NavLink className="nav-link ml-4" to="wishlist">
                   <img alt="logo" className="logo" src={require("../../assets/icons/love.svg")} />
                 </NavLink>
-                <NavLink class="nav-link ml-4" to="cart">
+                <NavLink className="nav-link ml-4" to="cart">
                   <img alt="logo" className="logo" src={require("../../assets/icons/cart.svg")} />
                 </NavLink>
-                <NavLink class="nav-link ml-4" to="/login">
+                <NavLink className="nav-link ml-4" to="/login">
                   <img alt="logo" className="logo" src={require("../../assets/icons/Family.svg")} />
                 </NavLink>
               </div>

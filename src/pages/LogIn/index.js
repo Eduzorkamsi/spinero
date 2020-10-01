@@ -60,14 +60,14 @@ function LogIn(props) {
               style={{ height: "100vh", width: "200vh" }}
             />
             <div
-              class="btn-group btn-group-lg float-right btn-style "
+              className="btn-group btn-group-lg float-right btn-style "
               role="group"
               aria-label="Basic example"
             >
-              <button type="button" class="btn  px-5  _login_btn" onClick={handleLoginClick}>
+              <button type="button" className="btn  px-5  _login_btn" onClick={handleLoginClick}>
                 Log in
               </button>
-              <button type="button" class="btn  px-5 _signup_btn" onClick={handleSignInClick}>
+              <button type="button" className="btn  px-5 _signup_btn" onClick={handleSignInClick}>
                 Sign Up
               </button>
             </div>
@@ -86,7 +86,7 @@ function LogIn(props) {
                 </div>
                 <div className=" col-sm-12 col-xs-12 mt-5">
                   <form onSubmit={doLogin}>
-                    <div class="form-group mx-sm-4 mb-2 px-5">
+                    <div className="form-group mx-sm-4 mb-2 px-5">
                       <label for="email">
                         <span
                           style={{
@@ -97,10 +97,10 @@ function LogIn(props) {
                           Email <span className="_dot_color">*</span>
                         </span>
                       </label>
-                      <input type="email" required value={email} onChange={e => setEmail(e.target.value)} class="form-control" id="email" placeholder="john@gmail.com" />
+                      <input type="email" required value={email} onChange={e => setEmail(e.target.value)} className="form-control" id="email" placeholder="john@gmail.com" />
                     </div>
 
-                    <div class="form-group mx-sm-4 mb-2 px-5">
+                    <div className="form-group mx-sm-4 mb-2 px-5">
                       <label for="password">
                         <span
                           style={{
@@ -111,12 +111,12 @@ function LogIn(props) {
                           Password <span className="_dot_color">*</span>
                         </span>
                       </label>
-                      <input type="password" required value={password} onChange={e => setPassword(e.target.value)} class="form-control" id="password" placeholder="*****" />
+                      <input type="password" required value={password} onChange={e => setPassword(e.target.value)} className="form-control" id="password" placeholder="*****" />
                     </div>
                     <div className="d-flex justify-content-center pt-5">
                       <button
                         type="submit"
-                        class="btn btn-dark btn-lg px-5 "
+                        className="btn btn-dark btn-lg px-5 "
                         style={{ backgroundColor: "#000", fontWeight: "bold", color: "#FBFBFB" }}
                       >
                         Log In

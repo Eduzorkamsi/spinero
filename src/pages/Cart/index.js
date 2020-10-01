@@ -40,10 +40,10 @@ const Cart = (props) => {
                     </ul>
                 </div>
                 <div className="div2">
-                    <ul class="list-unstyled">
+                    <ul className="list-unstyled">
                         {props.cart.products.map((product, i) => (
-                            <li class="media" key={i}>
-                                <img src={product.image} class="mr-3" alt="" onClick={() => {
+                            <li className="media" key={i}>
+                                <img src={product.image} className="mr-3" alt="" onClick={() => {
                                     history.push(`/ProductDetails/${product.id}`);
                                 }} />
                                 <div className="media_text">
@@ -51,7 +51,7 @@ const Cart = (props) => {
                                         history.push(`/ProductDetails/${product.id}`);
                                     }}>{product.name}</button>
                                 </div>
-                                <div class="media-body">
+                                <div className="media-body">
                                     <li className="div4" style={{ background: `${product.color}` }}></li>
                                     <li className="li_text">{product.size}</li>
                                     <li>
@@ -60,7 +60,7 @@ const Cart = (props) => {
                                             className="no-border no-background"
                                             onClick={() => { props.addToCart(product) }}
                                         >
-                                            <i class="fas fa-plus"></i>
+                                            <i className="fas fa-plus"></i>
                                         </button>
                                         {product.quantity}
                                         <button
@@ -68,7 +68,7 @@ const Cart = (props) => {
                                             className="no-border no-background"
                                             onClick={() => { props.removeOneFromCart(product.id) }}
                                         >
-                                            <i class="fas fa-minus"></i>
+                                            <i className="fas fa-minus"></i>
                                         </button>
                                     </li>
                                     <li>${product.price}</li>
@@ -76,7 +76,7 @@ const Cart = (props) => {
                                         type="button"
                                         className="no-border no-background"
                                         onClick={() => { props.removeFromCart(product.id) }}
-                                    ><i class="fas fa-times"></i></button>
+                                    ><i className="fas fa-times"></i></button>
                                 </div>
                             </li>
                         ))}

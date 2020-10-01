@@ -42,15 +42,15 @@ const LatestCollection = (props) => {
               {(products || props.latestProducts || []).map((data, index) => {
                 return (
                   <div className="col mb-4" key={index} onClick={() => { }}>
-                    <div class="card" id="item_card">
-                      <img src={data.images[0].url} class="card-img-top" alt="items" onClick={() => {
+                    <div className="card" id="item_card">
+                      <img src={data.images[0].url} className="card-img-top" alt="items" onClick={() => {
                         history.push(`/ProductDetails/${data._id}`, data);
                       }} />
-                      <div class="card-body _card-content-padding">
+                      <div className="card-body _card-content-padding">
                         <button type="button" className="no-border no-background card-title" onClick={() => {
                           history.push(`/ProductDetails/${data._id}`, data);
                         }} >{data.name}</button>
-                        <p class="card-text" style={{ fontWeight: "bold" }}>
+                        <p className="card-text" style={{ fontWeight: "bold" }}>
                           $ {data.price}
                         </p>
                         <button

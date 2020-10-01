@@ -24,7 +24,7 @@ export default function Header({ title, body, buttonTitle, categoryTypes }) {
               <div className="d-flex justify-content-center pt-5">
                 <button
                   type="button"
-                  class="btn btn-dark btn-lg px-5 "
+                  className="btn btn-dark btn-lg px-5 "
                   style={{ backgroundColor: "#fff", color: "#0D0D0D" }}
                 >
                   {buttonTitle}

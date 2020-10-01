@@ -23,8 +23,8 @@ class Increment extends Component {
   render() {
     return (
       <div className="quantity_increment">
-        <i class="fas fa-plus" onClick={this.IncrementItem}></i>
-        <i class="fas fa-minus" onClick={this.DecreaseItem}></i>
+        <i className="fas fa-plus" onClick={this.IncrementItem}></i>
+        <i className="fas fa-minus" onClick={this.DecreaseItem}></i>
         <div className="state_increament">
         { this.state.show ? <h6>{ this.state.clicks }</h6> : '' }
         </div>

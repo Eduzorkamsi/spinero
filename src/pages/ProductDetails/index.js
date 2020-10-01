@@ -47,28 +47,28 @@ const ProductDetails = (props) => {
         <TopNav />
         <div className="product_content_details">
           <div className="product_card">
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-              <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
+              <ol className="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
               </ol>
-              <div class="carousel-inner">
+              <div className="carousel-inner">
                 {
                   product?.images?.map((image, i) => (
-                    <div key={i} class="carousel-item active">
-                      <img src={image.url} class="d-block w-100" alt="..."></img>
+                    <div key={i} className="carousel-item active">
+                      <img src={image.url} className="d-block w-100" alt="..."></img>
                     </div>
                   ))
                 }
               </div>
-              <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
+              <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span className="sr-only">Previous</span>
               </a>
-              <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
+              <a className="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                <span className="sr-only">Next</span>
               </a>
             </div>
           </div>
@@ -112,9 +112,9 @@ const ProductDetails = (props) => {
               </div>
               <div className="product_quantity">
                 <h3>Qty</h3>
-                <i class="fas fa-plus" onClick={() => { setQuantity(quantity + 1) }}></i>
+                <i className="fas fa-plus" onClick={() => { setQuantity(quantity + 1) }}></i>
                 {quantity}
-                <i class="fas fa-minus" onClick={() => { setQuantity(curr => curr > 1 ? (curr - 1) : curr) }}></i>
+                <i className="fas fa-minus" onClick={() => { setQuantity(curr => curr > 1 ? (curr - 1) : curr) }}></i>
               </div>
 
             </div>
