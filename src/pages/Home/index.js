@@ -20,7 +20,7 @@ const Home = (props) => {
       return (
         <div className="col mb-4" key={product._id}>
           <div class="card" id="item_card">
-            <img src={product.images[0].url} class="card-img-top" alt="items" onClick={() => {
+            <img src={product.images[0].url} className="card-img-top" alt="items" onClick={() => {
               history.push(`/ProductDetails/${product._id}`, product);
             }} />
             <div class="card-body _card-content-padding">

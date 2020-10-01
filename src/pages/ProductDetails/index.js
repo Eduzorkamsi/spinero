@@ -13,9 +13,18 @@ const ProductDetails = (props) => {
   const location = useLocation();
   const routeParams = useRouteMatch().params;
   const [product, setProduct] = useState(location.state || {});
+  const [similarProducts, setSimilarProducts] = useState([]);
   const [size, setSize] = useState("M");
   const [colour, setColour] = useState();
   const [quantity, setQuantity] = useState(1);
+
+  const findSimilarProducts = () => {
+    Axios.get(`${constants.BASE_API}/api/product/search/product?param=${product.name}`).then((res) => res?.data?.data).then((data = []) => {
+      setSimilarProducts(data.map(d => d?._source));
+    }).catch(error => {
+      console.error(error);
+    });
+  }
 
   useEffect(() => {
     if (!Object.keys(product).length) {
@@ -25,7 +34,12 @@ const ProductDetails = (props) => {
         console.error(error);
       });
     }
+
   }, []);
+
+  useEffect(() => {
+    findSimilarProducts();
+  }, [product]);
 
   return (
     <>
@@ -131,30 +145,31 @@ const ProductDetails = (props) => {
         <div className="product_similar_items">
           <h5>Similar items</h5>
           <div className="similar_items">
-            <div className="similar_item1">
-              <img src={require("../../assets/images/girl.png")} />
-              <p className="p1">Cotton Turtle Neck</p>
-              <p className="p2">$200</p>
-              <p className="p3">Add to bag</p>
-            </div>
-            <div className="similar_item2">
-              <img src={require("../../assets/images/girl.png")} />
-              <p className="p1">Cotton Turtle Neck</p>
-              <p className="p2">$200</p>
-              <p className="p3">Add to bag</p>
-            </div>
-            <div className="similar_item3">
-              <img src={require("../../assets/images/girl.png")} />
-              <p className="p1">Cotton Turtle Neck</p>
-              <p className="p2">$200</p>
-              <p className="p3">Add to bag</p>
-            </div>
-            <div className="similar_item4">
-              <img src={require("../../assets/images/girl.png")} />
-              <p className="p1">Cotton Turtle Neck</p>
-              <p className="p2">$200</p>
-              <p className="p3">Add to bag</p>
-            </div>
+            {
+              similarProducts?.map(product => (
+                <div key={product.id} className="similar_item1">
+                  <img style={{ width: "255px", height: "340px" }} src={product.images[0].url} alt="Similar item" />
+                  <p className="p1">{product.name}</p>
+                  <p className="p2">${product.price}</p>
+                  <button
+                    className="no-border no-background add-to-cart"
+                    type="button"
+                    onClick={() => {
+                      props.addToCart(
+                        {
+                          id: product.id,
+                          name: product.name,
+                          price: product.price,
+                          color: "red",
+                          size: "M",
+                          image: product.images[0].url
+                        }
+                      )
+                    }}
+                  >Add to Bag</button>
+                </div>
+              ))
+            }
           </div>
         </div>
         <Footer />
