@@ -1,6 +1,10 @@
-.profile_person_info_details{
+.profile_person_info_details {
     display: flex;
     flex-direction: row;
+}
+
+.personal_information {
+    margin-top: 40px;
 }
 
 .profile_picture {
@@ -17,6 +21,8 @@
     text-decoration-line: underline;
     /* Gray 3 */
     color: #828282;
+    padding: 20px;
+    margin-top: 10px;
 }
 
 .profile_box1 {
@@ -24,6 +30,10 @@
     height: 66px;
     /* Light Grey */
     background: #FBFBFB;
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+    padding: 20px;
 }
 
 .profile_box1 p {
@@ -33,4 +43,299 @@
     line-height: 26px;
     /* identical to box height, or 162% */
     color: #000000;
+}
+
+.profile_box1 img {
+    margin-left: 514px;
+}
+
+.profile_box2 {
+    width: 730px;
+    height: 116px;
+    background: #FBFBFB;
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    padding-top: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.profile_name_holder p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+    /* identical to box height, or 162% */
+    /* Gray 3 */
+    color: #828282;
+    margin-bottom: 0px!important;
+    margin-right: 160px;
+    
+}
+
+.first_name_holder {
+    font-weight: bold!important;
+    color: #4F4F4F!important;
+    
+}
+
+
+.profile_surname_holder p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+    /* identical to box height, or 162% */
+    /* Gray 3 */
+    color: #828282;
+    margin-bottom: 0px!important;
+    margin-right: 160px;
+    
+}
+
+.profile_last_name_holder {
+    font-weight: bold!important;
+    color: #4F4F4F!important;
+    
+}
+
+
+.profile_email_holder p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+    /* identical to box height, or 162% */
+    /* Gray 3 */
+    color: #828282;
+    margin-bottom: 0px!important;
+  
+    
+}
+
+.profile_emailname_holder {
+    font-weight: bold!important;
+    color: #4F4F4F!important;
+    
+}
+
+.profile_box3 {
+    width: 730px;
+    height: 66px;
+    background: #FBFBFB;
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+    padding: 20px;
+}
+
+.profile_box3 p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+    /* identical to box height, or 162% */
+    color: #000000;
+}
+
+.profile_box3 img {
+    margin-left: 600px;
+}
+
+.profile_box4 {
+    width: 730px;
+    height: 116px;
+    background: #FBFBFB;
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    padding-top: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.password_user p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+    /* identical to box height, or 162% */
+    /* Gray 3 */
+    color: #828282;
+    margin-right: 168px;
+    margin-bottom: 0px!important;
+}
+
+.password_holder{
+    font-weight: bold!important;
+    color: #4F4F4F!important;
+}
+
+.password_confirm p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+    /* identical to box height, or 162% */
+    /* Gray 3 */
+    color: #828282;
+    margin-right: 168px;
+    margin-bottom: 0px!important;
+}
+
+.password_confirm_holder{
+    font-weight: bold!important;
+    color: #4F4F4F!important;
+}
+
+.profile_box5 {
+    width: 730px;
+    height: 66px;
+    background: #FBFBFB;
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+    padding: 20px;
+}
+
+.profile_box5 p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+    /* identical to box height, or 162% */
+    color: #000000;
+}
+
+.profile_box5 img {
+    margin-left: 540px;
+}
+
+.profile_box6 {
+    width: 730px;
+    height: 400px;
+    background: #FBFBFB;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    padding-top: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.name2{
+    display: flex;
+    flex-direction: row;
+}
+
+.number_holder {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+    /* identical to box height, or 162% */
+    /* Gray 3 */
+    color: #828282;
+    margin-top: 40px;
+    margin-bottom: 0px!important;
+}
+
+.number_holder_details {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 26px;
+    /* identical to box height, or 162% */
+    /* Gray 2 */
+    color: #4F4F4F;
+    margin-top: 0px!important;
+}
+
+.address_holder {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+    /* identical to box height, or 162% */
+    /* Gray 3 */
+    color: #828282;
+    margin-top: 40px;
+    margin-bottom: 0px!important;
+}
+
+.address_holder_details {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 26px;
+    /* identical to box height, or 162% */
+    /* Gray 2 */
+    color: #4F4F4F;
+}
+
+.city_details{
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+}
+
+.city_details_holder p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+    /* identical to box height, or 162% */
+    /* Gray 3 */
+    color: #828282;
+    margin-right: 209px;
+    margin-bottom: 0px!important;
+    
+}
+
+
+.city_holder{
+    font-weight: bold!important;
+    color: #4F4F4F!important;
+  
+}
+
+.town_details_holder p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+    /* identical to box height, or 162% */
+    /* Gray 3 */
+    color: #828282;
+    margin-right: 203px;
+    margin-bottom: 0px!important;
+  
+}
+
+
+.town_holder{
+    font-weight: bold!important;
+    color: #4F4F4F!important;
+  
+}
+
+.state_details_holder p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+    /* identical to box height, or 162% */
+    /* Gray 3 */
+    color: #828282;
+    margin-bottom: 0px!important;
+   
+}
+
+
+.state_holder{
+    font-weight: bold!important;
+    color: #4F4F4F!important;
+  
 }
