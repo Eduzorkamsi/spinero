@@ -19,6 +19,7 @@ import ProfilePersonalInfo from "./pages/ProfilePersonalInfo";
 import ProfileCart from "./pages/ProfileCart";
 import ProfilePayment from "./pages/ProfilePayment";
 import EditPersonalInfo from "./pages/EditPersonalInfo";
+import EditPassword from "./pages/EditPassword";
 
 function App() {
   return (
@@ -41,7 +42,8 @@ function App() {
         <Route path="/ProfileCart" component={ProfileCart}/>
         <Route path="/ProfilePayment" component={ProfilePayment}/>
         <Route path="/ProductDetails/:productId" component={ProductDetails}/>
-        <Route path="/EditPersonalInfo" component={EditPersonalInfo}/>      
+        <Route path="/EditPersonalInfo" component={EditPersonalInfo}/>
+        <Route path="/EditPassword" component={EditPassword}/>      
       </Switch>
     </Router>
   );

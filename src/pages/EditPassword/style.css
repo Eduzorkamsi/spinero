@@ -1,0 +1,67 @@
+.edit_password_info {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 40px;
+}
+
+.edit_password_details {
+    margin-top: 40px;
+}
+
+.edit_password_box1 {
+    width: 635px;
+    height: 66px;
+    background: #FBFBFB;
+    margin-top: 50px;
+    padding: 20px;
+}
+
+.edit_password_box1 p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+    color: #000000;
+}
+
+.edit_password_box2 {
+    width: 635px;
+    height: 335px;
+    background: #FBFBFB;
+    margin-top: 10px;
+    padding-top: 20px;
+    padding-left: 10px;
+}
+
+.edit_password_text {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 20px;
+    color: #151522;
+}
+
+.edit_password_box2 .form-group.col .form-control {
+    background: #FBFBFB!important;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.edit_password_box3 {
+    width: 635px;
+    height: 66px;
+    background: #FBFBFB;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.edit_password_box3 h4 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 19.5px;
+    line-height: 24px;
+    text-decoration-line: underline;
+    color: #FF0000;
+}
