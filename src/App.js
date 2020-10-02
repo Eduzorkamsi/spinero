@@ -18,6 +18,7 @@ import ProfileSidebar from "./pages/ProfileSidebar";
 import ProfilePersonalInfo from "./pages/ProfilePersonalInfo";
 import ProfileCart from "./pages/ProfileCart";
 import ProfilePayment from "./pages/ProfilePayment";
+import EditPersonalInfo from "./pages/EditPersonalInfo";
 
 function App() {
   return (
@@ -35,12 +36,12 @@ function App() {
         <Route path="/category/:categoryId" component={Collections} />
         <Route path="/CartMultiStepForm" component={CartMultiStepForm}/>
         <Route path="/CartSuccessfulInfo" component={CartSuccessfulInfo}/>
-        
         <Route path="/ProfileSidebar" component={ProfileSidebar}/>
         <Route path="/ProfilePersonalInfo" component={ProfilePersonalInfo}/>
         <Route path="/ProfileCart" component={ProfileCart}/>
         <Route path="/ProfilePayment" component={ProfilePayment}/>
         <Route path="/ProductDetails/:productId" component={ProductDetails}/>
+        <Route path="/EditPersonalInfo" component={EditPersonalInfo}/>      
       </Switch>
     </Router>
   );

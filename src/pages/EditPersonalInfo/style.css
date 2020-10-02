@@ -1,0 +1,70 @@
+.edit_personal_info {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 40px;
+}
+
+.edit_personal_details {
+    margin-top: 40px;
+}
+
+.edit_profile_box1 {
+    width: 634px;
+    height: 66px;
+    margin-top: 50px;
+    /* Light Grey */
+    background: #FBFBFB;
+    padding: 20px;
+}
+
+.edit_profile_box1 p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+    /* identical to box height, or 162% */
+    color: #000000;
+}
+
+.edit_personal_form {
+    width: 634px;
+    height: 335px;
+    /* Light Grey */
+    background: #FBFBFB;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.form_text1 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 20px;
+    color: #151522;
+}
+
+.edit_personal_form .form-column .col .form-control {
+    background: #FBFBFB!important;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.save_changes_box {
+    width: 635px;
+    height: 66px;
+    background: #FBFBFB;
+    margin-top: 10px;
+    margin-bottom: 49px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.save_changes_box h4 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 19.5px;
+    line-height: 24px;
+    text-decoration-line: underline;
+    color: #FF0000;
+}
