@@ -20,6 +20,7 @@ import ProfileCart from "./pages/ProfileCart";
 import ProfilePayment from "./pages/ProfilePayment";
 import EditPersonalInfo from "./pages/EditPersonalInfo";
 import EditPassword from "./pages/EditPassword";
+import ProfileCartDetails from "./pages/ProfileCartDetails"
 
 function App() {
   return (
@@ -43,7 +44,8 @@ function App() {
         <Route path="/ProfilePayment" component={ProfilePayment}/>
         <Route path="/ProductDetails/:productId" component={ProductDetails}/>
         <Route path="/EditPersonalInfo" component={EditPersonalInfo}/>
-        <Route path="/EditPassword" component={EditPassword}/>      
+        <Route path="/EditPassword" component={EditPassword}/>
+        <Route path="/ProfileCartDetails" component={ProfileCartDetails}/>      
       </Switch>
     </Router>
   );

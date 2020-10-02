@@ -1,0 +1,144 @@
+.profile_cart_details {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 40px;
+}
+
+.profile_cart_details2 {
+    margin-top: 40px;
+}
+
+.cart_details_box1 {
+    width: 729px;
+    height: 66px;
+    background: #FBFBFB;
+    padding: 20px;
+}
+
+.cart_details_box1 p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+    color: #000000;
+}
+
+.cart_details_box2 {
+    width: 730px;
+    height: 223px;
+    background: #FBFBFB;
+    margin-top: 10px;
+    padding: 20px;
+}
+
+.cart_details_box3 {
+    display: flex;
+    flex-direction: row;
+}
+
+.cart_details_box31 h5 {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+    color: #828282;
+    margin-right: 129px;
+}
+
+.cart_details_box31 h6 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 26px;
+    color: #219653
+}
+
+.cart_details_box32 h5 {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+    color: #828282;
+    margin-right: 171px;
+}
+
+.cart_details_box32 h6 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 26px;
+    color: #828282;
+}
+
+.cart_details_box33 h5 {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+    color: #828282;
+}
+
+.cart_details_box33 h6 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 26px;
+    color: #4F4F4F;
+}
+
+
+.cart_details_box4 {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+.cart_details_box41 h5 {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+    color: #828282;
+    margin-right: 107px;
+}
+
+.cart_details_box41 h6 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 26px;
+    color: #4F4F4F;
+}
+
+.cart_details_box42 h5 {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+    color: #828282;
+    margin-right: 158px;
+}
+
+.cart_details_box42 h6 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 26px;
+    color: #4F4F4F;
+}
+
+.cart_details_box43 h5 {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+    color: #828282;
+}
+
+.cart_details_box43 h6 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 26px;
+    color: #4F4F4F;
+}
