@@ -1,12 +1,9 @@
 import React from "react";
 import Footer from "../../components/Footer";
 import TopNav from "../../components/TopNav";
-import ProfileCartSidebar from "../ProfileCartSidebar";
+import ProfileCartSidebar from "../ProfileSidebar";
 
 import "./style.css"
-
-
-
 
 const ProfileCart = () => {
     return (

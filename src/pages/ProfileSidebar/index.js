@@ -1,52 +1,43 @@
 import React from "react";
 import "./style.css"
+import { NavLink, useRouteMatch, useLocation } from "react-router-dom";
 
 const ProfileSidebar = () => {
+    const location = useLocation();
+
     return (
         <>
-
             <div>
-
                 <div className="profile_sidebar">
-
                     <div className="sidebar1" >
-
-                        <img src={require("../../assets/icons/Familyblack.svg")} />
+                        <img src={require("../../assets/icons/Familyblack.svg")} alt="family icon" />
                         <div className="sidebar_subhead">
-                            <h5 className="profile_active">Personal Information</h5>
-                            <img src={require("../../assets/icons/Arrow.svg")} />
+                            <NavLink to="/ProfilePersonalInfo" className={`profile${/profilepersonalinfo/i.test(location.pathname) ? "_active" : ""}`}>Personal Information
+                            <img src={require("../../assets/icons/Arrow.svg")} alt="personal information" />
+                            </NavLink>
                         </div>
-                        <p>View, edit and change your personal
-Information.</p>
+                        <p>View, edit and change your personal Information.</p>
                     </div>
                     <div className="sidebar1" >
-
-                        <img src={require("../../assets/icons/cartblack.svg")} />
+                        <img src={require("../../assets/icons/cartblack.svg")} alt="cart icon" />
                         <div className="sidebar_subhead">
-                            <h5 className="profile ">My Cart</h5>
-                            <img src={require("../../assets/icons/Arrow.svg")} />
+                            <NavLink to="/ProfileCart" className={`profile${/profilecart/i.test(location.pathname) ? "_active" : ""}`}>My Cart
+                            <img src={require("../../assets/icons/Arrow.svg")} alt="cart information" />
+                            </NavLink>
                         </div>
-                        <p>View your wishlist, your cart and your
-pending items</p>
+                        <p>View your wishlist, your cart and your pending items</p>
                     </div>
                     <div className="sidebar1">
-
-
-                        <img src={require("../../assets/icons/payment.svg")} />
+                        <img src={require("../../assets/icons/payment.svg")} alt="payment icon" />
                         <div className="sidebar_subhead">
-                            <h5 className="profile ">Payment Options</h5>
-                            <img src={require("../../assets/icons/Arrow.svg")} />
+                            <NavLink to="/ProfilePayment" className={`profile${/profilepayment/i.test(location.pathname) ? "_active" : ""}`}>Payment Options
+                            <img src={require("../../assets/icons/Arrow.svg")} alt="payment options" />
+                            </NavLink>
                         </div>
-                        <p>View, edit your payment options.
-View saved cards.</p>
+                        <p>View, edit your payment options. View saved cards.</p>
                     </div>
                 </div>
             </div>
-
-
-
-
-
         </>
     )
 }

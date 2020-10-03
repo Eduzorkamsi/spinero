@@ -2,9 +2,6 @@ import React from "react";
 
 import "./style.css"
 
-
-
-
 const ProfilePayment = () => {
     return (
         <>

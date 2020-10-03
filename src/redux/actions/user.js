@@ -13,6 +13,7 @@ export const login = (userDetails, runAfter) => dispatch => {
       payload: data,
       isLoading: false
     });
+    dispatch(setUserInfo(data));
     runAfter()
   }).catch(error => {
     dispatch({
@@ -36,6 +37,7 @@ export const register = (userDetails, runAfter) => dispatch => {
       payload: data,
       isLoading: false
     });
+    dispatch(setUserInfo(data));
     runAfter()
   }).catch(error => {
     dispatch({
@@ -59,7 +61,8 @@ export const socialLogin = (type, query, runAfter) => dispatch => {
       payload: data,
       isLoading: false
     });
-    runAfter()
+    dispatch(setUserInfo(data));
+    runAfter();
   }).catch(error => {
     dispatch({
       type: Constants.REQUEST_FAILURE(Constants.SIGNIN),
@@ -67,4 +70,64 @@ export const socialLogin = (type, query, runAfter) => dispatch => {
       isLoading: false
     });
   });
+};
+
+export const updateUserProfileDetail = (newUserDetail) => dispatch => {
+  dispatch({
+    type: Constants.REQUEST(Constants.UPDATE_PROFILE),
+    isLoading: true
+  });
+  var accessToken = localStorage.getItem("token");
+  Axios.put(`${Constants.BASE_API}/api/user`, newUserDetail, {
+    "headers": {
+      Authorization: `Bearer ${accessToken}`
+    },
+  })
+    .then(res => res.data && res.data.data).then(data => {
+      dispatch({
+        type: Constants.REQUEST_SUCCESS(Constants.UPDATE_PROFILE),
+        payload: newUserDetail,
+        isLoading: false
+      });
+    }).catch(error => {
+      dispatch({
+        type: Constants.REQUEST_FAILURE(Constants.SIGNIN),
+        error,
+        isLoading: false
+      });
+    });
+};
+
+export const signout = () => ({
+  type: Constants.SIGNOUT
+});
+
+export const setUserInfo = (userInfo) => ({
+  type: Constants.SIGNIN,
+  payload: userInfo
+});
+
+export const updateUserPassword = (passwordInfo) => dispatch => {
+  dispatch({
+    type: Constants.REQUEST(Constants.CHANGE_PASSWORD),
+    isLoading: true
+  });
+  var accessToken = localStorage.getItem("token")
+  return Axios.put(`${Constants.BASE_API}/api/user/password`, passwordInfo, {
+    "headers": {
+      authorization: `Bearer ${accessToken}`
+    },
+  })
+    .then(res => res.data && res.data.data).then(data => {
+      dispatch({
+        type: Constants.REQUEST(Constants.CHANGE_PASSWORD),
+        isLoading: false
+      });
+    }).catch(error => {
+      dispatch({
+        type: Constants.REQUEST(Constants.CHANGE_PASSWORD),
+        isLoading: false,
+        error,
+      });
+    });
 };

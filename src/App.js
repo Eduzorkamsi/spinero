@@ -38,7 +38,6 @@ function App() {
         <Route path="/category/:categoryId" component={Collections} />
         <Route path="/CartMultiStepForm" component={CartMultiStepForm}/>
         <Route path="/CartSuccessfulInfo" component={CartSuccessfulInfo}/>
-        <Route path="/ProfileSidebar" component={ProfileSidebar}/>
         <Route path="/ProfilePersonalInfo" component={ProfilePersonalInfo}/>
         <Route path="/ProfileCart" component={ProfileCart}/>
         <Route path="/ProfilePayment" component={ProfilePayment}/>

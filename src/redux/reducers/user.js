@@ -26,6 +26,12 @@ export default (state = {}, action) => {
         error: action.error
       }
     }
+    case Constants.Signin: {
+      return {
+        ...state,
+        ...action.payload
+      };
+    }
     case Constants.REQUEST(Constants.SIGNUP): {
       return {
         ...state,
@@ -67,6 +73,44 @@ export default (state = {}, action) => {
         isLoading: action.isLoading,
         error: action.error
       }
+    case Constants.REQUEST(Constants.UPDATE_PROFILE):
+      return {
+        ...state,
+        isLoading: action.isLoading
+      }
+    case Constants.REQUEST_SUCCESS(Constants.UPDATE_PROFILE):
+      return {
+        ...state,
+        user: { ...action.payload, username: action.payload.email },
+        isLoading: action.isLoading
+      }
+    case Constants.REQUEST_FAILURE(Constants.UPDATE_PROFILE):
+      return {
+        ...state,
+        isLoading: action.isLoading,
+        error: action.error
+      }
+      case Constants.REQUEST(Constants.CHANGE_PASSWORD):
+        return {
+          ...state,
+          isLoading: action.isLoading
+        }
+      case Constants.REQUEST_SUCCESS(Constants.CHANGE_PASSWORD):
+        return {
+          ...state,
+          isLoading: action.isLoading
+        }
+      case Constants.REQUEST_FAILURE(Constants.CHANGE_PASSWORD):
+        return {
+          ...state,
+          isLoading: action.isLoading,
+          error: action.error
+        }
+    case Constants.SIGNOUT: 
+      return {
+        ...state,
+        user: {}
+      };
     default: {
       return state;
     }
