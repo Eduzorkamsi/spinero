@@ -19,6 +19,10 @@
   border: none;
 }
 
+button.no-border:focus, button.no-border:active {
+  outline: none;
+}
+
 .no-background {
   background: none;
 }
