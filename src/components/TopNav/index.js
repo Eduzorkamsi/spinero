@@ -13,6 +13,14 @@ function TopNav(props) {
     history.push("/");
   };
 
+  const signout = () => {
+    localStorage.removeItem("userDetail");
+    localStorage.removeItem("name");
+    localStorage.removeItem("token");
+    props.signout();
+    history.push("/login");
+  };
+
   useEffect(() => {
     props.getCategoryTypes();
   }, []);
@@ -72,20 +80,51 @@ function TopNav(props) {
 
           <div className="my-2 my-lg-0">
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-              <div className="navbar-nav">
-                <NavLink className="nav-link ml-4" to="#">
-                  <img alt="logo" className="logo" src={require("../../assets/icons/search.svg")} />
-                </NavLink>
-                <NavLink className="nav-link ml-4" to="/wishlist">
-                  <img alt="logo" className="logo" src={require("../../assets/icons/love.svg")} />
-                </NavLink>
-                <NavLink className="nav-link ml-4" to="/cart">
-                  <img alt="logo" className="logo" src={require("../../assets/icons/cart.svg")} />
-                </NavLink>
-                <NavLink className="nav-link ml-4" to="/login">
-                  <img alt="logo" className="logo" src={require("../../assets/icons/Family.svg")} />
-                </NavLink>
-              </div>
+              <ul className="navbar-nav">
+                <li class="nav-item">
+                  <NavLink className="nav-link ml-4" to="#">
+                    <img alt="logo" className="logo" src={require("../../assets/icons/search.svg")} />
+                  </NavLink>
+                </li>
+                <li class="nav-item">
+                  <NavLink className="nav-link ml-4" to="/wishlist">
+                    <img alt="logo" className="logo" src={require("../../assets/icons/love.svg")} />
+                  </NavLink>
+                </li>
+                <li class="nav-item">
+                  <NavLink className="nav-link ml-4" to="/cart">
+                    <img alt="logo" className="logo" src={require("../../assets/icons/cart.svg")} />
+                  </NavLink>
+                </li>
+                <li class="nav-item">
+                  <button type="button" class="nav-link ml-4 no-background no-border" id="accountDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img alt="logo" className="logo" src={require("../../assets/icons/Family.svg")} />
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="accountDropdown">
+                    {
+                      props?.user._id ? (
+                        <>
+                          <li class="nav-item">
+                            <NavLink className="nav-link ml-4 dropdown-item" to="/ProfilePersonalInfo">
+                              Account <i className="fab fa-arrow-right"></i>
+                            </NavLink>
+                          </li>
+                          <li class="nav-item">
+                            <button type="button" className="nav-link ml-4 dropdown-item no-background no-border" onClick={signout}>
+                              Sign out
+                        </button>
+                          </li>
+                        </>
+                      ) :
+                        <li class="nav-item">
+                          <NavLink className="nav-link ml-4 dropdown-item" to="/login">
+                            Sign in
+                          </NavLink>
+                        </li>
+                    }
+                  </ul>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -95,7 +134,8 @@ function TopNav(props) {
 }
 
 const mapStateToProps = state => ({
-  ...state.home
+  ...state.home,
+  ...state.user
 });
 const mapDispatchToProps = dispatch => bindActionCreators(actionCreators, dispatch);
 
