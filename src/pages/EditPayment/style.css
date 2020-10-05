@@ -1,0 +1,40 @@
+.edit_payment_info{
+    display: flex;
+    flex-direction: row;
+}
+
+.edit_payment_details{
+    margin-top: 40px;
+}
+
+.delivery_box2 {
+    width: 634px!important;
+}
+
+.edit_billing_box4 {
+    margin-top: 10px;
+    height:619px;
+    background: #FBFBFB;
+}
+
+.edit_billing_box4 .form-group label {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 20px;
+    color: #151522;
+}
+.edit_billing_box4 .form-group .form-check-label{
+    font-family: Montserrat;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 26px;
+color: #4F4F4F;
+margin-left: 25px;
+
+}
+
+.edit_billing_box4 .form-check input{
+    margin-left:5px;
+}

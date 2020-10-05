@@ -76,6 +76,7 @@ const CartBillingInfo = (props) => {
                         <form onSubmit={e => { e.preventDefault(); payWithStripe(); }}>
                             <div className="billing_box1">
                                 <p>Card Details</p>
+                                <img src={require("..//../assets/icons/minus.svg")}/>
                             </div>
                             <div className="billing_box2">
                                 <div className="form-column">

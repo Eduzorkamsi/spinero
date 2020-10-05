@@ -14,13 +14,13 @@ import Collections from "./pages/Collections";
 import CartMultiStepForm from "./pages/CartMultiStepForm";
 import CartSuccessfulInfo from "./pages/CartSuccessfullInfo";
 import ProductDetails from "./pages/ProductDetails";
-import ProfileSidebar from "./pages/ProfileSidebar";
 import ProfilePersonalInfo from "./pages/ProfilePersonalInfo";
 import ProfileCart from "./pages/ProfileCart";
 import ProfilePayment from "./pages/ProfilePayment";
 import EditPersonalInfo from "./pages/EditPersonalInfo";
 import EditPassword from "./pages/EditPassword";
 import ProfileCartDetails from "./pages/ProfileCartDetails"
+import EditPayment from "./pages/EditPayment";
 
 function App() {
   return (
@@ -45,6 +45,7 @@ function App() {
         <Route path="/EditPersonalInfo" component={EditPersonalInfo}/>
         <Route path="/EditPassword" component={EditPassword}/>
         <Route path="/ProfileCartDetails" component={ProfileCartDetails}/>      
+        <Route path="/EditPayment" component={EditPayment}/>
       </Switch>
     </Router>
   );
