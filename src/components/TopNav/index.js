@@ -102,7 +102,7 @@ function TopNav(props) {
                   </button>
                   <ul class="dropdown-menu" aria-labelledby="accountDropdown">
                     {
-                      props?.user._id ? (
+                      props?.user?._id ? (
                         <>
                           <li class="nav-item">
                             <NavLink className="nav-link ml-4 dropdown-item" to="/ProfilePersonalInfo">

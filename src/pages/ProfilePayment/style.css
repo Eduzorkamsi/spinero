@@ -1,0 +1,53 @@
+.profile_payment_info {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 40px;
+}
+
+.profile_payment_details {
+    margin-top: 40px;
+    width: 100%;
+}
+
+.payment_box1 {
+    width: 729px;
+    height: 66px;
+    background: #FBFBFB;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.payment_box1 p {
+    margin-right: 577px;
+}
+
+.payment_box2 {
+    width: 729px;
+    height: 296px;
+    background: #FBFBFB;
+    margin-top: 10px;
+    padding: 40px;
+}
+
+.payment_box3 {
+    width: 729px;
+    height: 66px;
+    background: #FBFBFB;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+}
+
+.payment_box3 p {
+    margin-right: 536px;
+}
+
+.payment_box4 {
+    width: 729px;
+    height: 400px;
+    background: #FBFBFB;
+    margin-top: 10px;
+    padding: 20px;
+}

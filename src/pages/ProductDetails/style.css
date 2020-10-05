@@ -4,7 +4,8 @@
 }
 
 .product_card {
-    width: 705px;
+    width: 100%;
+    margin-right: 10px;
 }
 
 .w-100 {
