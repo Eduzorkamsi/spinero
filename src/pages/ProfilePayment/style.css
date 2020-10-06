@@ -28,7 +28,11 @@
     background: #FBFBFB;
     margin-top: 10px;
     padding: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
+
 
 .payment_box3 {
     width: 729px;

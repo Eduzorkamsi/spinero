@@ -1,0 +1,79 @@
+.atm_card {
+    background: #151522;
+    Width: 306px;
+    Height: 201px;
+    border-radius: 8px;
+    margin-top: 7px;
+    padding: 20px;
+}
+
+.atm_card_logo {
+    display: flex;
+    flex-direction: row;
+}
+
+.atm_card_logo .master_edit {
+    margin-right: 210px;
+}
+
+.atm_number {
+    margin-top: 41px;
+}
+
+.atm_number h5{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14.75px;
+    line-height: 18px;
+    color: #FFFFFF;
+}
+
+.atm_info {
+    display: flex;
+    flex-direction: row;
+}
+
+.atm_holder_info{
+    margin-right: 88px;
+    margin-top: 40px;
+}
+
+.atm_holder_info p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    color: #999999;
+    margin-bottom: 0px;
+    
+}
+
+.atm_holder_info h5 {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14.75px;
+    line-height: 18px;
+    color: #FFFFFF;
+    
+}
+
+.atm_expiry_date p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    color: #999999;
+    margin-bottom: 0px;
+}
+
+.atm_expiry_date {
+    margin-top: 40px;
+}
+
+.atm_expiry_date h5 {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14.75px;
+    line-height: 18px;
+    color: #FFFFFF;
+}

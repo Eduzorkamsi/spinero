@@ -1,4 +1,6 @@
 import React from "react";
+import AtmCard from "../../components/AtmCard";
+
 import Footer from "../../components/Footer";
 import TopNav from "../../components/TopNav";
 import ProfilePaymentSidebar from "../ProfileSidebar"
@@ -18,7 +20,8 @@ const ProfilePayment = () => {
                     </div>
 
                     <div className="payment_box2">
-                        <img src={require("../../assets/images/cardinfo.svg")} />
+                        <AtmCard/>
+                       <AtmCard/>
                     </div>
 
                     <div className="payment_box3">
