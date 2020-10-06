@@ -131,3 +131,83 @@ export const updateUserPassword = (passwordInfo) => dispatch => {
       });
     });
 };
+
+export const getUserSavedCardDetails = () => dispatch => {
+  dispatch({
+    type: Constants.REQUEST(Constants.GET_CARD_DETAILS),
+    isLoading: true
+  });
+
+  var accessToken = localStorage.getItem("token")
+  Axios.get(`${Constants.BASE_API}/api/user/cards/information`, {
+    "headers": {
+      authorization: `Bearer ${accessToken}`
+    },
+  }).then(res => res.data && res.data.data).then((data = {}) => {
+    dispatch({
+      type: Constants.REQUEST_SUCCESS(Constants.GET_CARD_DETAILS),
+      payload: data,
+      isLoading: false
+    });
+  }).catch(error => {
+    dispatch({
+      type: Constants.REQUEST_FAILURE(Constants.GET_CARD_DETAILS),
+      error,
+      isLoading: false
+    });
+  });
+};
+
+export const saveCardAndBillingInfo = (cardDetail) => dispatch => {
+  dispatch({
+    type: Constants.REQUEST(Constants.ADD_CARD_DETAILS),
+    isLoading: true
+  });
+
+  var accessToken = localStorage.getItem("token");
+  Axios.post(`${Constants.BASE_API}/api/user/cards/information`, cardDetail, {
+    "headers": {
+      authorization: `Bearer ${accessToken}`
+    },
+  })
+    .then(res => res.data && res.data.data).then(data => {
+      dispatch({
+        type: Constants.REQUEST_SUCCESS(Constants.ADD_CARD_DETAILS),
+        payload: data,
+        isLoading: false
+      });
+      dispatch(getUserSavedCardDetails());
+    }).catch(error => {
+      dispatch({
+        type: Constants.REQUEST_FAILURE(Constants.ADD_CARD_DETAILS),
+        error,
+        isLoading: false
+      });
+    });
+};
+
+export const deleteSavedCard = cardId => dispatch => {
+  dispatch({
+    type: Constants.REQUEST(Constants.DELETE_SAVED_CARD_DETAIL),
+    isLoading: true
+  });
+
+  var accessToken = localStorage.getItem("token");
+  return Axios.delete(`${Constants.BASE_API}/api/user/cards/${cardId}`, {
+    "headers": {
+      authorization: `Bearer ${accessToken}`
+    },
+  }).then(res => res.data && res.data.data).then((data = {}) => {
+    dispatch({
+      type: Constants.REQUEST_SUCCESS(Constants.DELETE_SAVED_CARD_DETAIL),
+      isLoading: false
+    });
+    dispatch(getUserSavedCardDetails());
+  }).catch(error => {
+    dispatch({
+      type: Constants.REQUEST_FAILURE(Constants.DELETE_SAVED_CARD_DETAIL),
+      error,
+      isLoading: false
+    });
+  });
+};

@@ -86,3 +86,28 @@ export const makeOrder = (orderDetails, runAfter) => dispatch => {
 export const clearOrderDetails = () => ({
   type: Constants.CLEAR_ORDER_DETAILS
 });
+
+export const getPendingOders = (pageNumber, pageSize) => dispatch => {
+  dispatch({
+    type: Constants.REQUEST(Constants.PENDING_ORDERS),
+    isLoading: true
+  });
+  var accessToken = localStorage.getItem("token");
+  return Axios.get(`${Constants.BASE_API}/api/order/status/pending?page=${pageNumber}&pageSize=${pageSize}`, {
+    "headers": {
+      authorization: `Bearer ${accessToken}`
+    },
+  }).then(res => res.data && res.data.data).then((data = {}) => {
+    dispatch({
+      type: Constants.REQUEST_SUCCESS(Constants.PENDING_ORDERS),
+      payload: data,
+      isLoading: false
+    });
+  }).catch(error => {
+    dispatch({
+      type: Constants.REQUEST_FAILURE(Constants.PENDING_ORDERS),
+      error,
+      isLoading: false
+    });
+  });
+};
