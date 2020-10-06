@@ -112,7 +112,7 @@ function TopNav(props) {
                           <li class="nav-item">
                             <button type="button" className="nav-link ml-4 dropdown-item no-background no-border" onClick={signout}>
                               Sign out
-                        </button>
+                            </button>
                           </li>
                         </>
                       ) :

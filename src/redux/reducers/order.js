@@ -9,6 +9,7 @@ const initialState = {
   paidOrders: [],
   deliverdOrderCount: 0,
   pendingOrders: [],
+  completedOrders: []
 };
 
 export default (state = initialState, action) => {
@@ -22,7 +23,7 @@ export default (state = initialState, action) => {
     delete state.successful;
     delete state.error;
   }
-  
+
   switch (action.type) {
     case Constants.REQUEST(Constants.MAKE_ORDER):
       return {
@@ -87,6 +88,23 @@ export default (state = initialState, action) => {
         pendingOrders: action.payload
       }
     case Constants.REQUEST_FAILURE(Constants.PENDING_ORDERS):
+      return {
+        ...state,
+        isLoading: action.isLoading,
+        error: action.error
+      }
+    case Constants.REQUEST(Constants.COMPLETED_ORDERS):
+      return {
+        ...state,
+        isLoading: action.isLoading
+      }
+    case Constants.REQUEST_SUCCESS(Constants.COMPLETED_ORDERS):
+      return {
+        ...state,
+        isLoading: action.isLoading,
+        completedOrders: action.payload
+      }
+    case Constants.REQUEST_FAILURE(Constants.COMPLETED_ORDERS):
       return {
         ...state,
         isLoading: action.isLoading,

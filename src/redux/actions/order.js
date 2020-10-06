@@ -111,3 +111,28 @@ export const getPendingOders = (pageNumber, pageSize) => dispatch => {
     });
   });
 };
+
+export const getCompletedOrders = (pageNumber, pageSize) => dispatch => {
+  dispatch({
+    type: Constants.REQUEST(Constants.COMPLETED_ORDERS),
+    isLoading: true
+  });
+  var accessToken = localStorage.getItem("token");
+  return Axios.get(`${Constants.BASE_API}/api/order/status/completed?page=${pageNumber}&pageSize=${pageSize}`, {
+    "headers": {
+      authorization: `Bearer ${accessToken}`
+    },
+  }).then(res => res.data && res.data.data).then((data = {}) => {
+    dispatch({
+      type: Constants.REQUEST_SUCCESS(Constants.COMPLETED_ORDERS),
+      payload: data.items,
+      isLoading: false
+    });
+  }).catch(error => {
+    dispatch({
+      type: Constants.REQUEST_FAILURE(Constants.COMPLETED_ORDERS),
+      error,
+      isLoading: false
+    });
+  });
+};

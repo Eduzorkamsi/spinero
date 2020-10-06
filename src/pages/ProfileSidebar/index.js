@@ -21,8 +21,8 @@ const ProfileSidebar = () => {
                     <div className="sidebar1" >
                         <img src={require("../../assets/icons/cartblack.svg")} alt="cart icon" />
                         <div className="sidebar_subhead">
-                            <NavLink to="/ProfileCart" className={`profile${/profilecart/i.test(location.pathname) ? "_active" : ""}`}>My Cart
-                            <img src={require("../../assets/icons/Arrow.svg")} alt="cart information" />
+                            <NavLink to="/ProfileCart" className={`profile${/profilecart/i.test(location.pathname) ? "_active" : ""}`}>Orders
+                            <img src={require("../../assets/icons/Arrow.svg")} alt="orders information" />
                             </NavLink>
                         </div>
                         <p>View your wishlist, your cart and your pending items</p>
