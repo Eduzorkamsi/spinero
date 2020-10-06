@@ -21,6 +21,7 @@ import EditPersonalInfo from "./pages/EditPersonalInfo";
 import EditPassword from "./pages/EditPassword";
 import ProfileCartDetails from "./pages/ProfileCartDetails"
 import EditPayment from "./pages/EditPayment";
+import SuccessErrorMessages from "./components/SuccessErrorMessages";
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
         <Route path="/EditPassword" component={EditPassword}/>
         <Route path="/ProfileCartDetails" component={ProfileCartDetails}/>      
         <Route path="/EditPayment" component={EditPayment}/>
+        <Route path="/SuccessErrorMessages" component={SuccessErrorMessages}/>
       </Switch>
     </Router>
   );
