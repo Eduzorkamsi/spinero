@@ -45,7 +45,7 @@ function App() {
         <Route path="/EditPersonalInfo" component={EditPersonalInfo}/>
         <Route path="/EditPassword" component={EditPassword}/>
         <Route path="/ProfileCartDetails" component={ProfileCartDetails}/>      
-        <Route path="/EditPayment" component={EditPayment}/>
+        <Route path="/AddPayment" component={EditPayment}/>
       </Switch>
     </Router>
   );

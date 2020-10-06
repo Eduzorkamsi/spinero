@@ -1,6 +1,17 @@
 import Constants from "../../constants";
 
 export default (state = {}, action) => {
+  state = { ...state };
+  if (/success/i.test(action.type)) {
+    state.successful = true;
+    delete state.error;
+  } else if (/failure/i.test(action.type)) {
+    delete state.successful;
+  } else {
+    delete state.successful;
+    delete state.error;
+  }
+  
   switch (action.type) {
     case Constants.REQUEST(Constants.SIGNIN): {
       return {
@@ -90,27 +101,59 @@ export default (state = {}, action) => {
         isLoading: action.isLoading,
         error: action.error
       }
-      case Constants.REQUEST(Constants.CHANGE_PASSWORD):
-        return {
-          ...state,
-          isLoading: action.isLoading
-        }
-      case Constants.REQUEST_SUCCESS(Constants.CHANGE_PASSWORD):
-        return {
-          ...state,
-          isLoading: action.isLoading
-        }
-      case Constants.REQUEST_FAILURE(Constants.CHANGE_PASSWORD):
-        return {
-          ...state,
-          isLoading: action.isLoading,
-          error: action.error
-        }
-    case Constants.SIGNOUT: 
+    case Constants.REQUEST(Constants.CHANGE_PASSWORD):
+      return {
+        ...state,
+        isLoading: action.isLoading
+      }
+    case Constants.REQUEST_SUCCESS(Constants.CHANGE_PASSWORD):
+      return {
+        ...state,
+        isLoading: action.isLoading
+      }
+    case Constants.REQUEST_FAILURE(Constants.CHANGE_PASSWORD):
+      return {
+        ...state,
+        isLoading: action.isLoading,
+        error: action.error
+      }
+    case Constants.SIGNOUT:
       return {
         ...state,
         user: {}
       };
+    case Constants.REQUEST(Constants.GET_CARD_DETAILS):
+      return {
+        ...state,
+        isLoading: action.isLoading
+      }
+    case Constants.REQUEST_SUCCESS(Constants.GET_CARD_DETAILS):
+      return {
+        ...state,
+        isLoading: action.isLoading,
+        savedCardDetails: action.payload
+      }
+    case Constants.REQUEST_FAILURE(Constants.GET_CARD_DETAILS):
+      return {
+        ...state,
+        isLoading: action.isLoading,
+        error: action.error
+      }
+    case Constants.REQUEST(Constants.ADD_CARD_DETAILS):
+    case Constants.REQUEST_SUCCESS(Constants.ADD_CARD_DETAILS):
+    case Constants.REQUEST(Constants.DELETE_SAVED_CARD_DETAIL):
+    case Constants.REQUEST_SUCCESS(Constants.DELETE_SAVED_CARD_DETAIL):
+      return {
+        ...state,
+        isLoading: action.isLoading
+      }
+    case Constants.REQUEST_FAILURE(Constants.ADD_CARD_DETAILS):
+    case Constants.REQUEST_FAILURE(Constants.DELETE_SAVED_CARD_DETAIL):
+      return {
+        ...state,
+        isLoading: action.isLoading,
+        error: action.error
+      }
     default: {
       return state;
     }

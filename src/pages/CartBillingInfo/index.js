@@ -76,22 +76,22 @@ const CartBillingInfo = (props) => {
                         <form onSubmit={e => { e.preventDefault(); payWithStripe(); }}>
                             <div className="billing_box1">
                                 <p>Card Details</p>
-                                <img src={require("..//../assets/icons/minus.svg")}/>
+                                <img src={require("..//../assets/icons/minus.svg")} />
                             </div>
                             <div className="billing_box2">
                                 <div className="form-column">
                                     <div className="form-group">
-                                        <label for="inputName">Cardholder name</label>
+                                        <label for="inputName">Cardholder Name</label>
                                         <input type="text" className="form-control" id="inputName" placeholder="Ned Nwokolo" required></input>
                                     </div>
                                     <div className="form-group">
-                                        <label for="inputNumber">Card number</label>
+                                        <label for="inputNumber">Card Number</label>
                                         <CardNumberElement className="form-control" id="inputNumber" placeholder="5399xxxxxxx" required />
                                     </div>
                                 </div>
                                 <div className="form-row">
                                     <div className="form-group col-md-4">
-                                        <label for="inputExpiry">Month</label>
+                                        <label for="inputExpiry">Card Expiry</label>
                                         <CardExpiryElement className="form-control" id="inputExpiry" />
                                     </div>
                                     <div className="form-group col-md-2">
