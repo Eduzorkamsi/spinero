@@ -4,7 +4,6 @@ import * as actionCreators from "../../redux/actions";
 import { connect } from "react-redux";
 import "./style.css";
 import Header from "../../components/Header";
-import { latestCollection } from "./data";
 import { redirect } from "../../utils";
 import Card from "../../components/Card";
 import Footer from "../../components/Footer";
@@ -17,6 +16,7 @@ const Home = (props) => {
   const history = useHistory();
   const [displayCartSuccess, shouldDisplayCartSuccess] = useState();
   const [categoryProducts, setCategoryProducts] = useState({});
+  const [latestCollection, setLatestCollection] = useState([]);
 
   const getCartSuccessDisplay = () => (<SuccessErrorMessages type="CART" />);
 
@@ -90,13 +90,32 @@ const Home = (props) => {
     }
   };
 
+  const setUpLatestCollections = () => {
+    if (props?.product?.latestProducts) {
+      const collection = props.product.latestProducts.reduce((acc, product) => {
+        if (!acc.find(p => product.categories[0].name === p.categories[0].name)) {
+          acc.push(product);
+        }
+
+        return acc;
+      }, []);
+
+      setLatestCollection(collection);
+    }
+  }
+
   useEffect(() => {
     props.getCategoryTypes();
+    props.getLatestCollection(1);
   }, []);
 
   useEffect(() => {
     setUpCategoryProducts();
   }, [props.categoryTypes]);
+
+  useEffect(() => {
+    setUpLatestCollections();
+  }, [props?.product?.latestProducts]);
 
   return (
     <>
@@ -134,14 +153,14 @@ const Home = (props) => {
           </div>
         </div>
         <div className="row row-cols-1 row-cols-md-2 ">
-          {latestCollection.map((data, index) => {
+          {latestCollection.map((product, index) => {
             return (
-              <div className="col mb-4 pr-2" key={index} onClick={() => redirect(data.path)}>
+              <div className="col mb-4 pr-2" key={index} style={{ cursor: "pointer" }} onClick={() => history.push("/collections", { category: product.categories[0]._id })}>
                 <div className="card ">
-                  <img className="card-img img-responsive" src={data.photo} alt="cardIamge" />
+                  <img className="card-img img-responsive" src={product.images[0].url} alt="cardIamge" />
                   <div className="card-img-overlay text-white d-flex flex-column justify-content-center ">
-                    <h4 className="card-title text-center" id="_cardText">
-                      {data.info}
+                    <h4 className="card-title text-center titlecase-text" id="_cardText">
+                      {(product.categories[0].name || "").toLowerCase()}
                     </h4>
                   </div>
                 </div>
@@ -224,7 +243,8 @@ const Home = (props) => {
 };
 
 const mapStateToProps = state => ({
-  ...state.home
+  ...state.home,
+  product: state.product || {}
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators(actionCreators, dispatch);

@@ -6,12 +6,13 @@ import Filter from "../../components/Filter"
 import { bindActionCreators } from "redux";
 import * as actionCreators from "../../redux/actions";
 import { connect } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import SuccessErrorMessages from "../../components/SuccessErrorMessages";
 
 
 const LatestCollection = (props) => {
   const history = useHistory();
+  const { category } = useLocation().state || {};
   const [products, setProducts] = useState();
   const [displayCartSuccess, shouldDisplayCartSuccess] = useState();
 
@@ -31,7 +32,7 @@ const LatestCollection = (props) => {
       <div className="container">
         <div className="row">
           <div className="col-md-4 col-lg-3 col-sm-4">
-            <Filter setProducts={setProducts} />
+            <Filter setProducts={setProducts} category={category} />
           </div>
 
           <div className="col-md-8 col-lg-8 col-sm-8 pt-5 mt-5">

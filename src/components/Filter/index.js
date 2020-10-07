@@ -4,8 +4,12 @@ import Axios from "axios";
 import constants from "../../constants";
 
 const Filter = (props) => {
+    const initialFilter = {};
+    if (props.category) {
+        initialFilter["category"] = props.category;
+    }
 
-    const [filter, setFilter] = useState({});
+    const [filter, setFilter] = useState(initialFilter);
     const [categories, setCategories] = useState([]);
 
     const getCategories = () => {
@@ -16,13 +20,26 @@ const Filter = (props) => {
         });
     };
 
+    const filterProducts = () => {
+        const filterKeys = Object.keys(filter);
+        let url = `${constants.BASE_API}/api/product/search/price?`;
+        filterKeys.forEach((key, i) => {
+            url += `${key}=${filter[key]}&`;
+        });
+
+        Axios.get(url).then(res => res.data && res.data.data).then((data = {}) => {
+            props.setProducts(data.items);
+        }).catch(error => {
+            console.error(error);
+        });
+    }
+
     useState(() => {
         if (props.categoryType) {
             setFilter({ ...filter, categoryType: props.categoryType });
         }
-
         getCategories();
-
+        filterProducts();
     }, []);
 
     return (
@@ -133,20 +150,7 @@ const Filter = (props) => {
                         </div>
                     </div>
                     <div className="filter_button">
-                        <button className="btn btn-outline-secondary" onClick={() => {
-                            const filterKeys = Object.keys(filter);
-                            let url = `${constants.BASE_API}/api/product/search/price?`;
-                            filterKeys.forEach((key, i) => {
-                                url += `${key}=${filter[key]}&`;
-                            });
-
-                            Axios.get(url).then(res => res.data && res.data.data).then((data = {}) => {
-                                props.setProducts(data.items);
-                            }).catch(error => {
-                                console.error(error);
-                            });
-
-                        }} type="button">Apply Filters</button>
+                        <button className="btn btn-outline-secondary" onClick={filterProducts} type="button">Apply Filters</button>
 
                         <button className="no-background no-border" onClick={() => {
                             const filter = {};
