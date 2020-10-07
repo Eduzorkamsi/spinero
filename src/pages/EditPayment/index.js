@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Elements, CardNumberElement, CardExpiryElement, CardCVCElement, injectStripe } from 'react-stripe-elements';
 import Footer from "../../components/Footer";
 import TopNav from "../../components/TopNav";
@@ -10,12 +10,15 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as actionCreators from "../../redux/actions";
 import { useHistory } from "react-router-dom";
+import SuccessErrorMessages from "../../components/SuccessErrorMessages";
 
 
 
 const EditPayment = (props) => {
     const history = useHistory();
-    
+
+    const [showSuccessErrorMessage, shouldShowSuccessErrorMessage] = useState();
+
     const [billingInformation, setBillingInformation] = useState({
         firstName: "",
         lastName: "",
@@ -35,27 +38,33 @@ const EditPayment = (props) => {
 
     const saveBillingInformation = async (e) => {
         e.preventDefault();
-        let { token } = await props.stripe.createToken({ name: props.username });
-        if (token) {
-            props.saveCardAndBillingInfo({
-                stripeToken: token.id,
-                billingInformation: {
-                    ...billingInformation,
-                    fullName: `${billingInformation.firstName} ${billingInformation.lastName}`
-                }
-            });
-        } else {
-            alert("An error occurred. Please confirm the details entered and try again.");
+        try {
+            let { token } = await props.stripe.createToken({ name: props.username });
+            if (token) {
+                await props.saveCardAndBillingInfo({
+                    stripeToken: token.id,
+                    billingInformation: {
+                        ...billingInformation,
+                        fullName: `${billingInformation.firstName} ${billingInformation.lastName}`
+                    }
+                });
+                shouldShowSuccessErrorMessage({ type: "SUCCESS" });
+            } else {
+                shouldShowSuccessErrorMessage({ type: "ERROR", error: "An error occurred. Please confirm the details entered and try again." });
+            }
+        } catch (error) {
+            shouldShowSuccessErrorMessage({ type: "ERROR", error: "An error occurred. Please confirm the details entered and try again." });
+        } finally {
+            setTimeout(() => {
+                shouldShowSuccessErrorMessage(undefined);
+                history.push("/ProfilePayment");
+            }, 3000);
         }
     };
 
-    useEffect(() => {
-        if (props.successful) {
-            history.push("/ProfilePayment");
-        }
-    }, [props.successful]);
-
     return (
+        showSuccessErrorMessage ?
+            <SuccessErrorMessages type={showSuccessErrorMessage.type} error={showSuccessErrorMessage.error} /> :
         <>
             <TopNav />
             <div className="edit_payment_info">

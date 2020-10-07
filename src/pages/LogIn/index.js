@@ -41,7 +41,7 @@ function LogIn(props) {
 
     let token = localStorage.getItem('token');
     //TODO you should actually hit the verify endpoint to verify this token.
-    if (token) {
+    if (token && props?.user?._id) {
       history.push('/')
     }
 

@@ -7,11 +7,15 @@ import { bindActionCreators } from "redux";
 import * as actionCreators from "../../redux/actions";
 import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
+import SuccessErrorMessages from "../../components/SuccessErrorMessages";
 
 
 const LatestCollection = (props) => {
   const history = useHistory();
   const [products, setProducts] = useState();
+  const [displayCartSuccess, shouldDisplayCartSuccess] = useState();
+
+  const getCartSuccessDisplay = () => (<SuccessErrorMessages type="CART" />);
 
   useEffect(() => {
     props.getLatestCollection(1);
@@ -41,37 +45,43 @@ const LatestCollection = (props) => {
             <div className="row row-cols-1 row-cols-md-3 pt-3">
               {(products || props.latestProducts || []).map((data, index) => {
                 return (
-                  <div className="col mb-4" key={index} onClick={() => { }}>
-                    <div className="card" id="item_card">
-                      <img src={data.images[0].url} className="card-img-top" alt="items" onClick={() => {
-                        history.push(`/ProductDetails/${data._id}`, data);
-                      }} />
-                      <div className="card-body _card-content-padding">
-                        <button type="button" className="no-border no-background card-title" onClick={() => {
+                  displayCartSuccess && displayCartSuccess === data._id ?
+                    getCartSuccessDisplay() :
+                    <div className="col mb-4" key={index} onClick={() => { }}>
+                      <div className="card" id="item_card">
+                        <img src={data.images[0].url} className="card-img-top" alt="items" onClick={() => {
                           history.push(`/ProductDetails/${data._id}`, data);
-                        }} >{data.name}</button>
-                        <p className="card-text" style={{ fontWeight: "bold" }}>
-                          $ {data.price}
-                        </p>
-                        <button
-                          className="add-to-cart"
-                          type="button"
-                          onClick={() => {
-                            props.addToCart(
-                              {
-                                id: data._id,
-                                name: data.name,
-                                price: data.price,
-                                color: "red",
-                                size: "M",
-                                image: data.images[0].url
-                              }
-                            )
-                          }}
-                        >Add to Bag</button>
+                        }} />
+                        <div className="card-body _card-content-padding">
+                          <button type="button" className="no-border no-background card-title" onClick={() => {
+                            history.push(`/ProductDetails/${data._id}`, data);
+                          }} >{data.name}</button>
+                          <p className="card-text" style={{ fontWeight: "bold" }}>
+                            $ {data.price}
+                          </p>
+                          <button
+                            className="add-to-cart"
+                            type="button"
+                            onClick={() => {
+                              props.addToCart(
+                                {
+                                  id: data._id,
+                                  name: data.name,
+                                  price: data.price,
+                                  color: "red",
+                                  size: "M",
+                                  image: data.images[0].url
+                                }
+                              );
+                              shouldDisplayCartSuccess(data._id);
+                              setTimeout(() => {
+                                shouldDisplayCartSuccess(undefined);
+                              }, 2000);
+                            }}
+                          >Add to Bag</button>
+                        </div>
                       </div>
                     </div>
-                  </div>
                 );
               })}
             </div>

@@ -13,17 +13,6 @@ const initialState = {
 };
 
 export default (state = initialState, action) => {
-  state = { ...state };
-  if (/success/i.test(action.type)) {
-    state.successful = true;
-    delete state.error;
-  } else if (/failure/i.test(action.type)) {
-    delete state.successful;
-  } else {
-    delete state.successful;
-    delete state.error;
-  }
-
   switch (action.type) {
     case Constants.REQUEST(Constants.MAKE_ORDER):
       return {

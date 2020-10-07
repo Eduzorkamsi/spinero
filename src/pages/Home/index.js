@@ -11,44 +11,55 @@ import Footer from "../../components/Footer";
 import { Link, NavLink as button, useHistory } from "react-router-dom";
 import Axios from "axios";
 import constants from "../../constants";
+import SuccessErrorMessages from "../../components/SuccessErrorMessages";
 
 const Home = (props) => {
   const history = useHistory();
+  const [displayCartSuccess, shouldDisplayCartSuccess] = useState();
   const [categoryProducts, setCategoryProducts] = useState({});
+
+  const getCartSuccessDisplay = () => (<SuccessErrorMessages type="CART" />);
+
   const getCategoryProducts = name => {
     return (categoryProducts[name.toLowerCase()] || { items: [] }).items.map(product => {
       return (
-        <div className="col mb-4" key={product._id}>
-          <div className="card" id="item_card">
-            <img src={product.images[0].url} className="card-img-top" alt="items" onClick={() => {
-              history.push(`/ProductDetails/${product._id}`, product);
-            }} />
-            <div className="card-body _card-content-padding">
-              <button type="button" className="no-border no-background card-title" onClick={() => {
+        displayCartSuccess && displayCartSuccess === product._id ?
+          getCartSuccessDisplay() :
+          <div className="col mb-4" key={product._id}>
+            <div className="card" id="item_card">
+              <img src={product.images[0].url} className="card-img-top" alt="items" onClick={() => {
                 history.push(`/ProductDetails/${product._id}`, product);
-              }} >{product.name}</button>
-              <p className="card-text" style={{ fontWeight: "bold" }}>
-                $ {product.price}
-              </p>
-              <button
-                className="add-to-cart"
-                type="button"
-                onClick={() => {
-                  props.addToCart(
-                    {
-                      id: product._id,
-                      name: product.name,
-                      price: product.price,
-                      color: "red",
-                      size: "M",
-                      image: product.images[0].url
-                    }
-                  )
-                }}
-              >Add to Bag</button>
+              }} />
+              <div className="card-body _card-content-padding">
+                <button type="button" className="no-border no-background card-title" onClick={() => {
+                  history.push(`/ProductDetails/${product._id}`, product);
+                }} >{product.name}</button>
+                <p className="card-text" style={{ fontWeight: "bold" }}>
+                  $ {product.price}
+                </p>
+                <button
+                  className="add-to-cart"
+                  type="button"
+                  onClick={() => {
+                    props.addToCart(
+                      {
+                        id: product._id,
+                        name: product.name,
+                        price: product.price,
+                        color: "red",
+                        size: "M",
+                        image: product.images[0].url
+                      }
+                    );
+                    shouldDisplayCartSuccess(product._id);
+                    setTimeout(() => {
+                      shouldDisplayCartSuccess(undefined);
+                    }, 2000);
+                  }}
+                >Add to Bag</button>
+              </div>
             </div>
           </div>
-        </div>
       );
     })
   };

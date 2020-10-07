@@ -26,7 +26,7 @@ const ProfileCartDetails = () => {
                         <div className="cart_details_box3">
                             <div className="cart_details_box31">
                                 <h5>Delivery Status</h5>
-                                <h6 className="titlecase-text">{(order.status || "").toLowerCase()}</h6>
+                                <h6 className="titlecase-text">{/complete/i.test(order.status) ? "Delivered" : "Pending"}</h6>
                             </div>
                             <div className="cart_details_box32">
                                 <h5>Order No</h5>

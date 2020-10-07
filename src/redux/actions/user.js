@@ -78,7 +78,7 @@ export const updateUserProfileDetail = (newUserDetail) => dispatch => {
     isLoading: true
   });
   var accessToken = localStorage.getItem("token");
-  Axios.put(`${Constants.BASE_API}/api/user`, newUserDetail, {
+  return Axios.put(`${Constants.BASE_API}/api/user`, newUserDetail, {
     "headers": {
       Authorization: `Bearer ${accessToken}`
     },
@@ -89,12 +89,14 @@ export const updateUserProfileDetail = (newUserDetail) => dispatch => {
         payload: newUserDetail,
         isLoading: false
       });
+      return true;
     }).catch(error => {
       dispatch({
         type: Constants.REQUEST_FAILURE(Constants.SIGNIN),
         error,
         isLoading: false
       });
+      throw error;
     });
 };
 
@@ -120,15 +122,17 @@ export const updateUserPassword = (passwordInfo) => dispatch => {
   })
     .then(res => res.data && res.data.data).then(data => {
       dispatch({
-        type: Constants.REQUEST(Constants.CHANGE_PASSWORD),
+        type: Constants.REQUEST_SUCCESS(Constants.CHANGE_PASSWORD),
         isLoading: false
       });
+      return true;
     }).catch(error => {
       dispatch({
-        type: Constants.REQUEST(Constants.CHANGE_PASSWORD),
+        type: Constants.REQUEST_FAILURE(Constants.CHANGE_PASSWORD),
         isLoading: false,
         error,
       });
+      throw error;
     });
 };
 
@@ -165,7 +169,7 @@ export const saveCardAndBillingInfo = (cardDetail) => dispatch => {
   });
 
   var accessToken = localStorage.getItem("token");
-  Axios.post(`${Constants.BASE_API}/api/user/cards/information`, cardDetail, {
+  return Axios.post(`${Constants.BASE_API}/api/user/cards/information`, cardDetail, {
     "headers": {
       authorization: `Bearer ${accessToken}`
     },
@@ -177,12 +181,14 @@ export const saveCardAndBillingInfo = (cardDetail) => dispatch => {
         isLoading: false
       });
       dispatch(getUserSavedCardDetails());
+      return true;
     }).catch(error => {
       dispatch({
         type: Constants.REQUEST_FAILURE(Constants.ADD_CARD_DETAILS),
         error,
         isLoading: false
       });
+      throw error;
     });
 };
 

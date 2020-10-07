@@ -58,48 +58,47 @@ const ProfilePersonalInfo = (props) => {
                                 <img src={require("../../assets/icons/edit.svg")} alt="edit shipping address" />
                             </NavLink>
                         </div>
-                        <div className="profile_box6">
-                            <div className="name2">
-                                <div className="profile_name_holder">
-                                    <p>First Name</p>
-                                    <p className="first_name_holder">Angel</p>
+                        {
+                            props?.user?.shippingAddresses?.length &&
+                            <div className="profile_box6">
+                                <div className="name2">
+                                    <div className="profile_name_holder">
+                                        <p>Full Name</p>
+                                        <p className="first_name_holder">{props.user.shippingAddresses[0].fullName}</p>
+                                    </div>
+                                    <div className="profile_email_holder">
+                                        <p>Email </p>
+                                        <p className="profile_emailname_holder">{props.user.email}</p>
+                                    </div>
                                 </div>
-                                <div className="profile_surname_holder">
-                                    <p>Last Name</p>
-                                    <p className="profile_last_name_holder">Opoku</p>
-                                </div>
-                                <div className="profile_email_holder">
-                                    <p>Email </p>
-                                    <p className="profile_emailname_holder">angelopoku@gmail.com</p>
+                                <p className="number_holder">
+                                    Phone no
+                                </p>
+                                <p className="number_holder_details">
+                                    {props.user.shippingAddresses[0].mobileNumber}
+                                </p>
+                                <p className="address_holder">
+                                    Address
+                                </p>
+                                <p className="address_holder_details">
+                                    {props.user.shippingAddresses[0].address}
+                                </p>
+                                <div className="city_details">
+                                    <div className="city_details_holder">
+                                        <p>City</p>
+                                        <p className="city_holder">{props.user.shippingAddresses[0].cityProvince}</p>
+                                    </div>
+                                    <div className="town_details_holder">
+                                        <p>State</p>
+                                        <p className="town_holder">{props.user.shippingAddresses[0].state}</p>
+                                    </div>
+                                    <div className="state_details_holder">
+                                        <p>Zip code</p>
+                                        <p className="state_holder">{props.user.shippingAddresses[0].postalCode}</p>
+                                    </div>
                                 </div>
                             </div>
-                            <p className="number_holder">
-                                Phone no
-                            </p>
-                            <p className="number_holder_details">
-                                +1078767676655
-                            </p>
-                            <p className="address_holder">
-                                Address
-                            </p>
-                            <p className="address_holder_details">
-                                No 50, Beyonce Knowles Street
-                            </p>
-                            <div className="city_details">
-                                <div className="city_details_holder">
-                                    <p>City</p>
-                                    <p className="city_holder">Manhattan</p>
-                                </div>
-                                <div className="town_details_holder">
-                                    <p>Town</p>
-                                    <p className="town_holder">Newyork</p>
-                                </div>
-                                <div className="state_details_holder">
-                                    <p>Zip code</p>
-                                    <p className="state_holder">0897878</p>
-                                </div>
-                            </div>
-                        </div>
+                        }
                     </div>
                 </div>
                 <Footer />
