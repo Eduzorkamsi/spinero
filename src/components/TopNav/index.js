@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import "./style.css";
@@ -8,6 +8,7 @@ import { bindActionCreators } from "redux";
 
 function TopNav(props) {
   const history = useHistory();
+  const [searchText, setSearchText] = useState("");
 
   const handleOnLogoClick = (e) => {
     history.push("/");
@@ -82,9 +83,17 @@ function TopNav(props) {
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
               <ul className="navbar-nav">
                 <li class="nav-item">
-                  <NavLink className="nav-link ml-4" to="#">
+                  <button type="button" className="nav-link ml-4 no-background no-border" id="searchDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img alt="logo" className="logo" src={require("../../assets/icons/search.svg")} />
-                  </NavLink>
+                  </button>
+                  <ul className="dropdown-menu " aria-labelledby="searchDropdown">
+                    <li>
+                      <form onSubmit={e => { e.preventDefault(); history.push("/ProductSearch", { searchText }) }}>
+                        <input type="text" value={searchText} onChange={e => setSearchText(e.target.value)} />
+                        <button type="submit"></button>
+                      </form>
+                    </li>
+                  </ul>
                 </li>
                 <li class="nav-item">
                   <NavLink className="nav-link ml-4" to="/wishlist">

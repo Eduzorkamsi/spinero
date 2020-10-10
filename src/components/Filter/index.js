@@ -20,18 +20,23 @@ const Filter = (props) => {
         });
     };
 
-    const filterProducts = () => {
-        const filterKeys = Object.keys(filter);
-        let url = `${constants.BASE_API}/api/product/search/price?`;
-        filterKeys.forEach((key, i) => {
-            url += `${key}=${filter[key]}&`;
-        });
+    const filterProducts = (filter = {}) => {
+        if (props.findProducts) {
+            const params = Object.values(filter);
+            props.findProducts(...params);
+        } else {
+            const filterKeys = Object.keys(filter);
+            let url = `${constants.BASE_API}/api/product/search/price?`;
+            filterKeys.forEach((key, i) => {
+                url += `${key}=${filter[key]}&`;
+            });
 
-        Axios.get(url).then(res => res.data && res.data.data).then((data = {}) => {
-            props.setProducts(data.items);
-        }).catch(error => {
-            console.error(error);
-        });
+            Axios.get(url).then(res => res.data && res.data.data).then((data = {}) => {
+                props.setProducts(data.items);
+            }).catch(error => {
+                console.error(error);
+            });
+        }
     }
 
     useState(() => {
@@ -88,7 +93,7 @@ const Filter = (props) => {
                                                         <button
                                                             className="no-border no-background titlecase-text"
                                                             style={{ lineHeight: "18px", marginBottom: "20px", color: "#828282" }}
-                                                            onClick={() => setFilter({ ...filter, category: category._id })}
+                                                            onClick={() => setFilter({ ...filter, category: category[props.categorySelector] || category._id })}
                                                             type="button">
                                                             {category.name.toLowerCase()}
                                                         </button>
@@ -150,7 +155,7 @@ const Filter = (props) => {
                         </div>
                     </div>
                     <div className="filter_button">
-                        <button className="btn btn-outline-secondary" onClick={filterProducts} type="button">Apply Filters</button>
+                        <button className="btn btn-outline-secondary" onClick={() => filterProducts(filter)} type="button">Apply Filters</button>
 
                         <button className="no-background no-border" onClick={() => {
                             const filter = {};
@@ -158,6 +163,7 @@ const Filter = (props) => {
                                 filter["categoryType"] = props.categoryType;
                             }
                             setFilter(filter);
+                            filterProducts(filter)
                         }} style={{ textDecorationLine: "underline", color: "#828282", marginBottom: "30px" }} type="button">Clear Filter</button>
                     </div>
                 </div>
