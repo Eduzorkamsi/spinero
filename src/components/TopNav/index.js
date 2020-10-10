@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import "./style.css";
@@ -8,6 +8,7 @@ import { bindActionCreators } from "redux";
 
 function TopNav(props) {
   const history = useHistory();
+  const [searchText, setSearchText] = useState("");
 
   const handleOnLogoClick = (e) => {
     history.push("/");
@@ -82,12 +83,16 @@ function TopNav(props) {
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
               <ul className="navbar-nav">
                 <li class="nav-item">
-                  <button  class="nav-link ml-4 no-background no-border" id="searchDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <button type="button" className="nav-link ml-4 no-background no-border" id="searchDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img alt="logo" className="logo" src={require("../../assets/icons/search.svg")} />
                   </button>
-                  <ul class="dropdown-menu" aria-labelledby="accountDropdown">
-                    <li class="nav-item">
-                    <input type="search" name="search" placeholder="What are you searching for?" className="search_icon_dropdown"/>
+                  <ul className="dropdown-menu search" aria-labelledby="searchDropdown">
+                    <li className="search_item">
+                      <form onSubmit={e => { e.preventDefault(); history.push("/ProductSearch", { searchText }) }}>
+                      <button type="submit"><img alt="logo" className="search_logo" src={require("../../assets/icons/searchred.svg")} /></button>
+                        <input type="text" placeholder="What are you searching for?" value={searchText} onChange={e => setSearchText(e.target.value)} />
+                       
+                      </form>
                     </li>
                   </ul>
                 </li>
@@ -105,11 +110,11 @@ function TopNav(props) {
                   <button type="button" class="nav-link ml-4 no-background no-border" id="accountDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img alt="logo" className="logo" src={require("../../assets/icons/Family.svg")} />
                   </button>
-                  <ul class="dropdown-menu" aria-labelledby="accountDropdown">
+                  <ul class="dropdown-menu account" aria-labelledby="accountDropdown">
                     {
                       props?.user?._id ? (
                         <>
-                          <li class="nav-item">
+                          <li class="account_item">
                             <NavLink className="nav-link ml-4 dropdown-item" to="/ProfilePersonalInfo">
                               Account <i className="fab fa-arrow-right"></i>
                             </NavLink>
