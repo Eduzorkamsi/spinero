@@ -22,6 +22,7 @@ import EditPassword from "./pages/EditPassword";
 import ProfileCartDetails from "./pages/ProfileCartDetails"
 import EditPayment from "./pages/EditPayment";
 import SuccessErrorMessages from "./components/SuccessErrorMessages";
+import ProductSearch from "./pages/Search";
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
         <Route path="/ProfileCartDetails" component={ProfileCartDetails}/>      
         <Route path="/SuccessErrorMessages" component={SuccessErrorMessages}/>
         <Route path="/AddPayment" component={EditPayment}/>
+        <Route path="/ProductSearch" component={ProductSearch}/>
       </Switch>
     </Router>
   );

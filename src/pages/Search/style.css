@@ -1,0 +1,166 @@
+.product_page_search {
+    width: 100%;
+}
+
+.product_search {
+    display: flex;
+    flex-direction: row;
+    margin-left: 13%;
+}
+
+.search_filter {
+    height: 372px;
+    margin-top: -100px;
+}
+
+.search_results {
+    margin-left: 30px;
+    margin-top: 40px;
+}
+
+.search_results h3 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 59px;
+    color: #0D0D0D;
+}
+
+.result_display {
+    margin-top: 40px;
+}
+
+.result_box1 {
+    display: flex;
+    flex-direction: row;
+}
+
+.result_1 {
+    margin-right: 30px;
+}
+
+.result_1 p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+    color: #000000;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.result_1 h6 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 26px;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.result_1 h5 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 26px;
+    text-decoration-line: underline;
+    color: #FF0000;
+}
+
+.result_2 {
+    margin-right: 30px;
+}
+
+.result_box2 {
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+}
+
+.result_2 p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+    color: #000000;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.result_2 h6 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 26px;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.result_2 h5 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 26px;
+    text-decoration-line: underline;
+    color: #FF0000;
+}
+
+.result_box3 {
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+}
+
+.result_3 p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+    color: #000000;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.result_3 h6 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 26px;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.result_3 h5 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 26px;
+    text-decoration-line: underline;
+    color: #FF0000;
+}
+
+.result_box4 {
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+}
+
+.result_next {
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+    border-top: 1px solid #E0E0E0;
+    width: 100%;
+    margin-bottom: 82px;
+    padding-top: 24px;
+}
+
+.result_next p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14.75px;
+    line-height: 18px;
+    color: #000000;
+    margin-right: 559px;
+    
+}
