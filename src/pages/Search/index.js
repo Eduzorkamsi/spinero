@@ -2,6 +2,7 @@ import React from "react";
 import Filter from "../../components/Filter";
 import Footer from "../../components/Footer";
 import PagesPagination from "../../components/PagesPagination";
+import SearchBar from "../../components/searchicon";
 import TopNav from "../../components/TopNav";
 
 import "./style.css"

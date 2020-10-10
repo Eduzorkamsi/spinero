@@ -82,9 +82,14 @@ function TopNav(props) {
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
               <ul className="navbar-nav">
                 <li class="nav-item">
-                  <NavLink className="nav-link ml-4" to="#">
+                  <button  class="nav-link ml-4 no-background no-border" id="searchDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img alt="logo" className="logo" src={require("../../assets/icons/search.svg")} />
-                  </NavLink>
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="accountDropdown">
+                    <li class="nav-item">
+                    <input type="search" name="search" placeholder="What are you searching for?" className="search_icon_dropdown"/>
+                    </li>
+                  </ul>
                 </li>
                 <li class="nav-item">
                   <NavLink className="nav-link ml-4" to="/wishlist">
