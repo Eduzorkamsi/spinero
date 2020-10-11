@@ -35,7 +35,7 @@ const ProductSearch = (props) => {
 
     useEffect(() => {
         findProducts();
-    }, []);
+    }, [searchText]);
 
     return (
         <>
