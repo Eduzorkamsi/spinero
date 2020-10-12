@@ -1,9 +1,18 @@
 .current {
-  border-bottom: 2px solid #000000;
+  /* border: 2px solid #000000; */
+background-image: url("../../assets/icons/indicator.svg");
+background-repeat: no-repeat;
+background-position: bottom;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 26px;
+color: #0D0D0D!important;
 }
 
 .backgroundColor_ {
   color: #fbfbfb !important;
+  background: #fbfbfb;
 }
 /*# sourceMappingURL=style.css.map */
 
