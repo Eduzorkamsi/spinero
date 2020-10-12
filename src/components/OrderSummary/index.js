@@ -28,6 +28,7 @@ const OrderSummary = (props) => {
         <>
             <div className="delivery_box4">
                 <p>Order summary</p>
+                <img src={require("../../assets/icons/minus.svg")}/>
             </div>
             {
                 props.cart.products.map(product => {
@@ -54,12 +55,12 @@ const OrderSummary = (props) => {
                 <div className="order_totals">
                     <h4>Sub-total</h4>
                     {/* <h4>Delivery</h4> */}
-                    <h4>Total</h4>
+                    <h4 className="h4_number_totals">Total</h4>
                 </div>
                 <div className="number_totals">
                     <h4>${props.cart.amount}</h4>
                     {/* <h4>$0</h4> */}
-                    <h4>${props.cart.amount}</h4>
+                    <h4 className="h4_number_totals">${props.cart.amount}</h4>
                 </div>
             </div>
 

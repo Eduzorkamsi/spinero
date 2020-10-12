@@ -3,6 +3,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-top: -20px;
 }
 
 .successful_text1 h3 {
@@ -11,11 +12,11 @@
     font-size: 37.25px;
     line-height: 46px;
     color: #0D0D0D;
-    margin-top: 46px;
+    margin-top: 26px;
 }
 
 .successful_text2 {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .successful_text2 h4 {
@@ -30,7 +31,7 @@
     width: 325px;
     height: 78px;
     margin-top: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
 }
 
 .successful_text3 p {

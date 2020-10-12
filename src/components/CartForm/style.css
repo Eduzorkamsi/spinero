@@ -1,5 +1,15 @@
 .delivery_box2{
+    font-family: inherit;
     background: #FBFBFB;
     margin-top: 10px;
     padding: 20px;
 }
+
+.form-control{
+    background-color: #FBFBFB!important;
+}
+
+.input_label_text{
+    font-weight: bold;
+}
+

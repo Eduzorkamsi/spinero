@@ -56,3 +56,12 @@ line-height: 26px;
 
 color: #000000;
 }
+
+.arrow_active{
+margin-bottom: 15px;
+fill : red;
+}
+
+svg{
+    fill: #FF0000;
+}

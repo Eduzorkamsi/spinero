@@ -6,9 +6,9 @@ const CartProgressSuccessful = () => {
         <>
         <div className="delivery_progress_section">
         <ol className="progress-indicator">
-  <li className="is-complete" data-step="">
+  {/* <li className="is-complete" data-step="">
   <span>Log in</span>
-  </li>
+  </li> */}
   <li  className="is-complete" data-step=""><a href="#" aria-label="Page 2"></a> 
   <span>Check out</span>
   </li>

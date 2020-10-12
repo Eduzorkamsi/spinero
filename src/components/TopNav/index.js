@@ -97,7 +97,7 @@ function TopNav(props) {
                   </ul>
                 </li>
                 <li class="nav-item">
-                  <NavLink className="nav-link ml-4" to="/wishlist">
+                  <NavLink className="nav-link ml-4"  to="/wishlist">
                     <img alt="logo" className="logo" src={require("../../assets/icons/love.svg")} />
                   </NavLink>
                 </li>

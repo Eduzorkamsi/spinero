@@ -17,6 +17,7 @@ const CartDeliveryInfo = ({ navigation, shippingInformation, billingInformation,
                     <div className="cart_delivery_address">
                         <div className="delivery_box">
                             <p> Delivery Address</p>
+                            <img src={require("../../assets/icons/minus.svg")}/>
                         </div>
                         <form onSubmit={e => { e.preventDefault(); next(); }}>
                             <CartForm addressInformation={shippingInformation} handleInputChange={handleInputChange}>
