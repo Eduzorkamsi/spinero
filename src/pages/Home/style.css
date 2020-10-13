@@ -7,10 +7,12 @@
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
   color: #ffffff;
+  text-shadow: 0 1px 0 black;
   cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */
+
 
 .add-to-cart {
   border: none;
@@ -27,4 +29,10 @@
 
 .container.pt-5.mt-5 {
   margin-top: 440px;
+}
+
+.justify-content-center {
+  -ms-flex-pack: center!important;
+  justify-content: center!important;
+  margin-bottom: 30px;
 }

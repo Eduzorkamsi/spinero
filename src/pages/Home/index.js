@@ -56,7 +56,7 @@ const Home = (props) => {
                       shouldDisplayCartSuccess(undefined);
                     }, 2000);
                   }}
-                >Add to Bag</button>
+                >Add to Cart</button>
               </div>
             </div>
           </div>
