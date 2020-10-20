@@ -17,3 +17,9 @@
   border: none;
 }
 /*# sourceMappingURL=style.css.map */
+
+@media (max-width: 992px){
+  .content{
+    margin-top: 30%;
+  }
+}

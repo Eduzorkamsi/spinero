@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useLocation } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import "./style.css";
 import { connect } from "react-redux";
@@ -13,6 +13,7 @@ import SearchIcon from "../searchicon";
 
 function TopNav(props) {
   const history = useHistory();
+  const location = useLocation();
   const [searchText, setSearchText] = useState("");
 
   const handleOnLogoClick = (e) => {
@@ -43,6 +44,7 @@ function TopNav(props) {
     });
   };
 
+
   return (
     <>
       <nav className="col-lg-12 container top-navigation navbar navbar-expand-lg navbar-light py-4 backgroundColor_">
@@ -65,13 +67,13 @@ function TopNav(props) {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+{/* <div className="nav_tab_home_icon"> */}
+<div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
             {
               showCategoryTypes()
             }
-            <li className="nav-item">
+            <li className="nav-item latest">
               <NavLink className="nav-link ml-5 flex-shrink-0" activeClassName="current" to="/collections">
                 Latest Collection
               </NavLink>
@@ -83,13 +85,14 @@ function TopNav(props) {
               </NavLink>
             </li>
           </ul>
+          </div>
 
           <div className="my-2 my-lg-0">
-            <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div className="icon_nav" id="navbarIcon">
               <ul className="navbar-nav">
                 <li class="nav-item">
                   <button type="button" className="nav-link ml-4 no-background no-border" id="searchDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <SearchIcon active={true}/>
+                <SearchIcon active={/ProductSearch/i.test(location.pathname)}/>
                                   </button>
                   <ul className="col-lg-9 dropdown-menu search" aria-labelledby="searchDropdown">
                     <li className="search_item">
@@ -103,17 +106,17 @@ function TopNav(props) {
                 </li>
                 <li class="nav-item">
                   <NavLink className="nav-link ml-4"  to="/wishlist">
-                 <Heart active={true}/>
+                 <Heart active={/wishlist/i.test(location.pathname)}/>
                   </NavLink>
                 </li>
                 <li class="nav-item">
                   <NavLink className="nav-link ml-4" to="/cart">
-                 <CartIcon active={true}/>
+                 <CartIcon active={/cart/i.test(location.pathname)}/>
                   </NavLink>
                 </li>
                 <li class="nav-item">
                   <button type="button" class="nav-link ml-4 no-background no-border" id="accountDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-           <FamilyIcon active={true}/>
+           <FamilyIcon active={/ProfilePersonalInfo/i.test(location.pathname)}/>
                   </button>
                   <ul class="dropdown-menu account" aria-labelledby="accountDropdown">
                     {
@@ -142,7 +145,9 @@ function TopNav(props) {
               </ul>
             </div>
           </div>
-        </div>
+{/* </div> */}
+
+        
       </nav>
     </>
   );

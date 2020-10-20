@@ -49,14 +49,16 @@ const ProductDetails = (props) => {
           <div className="product_card">
             <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
               <ol className="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                {
+                  product?.images?.map((img, i) => (
+                    <li data-target="#carouselExampleIndicators" data-slide-to={i} className={(i === 0) && "active"}></li>
+                  ))
+                }
               </ol>
               <div className="carousel-inner">
                 {
                   product?.images?.map((image, i) => (
-                    <div key={i} className="carousel-item active">
+                    <div key={i} className={`carousel-item ${(i === 0) && "active"}`}>
                       <img src={image.url} className="d-block w-100" alt="..."></img>
                     </div>
                   ))
@@ -138,7 +140,7 @@ const ProductDetails = (props) => {
                     quantity
                   )
                 }}
-              >Add to Bag</button>
+              >Add to Cart</button>
             </div>
           </div>
         </div>
