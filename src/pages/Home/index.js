@@ -137,20 +137,22 @@ const Home = (props) => {
             <p className="h2" style={{ fontWeight: "bold", color: "#BA2222", lineHeight: "59px" }}>
               Latest Collection
             </p>
-            <p style={{ color: "#333333", fontSize: "16px" }}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas cras lectus magna sodales
-              aenean condimentum auctor aliquet.{" "}
-            </p>
-          </div>
-          <div className="col-lg-2 col-md-6 col-sm-6 col-xs-6  ">
+            </div>
+            <div className="col-lg-2 col-md-6 col-sm-6 col-xs-6  ">
             <div className="d-flex justify-content-around">
               <Link to="/collections">
-                <p style={{ color: "#FF0000", textDecorationLine: "underline", fontWeight: "bold" }}>
+                <p className="lorem_check" style={{ color: "#FF0000", textDecorationLine: "underline", fontWeight: "bold" }}>
                   Check it Out
                 </p>
               </Link>
             </div>
           </div>
+            <p className="lorem2" style={{ color: "#333333", fontSize: "16px" }}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas cras lectus magna sodales
+              aenean condimentum auctor aliquet.{" "}
+            </p>
+         
+
         </div>
         <div className="row row-cols-1 row-cols-md-2 ">
           {latestCollection.map((product, index) => {
@@ -176,7 +178,7 @@ const Home = (props) => {
                 <p className="h2" style={{ fontWeight: "bold", color: "#BA2222", lineHeight: "59px" }}>
                   Women
                 </p>
-                <p style={{ color: "#333333", fontSize: "16px" }}>
+                <p className="lorem3" style={{ color: "#333333", fontSize: "16px" }}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas cras lectus magna sodales
                   aenean condimentum auctor aliquet.{" "}
                 </p>
@@ -188,7 +190,7 @@ const Home = (props) => {
                       pathname: `/category/${(categoryProducts["women"] || { id: "" }).id}`,
                       state: (categoryProducts["women"] || { info: {} }).info
                     }}
-                    style={{ color: "#FF0000", fontWeight: "bold" }}
+                    className="lorem_check" style={{ color: "#FF0000", fontWeight: "bold" , marginTop: "15px"}}
                   >
                     Check it out
                   </Link>
@@ -212,7 +214,7 @@ const Home = (props) => {
                 <p className="h2" style={{ fontWeight: "bold", color: "#BA2222", lineHeight: "59px" }}>
                   Men
                 </p>
-                <p style={{ color: "#333333", fontSize: "16px" }}>
+                <p className="lorem4" style={{ color: "#333333", fontSize: "16px" }}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas cras lectus magna sodales
                   aenean condimentum auctor aliquet.{" "}
                 </p>
@@ -224,7 +226,7 @@ const Home = (props) => {
                       pathname: `/category/${(categoryProducts["men"] || { id: "" }).id}`,
                       state: (categoryProducts["men"] || { info: {} }).info
                     }}
-                    style={{ color: "#FF0000", fontWeight: "bold" }}
+                    className="lorem_check" style={{ color: "#FF0000", fontWeight: "bold" , margintTop: "15px" }}
                   >
                     Check it out
                   </Link>

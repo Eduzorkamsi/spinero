@@ -20,7 +20,7 @@ const Card = () => {
                     </h3>
                     <p
                       className="card-text text-wrap"
-                      style={{ width: "24rem", fontSize: "16px", fontStyle: "normal" }}
+                      style={{  fontSize: "16px", fontStyle: "normal" }}
                     >
                       The Rences Jersey is the best you can possibly find, with its silk fabric and line
                       seams. It is designed to suit your skin
