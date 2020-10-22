@@ -65,6 +65,8 @@ ul li i{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border: 1px solid #E0E0E0;
+    
 }
 
 .filter_button>.btn-outline-secondary {
