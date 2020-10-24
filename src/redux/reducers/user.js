@@ -12,6 +12,7 @@ export default (state = {}, action) => {
       let token = action.payload.token
       let name = action.payload.user.name;
       localStorage.setItem('token', token);
+      localStorage.setItem('refresh_token', action.payload.refresh_token);
       localStorage.setItem('name', name);
       return {
         ...state,
