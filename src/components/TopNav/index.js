@@ -80,7 +80,7 @@ function TopNav(props) {
             </li>
 
             <li className="nav-item  ">
-              <NavLink className="nav-link px-5 ml-5" activeClassName="current" to="/">
+              <NavLink className="nav-link ml-5" activeClassName="current" to="/">
                 Home
               </NavLink>
             </li>
@@ -170,6 +170,7 @@ export const LoginTopNav = () => {
   return (
     <>
       <nav className="container top-navigation navbar navbar-expand-lg navbar-light py-4 backgroundColor_">
+      
         <Link className="navbar-brand" to="#">
           <img
             alt="logo"
@@ -177,8 +178,12 @@ export const LoginTopNav = () => {
             src={require("../../assets/icons/Logo.svg")}
             onClick={handleOnLogoClick}
           />
+
+         <h3 className="the_spinero_mobile">Spinero</h3>
         </Link>
-        <button
+      
+    
+        {/* <button
           className="navbar-toggler"
           type="button"
           data-toggle="collapse"
@@ -188,7 +193,7 @@ export const LoginTopNav = () => {
           aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon"></span>
-        </button>
+        </button> */}
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">

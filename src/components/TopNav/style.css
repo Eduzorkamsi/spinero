@@ -87,6 +87,11 @@ width: 134px;
       
     }
 
+.icon_nav .navbar-nav{
+  display: flex;
+  flex-direction: row;
+}
+
     .nav_tab_home_icon{
       display: flex;
       

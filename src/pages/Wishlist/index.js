@@ -20,9 +20,9 @@ const Wishlist = (props) => {
             <div className="wish_section">
                 <TopNav></TopNav>
                 <div className="wish_section2">
-                    <div className="wishlist_second_nav">
+                    <div className="col-sm wishlist_second_nav">
                         <h3>Wishlist</h3>
-                        <div className="wishlist_continue_shopping">
+                        <div className="col-sm wishlist_continue_shopping">
                             <NavLink to="/">Continue Shopping</NavLink>
                         </div>
                     </div>
