@@ -47,7 +47,7 @@ function TopNav(props) {
 
   return (
     <>
-      <nav className="col-lg-12 container top-navigation navbar navbar-expand-lg navbar-light py-4 backgroundColor_">
+      <nav className="col-md-12 container top-navigation navbar navbar-expand-lg navbar-light py-4 backgroundColor_">
         <Link className="navbar-brand" to="#">
           <img
             alt="logo"

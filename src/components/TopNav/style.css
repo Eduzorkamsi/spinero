@@ -99,7 +99,9 @@ width: 134px;
   
 }
 
-/* @media (max-width: 600px){
-  
+@media (max-width: 426px){
+  .backgroundColor_ {
+    box-sizing: content-box;
+  }
 
- } */
+ } 

@@ -3,6 +3,7 @@
     background: #FBFBFB;
     margin-top: 10px;
     padding: 20px;
+    width: 634px;
 }
 
 .form-control{
@@ -12,4 +13,36 @@
 .input_label_text{
     font-weight: bold;
 }
+@media (max-width:426px){
+    .form-control{
+max-width: 310px!important;
+    }
 
+    .delivery_box2{
+        width: 55%!important;
+    }
+
+    .px-5{
+        padding-right: 0!important;
+    }
+.mt-5{
+    margin-top: 10px!important;
+}
+
+    .form-column{
+        padding-left: 0!important;
+
+    }
+
+    .form-row{
+        padding-left: 0!important;
+    }
+
+    .form-neither{
+        padding-left: 0!important;
+    }
+
+    ._dot_color {
+        color: #ff0000;
+    }
+}

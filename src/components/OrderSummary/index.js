@@ -26,6 +26,9 @@ const OrderSummary = (props) => {
 
     return (
         <>
+        <div className="order_summary">
+
+        
             <div className="delivery_box4">
                 <p>Order summary</p>
                 <img src={require("../../assets/icons/minus.svg")}/>
@@ -69,6 +72,7 @@ const OrderSummary = (props) => {
                     Check Out
                 </div>
             </button>
+            </div>
         </>
     )
 };
