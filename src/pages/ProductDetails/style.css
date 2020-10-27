@@ -1,6 +1,4 @@
-*{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
+
 
 .product_content_details {
     display: flex;
@@ -231,6 +229,18 @@
     font-size: 19.5px;
     line-height: 24px;
     color: #FF0000;
+    text-decoration: underline;
+}
+.add_to_cart:after{
+    content:"+Add to Cart"
+}
+.add_to_cart:focus:after {
+    content: "Added to cart";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 19.5px;
+    line-height: 24px;
+    color: #219653;
     text-decoration: underline;
 }
 

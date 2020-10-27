@@ -59,7 +59,7 @@
     flex-direction: row;
 }
 
-.stripe_logo {
+.creditdebit_logo {
     padding: 20px;
     display: flex;
     flex-direction: row;
@@ -100,3 +100,4 @@
     border: none;
     background: none;
 }
+

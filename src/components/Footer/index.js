@@ -25,6 +25,9 @@ const Footer = () => {
               </ul>
             </div>
           </div>
+          <div className="border_bottom_for_mobile">
+            
+          </div>
           <div className="row">
             <div className="col-md-12 ">
               <ul className="foote_bottom_ul_amrc d-flex justify-content-center">
@@ -39,7 +42,7 @@ const Footer = () => {
           </div>
           <div className="row">
             <div className="col-md-12">
-              <ul className="foote_bottom_ul_amrc ">
+              <ul className="foote_bottom_ul_socials ">
                 <li>
                   <Link to="#">
                     <img alt="socials" src={require("../../assets/icons/ig.svg")} />

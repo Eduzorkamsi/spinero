@@ -74,7 +74,7 @@ function LogIn(props) {
           </div>
           <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 mt-5">
             <div className="container">
-              <h3 className="font-weight-bolder text-center pb-3">Log in and assess our discounts.</h3>
+              <h3 className="create_account_spinero font-weight-bolder text-center pb-3">Log in and assess our discounts.</h3>
               <div className="row">
                 <div className=" col-sm-12 col-xs-12 d-flex justify-content-center">
                   <a href={`${constants.BASE_API}/auth/facebook`}>
@@ -86,7 +86,7 @@ function LogIn(props) {
                 </div>
                 <div className=" col-sm-12 col-xs-12 mt-5">
                   <form onSubmit={doLogin}>
-                    <div className="form-group mx-sm-4 mb-2 px-5">
+                    <div className="form-group mx-sm-4 mb-2 px-5 login_form_group">
                       <label for="email">
                         <span
                           style={{
@@ -100,7 +100,7 @@ function LogIn(props) {
                       <input type="email" required value={email} onChange={e => setEmail(e.target.value)} className="form-control" id="email" placeholder="john@gmail.com" />
                     </div>
 
-                    <div className="form-group mx-sm-4 mb-2 px-5">
+                    <div className="form-group mx-sm-4 mb-2 px-5 last_form_group">
                       <label for="password">
                         <span
                           style={{

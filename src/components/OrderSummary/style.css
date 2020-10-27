@@ -183,3 +183,9 @@ text-align: center;
 
 color: #FFFFFF;
 }
+
+@media (max-width:426px){
+    .order_summary{
+        display: none;
+    }
+}

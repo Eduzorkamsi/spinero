@@ -72,7 +72,7 @@ function SignIn(props) {
           </div>
           <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 mt-5">
             <div className="container">
-              <h3 className="font-weight-bolder text-center pb-3">Create Account</h3>
+              <h3 className="create_account_spinero text-center pb-3">Create Account</h3>
               <div className="row">
                 <div className=" col-sm-12 col-xs-12 d-flex justify-content-center">
                   <a href={`${constants.BASE_API}/auth/facebook`}>
@@ -84,12 +84,11 @@ function SignIn(props) {
                 </div>
                 <div className=" col-sm-12 col-xs-12 mt-5">
                   <form onSubmit={handleNextBtnClick}>
-                    <div className="form-group mx-sm-4 mb-2 px-5">
+                    <div className="form-group mx-sm-4 mb-2 px-5 login_form_group">
                       <label for="firstName">
                         <span
                           style={{
                             fontWeight: "bold",
-                            fontFamily: "Century Gothic"
                           }}
                         >
                           First Name <span className="_dot_color">*</span>
@@ -97,12 +96,13 @@ function SignIn(props) {
                       </label>
                       <input type="text" value={firstName} onChange={e => setFirstName(e.target.value)} required className="form-control" id="firstName" placeholder="john Doe" />
                     </div>
-                    <div className="form-group mx-sm-4 mb-2 px-5">
+                    <div className="form-group mx-sm-4 mb-2 px-5 last_form_group">
                       <label for="lastName">
                         <span
                           style={{
                             fontWeight: "bold",
-                            fontFamily: "Century Gothic"
+                            
+                        
                           }}
                         >
                           Last Name <span className="_dot_color">*</span>
@@ -111,12 +111,12 @@ function SignIn(props) {
                       <input type="text" value={lastName} onChange={e => setLastName(e.target.value)} required className="form-control" id="lastName" placeholder="john Doe" />
                     </div>
 
-                    <div className="form-group mx-sm-4 mb-2 px-5">
+                    <div className="form-group mx-sm-4 mb-2 px-5 last_form_group">
                       <label for="email">
                         <span
                           style={{
                             fontWeight: "bold",
-                            fontFamily: "Century Gothic"
+                            
                           }}
                         >
                           Email <span className="_dot_color">*</span>
@@ -130,7 +130,8 @@ function SignIn(props) {
                         style={{
                           color: "red",
                           fontWeight: "normal",
-                          cursor: "pointer"
+                          cursor: "pointer",
+                          textDecoration: "underline"
                         }}
                         onClick={handleLoginClick}
                       >
@@ -138,7 +139,7 @@ function SignIn(props) {
                     </span>
                     </div>
                     <div className="d-flex justify-content-center pt-5">
-                      <button type="submit" className="btn btn-dark btn-lg px-5 ">
+                      <button type="submit" className="btn btn-dark btn-lg px-5 next_login_button">
                         Next
                       </button>
                     </div>

@@ -64,16 +64,16 @@ function NextSignIn(props) {
           </div>
           <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 mt-5">
             <div className="container">
-              <h3 className="font-weight-bolder text-center pb-3">Create a secure passsword</h3>
+              <h3 className="create_account_spinero font-weight-bolder text-center pb-3">Create a secure passsword</h3>
               <div className="row">
                 <div className=" col-sm-12 col-xs-12 mt-5">
                   <form onSubmit={doRegister}>
-                    <div className="form-group mx-sm-4 mb-2 px-5">
+                    <div className="form-group mx-sm-4 mb-2 px-5 login_form_group">
                       <label for="password">
                         <span
                           style={{
                             fontWeight: "bold",
-                            fontFamily: "Century Gothic"
+                           
                           }}
                         >
                           Password <span className="_dot_color">*</span>
@@ -81,12 +81,12 @@ function NextSignIn(props) {
                       </label>
                       <input type="password" value={password} onChange={e => setPassword(e.target.value)} required className="form-control" id="password" placeholder="*****" />
                     </div>
-                    <div className="form-group mx-sm-4 mb-2 px-5">
+                    <div className="form-group mx-sm-4 mb-2 px-5 last_form_group">
                       <label for="confirmPassword">
                         <span
                           style={{
                             fontWeight: "bold",
-                            fontFamily: "Century Gothic"
+          
                           }}
                         >
                           Confirm Password <span className="_dot_color">*</span>
@@ -97,7 +97,7 @@ function NextSignIn(props) {
                     <div className="d-flex justify-content-center pt-5">
                       <button
                         type="submit"
-                        className="btn btn-dark btn-lg px-5"
+                        className="btn btn-dark btn-lg px-5 next_login_button"
                         style={{ backgroundColor: "#000", fontWeight: "bold", color: "#FBFBFB" }}
                       >
                         Sign In

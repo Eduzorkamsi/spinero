@@ -87,6 +87,11 @@ width: 134px;
       
     }
 
+.icon_nav .navbar-nav{
+  display: flex;
+  flex-direction: row;
+}
+
     .nav_tab_home_icon{
       display: flex;
       
@@ -94,7 +99,33 @@ width: 134px;
   
 }
 
-/* @media (max-width: 600px){
-  
+@media (max-width: 426px){
+  .backgroundColor_ {
+    box-sizing: content-box;
+    max-width: 79.5%;
+  }
 
- } */
+  .spinero_logo{
+    margin-left: -220%;
+  }
+
+  .icon_nav .navbar-nav{
+    margin-left: -40%;
+  }
+
+  /* .navbar-light .navbar-toggler-icon{
+    margin-left: -300%;
+    
+  } */
+
+  .hamburger{
+    margin-left: -20%;
+  }
+
+  .navbar-light{
+    padding-top: 0rem!important;
+    padding-bottom: 0px!important;
+  }
+
+ 
+ } 

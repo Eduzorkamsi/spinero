@@ -1,3 +1,7 @@
+*{
+  font-family: century-gothic, sans-serif!important;
+}
+
 .img-overlay {
   background: #000000 !important;
   opacity: 0.75 !important;
@@ -12,7 +16,6 @@
       -ms-flex-align: center !important;
           align-items: center !important;
   text-align: center !important;
-  font-family: Century Gothic !important;
   font-style: normal !important;
   font-weight: normal !important;
   font-size: 16px !important;
@@ -20,13 +23,18 @@
 }
 
 ._signup_btn {
-  background: #ffffff !important;
+  background: #FBFBFB !important;
   color: #ff0000 !important;
 }
 
 ._login_btn {
   color: #fbfbfb !important;
   background-color: #828282;
+}
+
+.create_account_spinero {
+  font-weight: bold;
+  color: #0D0D0D;
 }
 
 ._dot_color {
@@ -36,4 +44,65 @@
 .form-control {
   border-radius: 0;
 }
+
+.next_login_button{
+  background-color: #0D0D0D!important;
+}
+
+.the_spinero_mobile{
+  visibility: hidden;
+}
+
+
+
 /*# sourceMappingURL=style.css.map */
+
+@media (max-width: 426px){
+  .the_spinero_mobile{
+   visibility: visible!important;
+   margin-left: 5%;
+  }
+
+  .navbar-brand{
+display: flex!important;
+flex-direction: row!important;
+margin-left: 25%;
+}
+
+.img-fluid{
+  display: none;
+}
+
+.btn-style{
+  transform: unset!important;
+  -webkit-transform: unset!important;
+  margin-top: 10%!important;
+  margin-right: 10%!important;
+}
+
+._signup_btn{
+  order: 0;
+
+}
+
+._login_btn{
+  order: 1;
+}
+
+.login_form_group{
+  margin-top: -40px;
+  margin-left: -10%;
+  margin-bottom: 20px!important;
+}
+
+.last_form_group{
+  margin-left: -10%;
+  margin-bottom: 20px!important;
+}
+
+.create_account_spinero{
+font-size: 19.5px;
+line-height: 24px;
+}
+
+}

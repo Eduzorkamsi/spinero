@@ -38,6 +38,7 @@
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
     letter-spacing: 0.05px;
+    white-space: nowrap;
 }
 
 .progress-indicator>li::before {
@@ -99,4 +100,12 @@
 
 .progress-indicator>li.is-current span {
     color:#0D0D0D;
+}
+
+@media (max-width:426px){
+    .progress-indicator {
+        
+        width: 90%;
+        
+    }
 }

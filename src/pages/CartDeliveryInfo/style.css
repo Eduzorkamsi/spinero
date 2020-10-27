@@ -11,7 +11,7 @@
 }
 
 .delivery_box {
-    width: 634px;
+    width: 100%;
     height: 66px;
     background: #FBFBFB;
     display: flex;
@@ -32,8 +32,6 @@
 .delivery_box3 {
     width: 635px;
     height: 66px;
-    left: 165px;
-    top: 1171px;
     /* Light Grey */
     background: #FBFBFB;
     margin-top: 10px;
@@ -53,4 +51,22 @@
     color: #FF0000;
     border: none;
     background: none;
+}
+
+@media (max-width:426px){
+    .delivery_box img{
+      display: none;
+    }
+
+    .delivery_box {
+        max-width: 346px;
+    }
+
+    .delivery_box p {
+        margin-right: 0px!important;
+    }
+
+    .delivery_box3{
+        max-width: 55%;
+    }
 }

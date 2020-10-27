@@ -3,6 +3,7 @@
     background: #FBFBFB;
     margin-top: 10px;
     padding: 20px;
+    width: 634px;
 }
 
 .form-control{
@@ -13,3 +14,41 @@
     font-weight: bold;
 }
 
+.mt5forform{
+    margin-top: 10px!important;
+}
+
+.px5forform{
+    padding-right: 0!important;
+}
+
+
+.form-column{
+    padding-left: 0!important;
+
+}
+
+.form-row{
+    padding-left: 0!important;
+}
+
+.form-neither{
+    padding-left: 0!important;
+}
+
+
+@media (max-width:426px){
+    .form-control{
+max-width: 310px!important;
+    }
+
+    .delivery_box2{
+        width: 55%!important;
+    }
+
+    
+
+    ._dot_color {
+        color: #ff0000;
+    }
+}
