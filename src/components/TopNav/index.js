@@ -51,13 +51,13 @@ function TopNav(props) {
         <Link className="navbar-brand" to="#">
           <img
             alt="logo"
-            className="logo"
+            className="spinero_logo"
             src={require("../../assets/icons/Logo.svg")}
             onClick={handleOnLogoClick}
           />
         </Link>
         <button
-          className="navbar-toggler"
+          className="navbar-toggler hamburger"
           type="button"
           data-toggle="collapse"
           data-target="#navbarSupportedContent"

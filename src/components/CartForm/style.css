@@ -13,6 +13,30 @@
 .input_label_text{
     font-weight: bold;
 }
+
+.mt5forform{
+    margin-top: 10px!important;
+}
+
+.px5forform{
+    padding-right: 0!important;
+}
+
+
+.form-column{
+    padding-left: 0!important;
+
+}
+
+.form-row{
+    padding-left: 0!important;
+}
+
+.form-neither{
+    padding-left: 0!important;
+}
+
+
 @media (max-width:426px){
     .form-control{
 max-width: 310px!important;
@@ -22,25 +46,7 @@ max-width: 310px!important;
         width: 55%!important;
     }
 
-    .px-5{
-        padding-right: 0!important;
-    }
-.mt-5{
-    margin-top: 10px!important;
-}
-
-    .form-column{
-        padding-left: 0!important;
-
-    }
-
-    .form-row{
-        padding-left: 0!important;
-    }
-
-    .form-neither{
-        padding-left: 0!important;
-    }
+    
 
     ._dot_color {
         color: #ff0000;

@@ -140,7 +140,7 @@ const ProductDetails = (props) => {
                     quantity
                   )
                 }}
-              >+Add to Cart</button>
+              ></button>
             </div>
           </div>
         </div>

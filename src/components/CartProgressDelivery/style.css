@@ -102,3 +102,10 @@
     color:#0D0D0D;
 }
 
+@media (max-width:426px){
+    .progress-indicator {
+        
+        width: 90%;
+        
+    }
+}

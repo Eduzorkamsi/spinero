@@ -16,7 +16,6 @@
       -ms-flex-align: center !important;
           align-items: center !important;
   text-align: center !important;
-  font-family: Century Gothic !important;
   font-style: normal !important;
   font-weight: normal !important;
   font-size: 16px !important;
@@ -83,6 +82,7 @@ margin-left: 25%;
 
 ._signup_btn{
   order: 0;
+
 }
 
 ._login_btn{
