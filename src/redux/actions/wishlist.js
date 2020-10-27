@@ -8,7 +8,9 @@ export const addToWishlist = (product) => dispatch => {
   });
 
   var accessToken = localStorage.getItem("token");
-  return Axios.post(`${Constants.BASE_API}/api/wishlist`, { product }, {
+  return Axios.post(`${Constants.BASE_API}/api/wishlist`, {
+    product: typeof product === "object" ? product._id || product.id : product
+  }, {
     "headers": {
       Authorization: `Bearer ${accessToken}`
     },
