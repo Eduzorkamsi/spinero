@@ -22,9 +22,8 @@
 }
 
 div>.continue_shopping {
-    float: right;
     line-height: 23.92px;
-    margin-left: 925px;
+    margin-left: 70.2%;
 }
 
 .fill>.cart_item {
@@ -180,4 +179,18 @@ img.mr-3 {
     color: #828282;
     margin-right: -190px;
     
+}
+
+@media (max-width:426px){
+    .cart_second_nav h3{
+        display: none;
+    }
+
+    .div1{
+        display: none;
+    }
+
+    div>.continue_shopping{
+        margin-left: unset;
+    }
 }

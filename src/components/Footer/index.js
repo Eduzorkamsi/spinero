@@ -5,7 +5,7 @@ import "./style.css";
 const Footer = () => {
   return (
     <>
-      <div className="footer " style={{ backgroundColor: "#0D0D0D", color: "#fff", padding: "3%" }}>
+      <div className="footer " style={{ backgroundColor: "#0D0D0D", color: "#fff", padding: "3%", }}>
         <div className="container ">
           <div className="row">
             <div className="col-md-12 ">
