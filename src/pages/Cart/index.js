@@ -80,7 +80,7 @@ const Cart = (props) => {
                 <div className="cart_product_price">${product.price}</div>
                 <button
                   type="button"
-                  className="no-border no-background"
+                  className="button_times"
                   onClick={() => {
                     props.removeFromCart(product.id);
                   }}
