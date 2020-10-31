@@ -5,7 +5,7 @@
 
 .card_details {
     margin-left: 166px;
-    margin-right: 10px;
+    margin-right: 30px;
 }
 
 .billing_box1 {
@@ -25,7 +25,11 @@
     line-height: 26px;
     /* identical to box height, or 162% */
     color: #000000;
-    margin-right: 484px;
+
+}
+
+.billing_box1 img{
+    margin-left: 80%;
 }
 
 .billing_box2 {
@@ -105,4 +109,30 @@
     font-size: 15px;
     line-height: 20px;
     color: #151522;
+}
+
+@media (max-width: 426px){
+   .billing_box1  {
+max-width: 364px;
+    }
+.billing_box1 img{
+    margin-left: 60%;
+}
+
+    .card_details{
+        margin-left: 5%;
+    }
+
+    .billing_box2{
+        max-width: 364px;
+        height: 440px;
+    }
+
+    .billing_box3{
+        max-width: 364px;
+    }
+
+    .billing_box5{
+        max-width: 364px;
+    }
 }

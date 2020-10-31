@@ -43,7 +43,7 @@ max-width: 310px!important;
     }
 
     .delivery_box2{
-        width: 55%!important;
+        max-width: 364px;
     }
 
     

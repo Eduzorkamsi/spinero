@@ -14,7 +14,7 @@ const CartDeliveryInfo = ({ navigation, shippingInformation, billingInformation,
                 <TopNav></TopNav>
                 <CartProgressDelivery></CartProgressDelivery>
                 <div className="cart_delivery_content">
-                    <div className="cart_delivery_address mx-sm-4 mb-2 px-5">
+                    <div className="cart_delivery_address ">
                         <div className="delivery_box ">
                             <p> Delivery Address</p>
                             <img src={require("../../assets/icons/minus.svg")}/>

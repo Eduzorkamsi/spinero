@@ -46,9 +46,6 @@
 .successful_text4 {
     width: 445px;
     height: 66px;
-    left: 513px;
-    top: 779px;
-    /* Black */
     background: #0D0D0D;
     display: flex;
     align-items: center;
@@ -66,4 +63,10 @@
     text-align: center;
     /* White */
     color: #FFFFFF;
+}
+
+@media (max-width:426px){
+.successful_text4{
+    max-width:364px;
+}
 }

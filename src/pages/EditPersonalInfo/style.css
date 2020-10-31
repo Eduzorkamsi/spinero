@@ -53,11 +53,12 @@
     width: 635px;
     height: 66px;
     background: #FBFBFB;
-    margin-top: 10px;
+    margin-top: 50px;
     margin-bottom: 49px;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: -10px;
 }
 
 .save_changes_box h4 {
@@ -68,3 +69,19 @@
     text-decoration-line: underline;
     color: #FF0000;
 }
+
+ @media (max-width:426px){
+    .edit_profile_box1{
+        max-width: 364px;
+        margin-left: 10px;
+    }
+
+    .edit_personal_form{
+        max-width: 364px;
+        margin-left: 10px;
+    }
+
+    .save_changes_box{
+        width: 364px;
+    }
+} 

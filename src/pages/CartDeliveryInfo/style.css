@@ -3,11 +3,13 @@
     flex-direction: row;
     margin-top: 80px;
     margin-bottom: 120px;
+    
 }
 
 .cart_delivery_address {
     padding-left: 165px;
     padding-right: 32px;
+    
 }
 
 .delivery_box {
@@ -16,6 +18,8 @@
     background: #FBFBFB;
     display: flex;
     flex-direction: row;
+    
+    
 }
 
 .delivery_box p {
@@ -54,12 +58,17 @@
 }
 
 @media (max-width:426px){
+.cart_delivery_address{
+    margin-left: -30%;
+    margin-right: unset;
+}
+
     .delivery_box img{
       display: none;
     }
 
     .delivery_box {
-        max-width: 346px;
+        max-width: 364px;
     }
 
     .delivery_box p {
@@ -67,6 +76,8 @@
     }
 
     .delivery_box3{
-        max-width: 55%;
+        max-width: 364px;
     }
+
+
 }

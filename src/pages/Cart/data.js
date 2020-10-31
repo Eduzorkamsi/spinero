@@ -4,35 +4,35 @@ export const cart = [
       photo: require("../../assets/images/girl.png"),
       price: "200",
       info: "Cotton Turtle Neck",
-      option: "Add to Bag"
+      option: "Add to Cart"
     },
     {
       path: "/",
       photo: require("../../assets/images/girl.png"),
       price: "200",
       info: "Cotton Turtle Neck",
-      option: "Add to Bag"
+      option: "Add to Cart"
     },
     {
       path: "/",
       photo: require("../../assets/images/girl.png"),
       price: "200",
       info: "Cotton Turtle Neck",
-      option: "Add to Bag"
+      option: "Add to Cart"
     },
     {
       path: "/",
       photo: require("../../assets/images/girl.png"),
       price: "200",
       info: "Cotton Turtle Neck",
-      option: "Add to Bag"
+      option: "Add to Cart"
     },
     {
       path: "/",
       photo: require("../../assets/images/girl.png"),
       price: "200",
       info: "Cotton Turtle Neck",
-      option: "Add to Bag"
+      option: "Add to Cart"
     },
     {
       path: "/",

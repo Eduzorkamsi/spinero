@@ -23,7 +23,7 @@
 
 div > .continue_shopping {
   line-height: 23.92px;
-  margin-left: 78%;
+  margin-left: 74%;
 }
 
 .fill > .cart_item {
@@ -88,7 +88,7 @@ div > .continue_shopping {
 }
 
 .mob_cart_total {
-  margin-left: 82%;
+  margin-left: 74%;
   font-style: normal;
   font-weight: bold;
   font-size: 19.5px;
@@ -100,9 +100,10 @@ div > .continue_shopping {
   width: 20px;
   height: 20px;
   padding-left: 0px;
-  margin-left: 10.5%;
+  margin-left: 10%;
   margin-top: 10px;
   border: 1px solid #ba2222;
+  
   /* background: #BA2222; */
 }
 
@@ -116,10 +117,10 @@ img.mr-3 {
   display: flex;
   flex-direction: row;
   margin-top: 100px;
-  margin-right: -150px;
+  margin-right: 100px;
 }
 
-.media_text > p {
+/* .media_text > p {
   margin-left: -165px;
   margin-bottom: 0px;
   margin-top: 210px;
@@ -128,10 +129,10 @@ img.mr-3 {
   font-size: 16px;
   line-height: 26px;
   color: #333333;
-}
+} */
 
 .media_text_button {
-  margin-left: -165px;
+  margin-left: -145px;
   margin-bottom: 0px;
   margin-top: 210px;
   font-style: normal;
@@ -142,7 +143,7 @@ img.mr-3 {
 }
 
 .increment_indicator {
-  margin-left: 21%;
+  margin-left: 25%;
 }
 .media-body div .fa-plus {
   font-size: 8px;
@@ -162,11 +163,11 @@ img.mr-3 {
   font-weight: bold;
   font-size: 16px;
   color: #0d0d0d;
-  margin-left: 21.5%;
+  margin-left: 23%;
 }
 
 .cart_product_price {
-  margin-left: 19.5%;
+  margin-left: 23%;
   font-style: normal;
   font-weight: bold;
   font-size: 19.5px;
