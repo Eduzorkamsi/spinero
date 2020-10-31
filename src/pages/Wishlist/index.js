@@ -33,7 +33,7 @@ const Wishlist = (props) => {
                                     history.push(`/ProductDetails/${product._id}`, product);
                                 }} />
                                 <div className="two">
-                                    <button type="button" className="no-border no-background remove-item" onClick={() => { props.removeWishlistItem(product._id) }}><i className="fas fa-times"></i></button>
+                                    <button type="button" className=" remove-item" onClick={() => { props.removeWishlistItem(product._id) }}><i className="fas fa-times"></i></button>
                                     <button type="button" className="no-border no-background card-title" onClick={() => {
                                         history.push(`/ProductDetails/${product._id}`, product);
                                     }} ><h3>{product.name}</h3></button>

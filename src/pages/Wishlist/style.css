@@ -61,7 +61,7 @@
 
 .two i {
   margin-bottom: -30px !important;
-  margin-right: -1000% !important;
+  margin-right: -800% !important;
   color: #828282;
 }
 
@@ -71,6 +71,8 @@
   color: #828282;
   text-align: right;
   float: right;
+  border: none;
+  background: none;
 }
 
 .two h3 {
@@ -234,7 +236,7 @@
   }
 
   .two h3{
-    margin-left: 10%;
+    margin-left: -77%;
     font-size: 14px;
     margin-top: -10px;
   }
@@ -245,16 +247,37 @@
   }
 
   .two i {
-    margin-bottom: -30px !important;
+    
     margin-right: unset !important;
   
   }
 
   .remove-item{
     margin-right: unset;
+    margin-top: unset;
+    margin-bottom: unset;
+    margin-left: unset;
   }
+
+.two h4{
+  font-size: 14px;
+  margin-left: 6%;
+}
 
   .two p{
     width: unset;
+    margin-top: 10px;
+    margin-left: 25px;
+  }
+
+  .color_palette{
+    margin-left: 25px;
+    margin-top: -30px;
+  }
+
+  .wishlist_size{
+    margin-left: 25px;
+    margin-top: -30px;
+    font-size: 14px;
   }
 }

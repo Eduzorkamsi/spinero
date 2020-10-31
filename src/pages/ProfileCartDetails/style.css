@@ -142,3 +142,20 @@
     line-height: 26px;
     color: #4F4F4F;
 }
+
+@media (max-width:426px){
+    .cart_details_box1{
+        max-width: 364px;
+        margin-left: 10px;
+    }
+
+    .cart_details_box2{
+        max-width: 364px;
+        height: 350px;
+        margin-left: 10px;
+    }
+
+    .cart_details_box3{
+       flex-direction: column; 
+    }
+}

@@ -46,7 +46,7 @@ const ProfileCart = (props) => {
                                                                 <h4>${product.price}</h4>
                                                             </div>
                                                             <div className="profile_cart_inner2">
-                                                                <p className="capitalize-text">Size: {product.size}</p>
+                                                                <p className="">Size: {product.size}</p>
                                                                 <p>Qty: {product.quantity}</p>
                                                                 <p >Color </p>
                                                                 <p className="cart_color_box" style={{ background: `${product.color}` }}></p>
