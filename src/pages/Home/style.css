@@ -62,3 +62,48 @@
 @media (max-width:992px){
   
 }
+
+@media (max-width: 426px) {
+  .h2 {
+    font-size: 19.5px;
+    line-height: 24px;
+  }
+
+  .lorem_check {
+    font-size: 14px;
+    line-height: 17px;
+    margin-top: -45px!important;
+    margin-left: 210px;
+  }
+
+  .lcmarg {
+    margin-top: -80px;
+  }
+
+  .comarg {
+    margin-top: -15px;
+  }
+
+  .lorem2 {
+    width: 100%;
+    font-size: 14px;
+    line-height: 23px;
+    margin-top: -20px;
+  }
+
+  .lorem3 {
+    width: 100%;
+    font-size: 14px;
+    line-height: 23px;
+    margin-top: -20px;
+    margin-left: 17px;
+  }
+
+  .lorem4 {
+    width: 100%;
+    font-size: 14px;
+    line-height: 23px;
+    margin-top: -20px;
+    margin-left: 17px;
+  }
+}

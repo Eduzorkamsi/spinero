@@ -36,7 +36,7 @@ const LatestCollection = (props) => {
           </div>
 
           <div className="col-md-8 col-lg-8 col-sm-8 pt-5 mt-5">
-            <p className="h2" style={{ fontWeight: "bold", color: "#4F4F4F", lineHeight: "59px" }}>
+            <p className="h2 collectionedits" style={{ fontWeight: "bold", color: "#4F4F4F", lineHeight: "59px" }}>
               Latest Collection
             </p>
             <p style={{ color: "#333333", fontSize: "16px" }}>

@@ -90,3 +90,9 @@ ul li i{
 }
 
 /* ------- */
+@media(max-width:426px){
+    .filter_section{
+        visibility: hidden;
+
+}
+}

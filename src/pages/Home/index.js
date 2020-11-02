@@ -133,12 +133,12 @@ const Home = (props) => {
       </div>
       <div className="container pt-5 mt-5 ">
         <div className="row">
-          <div className="col-lg-10 col-md-6 col-sm-6 col-xs-6">
+          <div className="col-lg-10 col-md-6 col-sm-6 col-xs-6 lcmarg">
             <p className="h2" style={{ fontWeight: "bold", color: "#BA2222", lineHeight: "59px" }}>
               Latest Collection
             </p>
             </div>
-            <div className="col-lg-2 col-md-6 col-sm-6 col-xs-6  ">
+            <div className="col-lg-2 col-md-6 col-sm-6 col-xs-6 comarg ">
             <div className="d-flex justify-content-around">
               <Link to="/collections">
                 <p className="lorem_check" style={{ color: "#FF0000", textDecorationLine: "underline", fontWeight: "bold" }}>
@@ -178,10 +178,7 @@ const Home = (props) => {
                 <p className="h2" style={{ fontWeight: "bold", color: "#BA2222", lineHeight: "59px" }}>
                   Women
                 </p>
-                <p className="lorem3" style={{ color: "#333333", fontSize: "16px" }}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas cras lectus magna sodales
-                  aenean condimentum auctor aliquet.{" "}
-                </p>
+                
               </div>
               <div className="col-lg-2 col-md-6 col-sm-6 col-xs-6  ">
                 <div className="d-flex justify-content-around">
@@ -196,6 +193,10 @@ const Home = (props) => {
                   </Link>
                 </div>
               </div>
+              <p className="lorem3" style={{ color: "#333333", fontSize: "16px" }}>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas cras lectus magna sodales
+                  aenean condimentum auctor aliquet.{" "}
+                </p>
             </div>
             <div className="row row-cols-1 row-cols-md-4 pt-3">
               {getCategoryProducts("women")}
@@ -214,10 +215,7 @@ const Home = (props) => {
                 <p className="h2" style={{ fontWeight: "bold", color: "#BA2222", lineHeight: "59px" }}>
                   Men
                 </p>
-                <p className="lorem4" style={{ color: "#333333", fontSize: "16px" }}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas cras lectus magna sodales
-                  aenean condimentum auctor aliquet.{" "}
-                </p>
+              
               </div>
               <div className="col-lg-2 col-md-6 col-sm-6 col-xs-6  ">
                 <div className="d-flex justify-content-around">
@@ -232,6 +230,10 @@ const Home = (props) => {
                   </Link>
                 </div>
               </div>
+              <p className="lorem4" style={{ color: "#333333", fontSize: "16px" }}>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas cras lectus magna sodales
+                  aenean condimentum auctor aliquet.{" "}
+                </p>
             </div>
             <div className="row row-cols-1 row-cols-md-4 pt-3">
               {getCategoryProducts("men")}

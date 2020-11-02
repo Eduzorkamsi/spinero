@@ -47,7 +47,7 @@ export const CollectionHeader = ({ title }) => {
           <div className="col-lg-12 col-md-12 header-banner">
             <div className="content">
               <p
-                className="h1 d-flex justify-content-center titlecase-text"
+                className="h1 d-flex justify-content-center titlecase-text centerboxformobile"
                 style={{
                   fontWeight: "bold",
                   color: "#fff",
