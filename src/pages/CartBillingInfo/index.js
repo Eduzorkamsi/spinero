@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, createRef } from "react";
 import "./style.css";
 import TopNav from "../../components/TopNav";
 import { Elements, CardNumberElement, CardExpiryElement, CardCVCElement, injectStripe } from 'react-stripe-elements';
@@ -11,6 +11,8 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
 const CartBillingInfo = (props) => {
+    const orderSummaryRef = createRef();
+    const cardDetailsRef = createRef();
     const [saveCard, setSaveCard] = useState(false);
     const [stripeToken, setStripeToken] = useState();
     const [enableCheckout, shouldEnableCheckout] = useState(false);
@@ -60,7 +62,9 @@ const CartBillingInfo = (props) => {
     };
 
     useEffect(() => {
-        if (props?.order?.status === "INITIAL") {
+        if (props?.order?.status === "INITIAL" && stripeToken) {
+            orderSummaryRef.current.classList.remove("no-mobile-display");
+            cardDetailsRef.current.classList.add("no-mobile-display");
             shouldEnableCheckout(true);
         }
 
@@ -72,11 +76,11 @@ const CartBillingInfo = (props) => {
                 <TopNav></TopNav>
                 <CartProgressDelivery></CartProgressDelivery>
                 <div className="billing_content">
-                    <div className="card_details">
+                    <div ref={cardDetailsRef} className="card_details">
                         <form onSubmit={e => { e.preventDefault(); payWithStripe(); }}>
                             <div className="billing_box1">
                                 <p>Card Details</p>
-                                <img src={require("..//../assets/icons/minus.svg")} />
+                                <img src={require("..//../assets/icons/minus.svg")} alt="collapse" />
                             </div>
                             <div className="billing_box2">
                                 <div className="form-column">
@@ -123,7 +127,7 @@ const CartBillingInfo = (props) => {
                             </div>
                         </form>
                     </div>
-                    <div className="cart_order_summary">
+                    <div ref={orderSummaryRef} className="cart_order_summary no-mobile-display">
                         <OrderSummary
                             shippingInformation={shippingInformation}
                             billingInformation={billingInformation}

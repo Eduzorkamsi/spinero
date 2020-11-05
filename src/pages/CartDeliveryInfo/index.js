@@ -35,7 +35,7 @@ const CartDeliveryInfo = ({ navigation, shippingInformation, billingInformation,
                             </div>
                         </form>
                     </div>
-                    <div className="cart_order_summary">
+                    <div className="cart_order_summary no-mobile-display">
                         <OrderSummary shippingInformation={shippingInformation} billingInformation={billingInformation} />
                     </div>
                 </div>

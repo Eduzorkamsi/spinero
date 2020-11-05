@@ -184,8 +184,12 @@ text-align: center;
 color: #FFFFFF;
 }
 
-@media (max-width:426px){
+.active_checkout {
+    background: #0D0D0D!important;
+}
+
+/* @media (max-width:426px){
     .order_summary{
         display: none;
     }
-}
+} */

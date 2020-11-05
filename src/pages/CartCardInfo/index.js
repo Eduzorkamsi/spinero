@@ -29,7 +29,8 @@ const CartCardInfo = (props) => {
                 <PayPalButton
                   style={{
                     shape: "pill",
-                    color: "gold",
+                    size: "large",
+                    color: "white",
                     layout: "horizontal",
                     label: "paypal",
                   }}
@@ -120,7 +121,7 @@ const CartCardInfo = (props) => {
               </div>
             </div>
           </div>
-          <div className="cart_order_summary">
+          <div className="cart_order_summary no-mobile-display">
             <OrderSummary
               shippingInformation={shippingInformation}
               billingInformation={billingInformation}

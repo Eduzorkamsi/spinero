@@ -55,6 +55,9 @@ button.no-border:focus, button.no-border:active {
   .back__button{
     display: initial;
   }
+  .no-mobile-display {
+    display: none!important;
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
