@@ -8,10 +8,11 @@
 .filter_section {
     width: 255px;
     margin-top: 240px;
-    background: #FBFBFB;
+    
     line-height: 18px;
    
 }
+
 
 .collapse .card-body{
     background: #FBFBFB;

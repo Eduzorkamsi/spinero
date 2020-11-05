@@ -52,10 +52,11 @@ export const CollectionHeader = ({ title }) => {
                   fontWeight: "bold",
                   color: "#fff",
                   border: "1px solid #E0E0E0",
-                  paddingTop: "10%",
+                  paddingTop: "15%",
                   paddingBottom:"10%",
-                  marginLeft:"30%",
-                  marginRight:"30%"
+                  marginLeft:"25%",
+                  marginRight:"25%",
+                  marginTop: "-10%",
                 }}
               >
                 {title}

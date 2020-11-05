@@ -49,9 +49,21 @@
   background-color: #0D0D0D!important;
 }
 
-.the_spinero_mobile{
-  visibility: hidden;
+.spinero_brand{
+  display: flex;
+  flex-direction: row;
+  margin-left: 40%;
 }
+.the_spinero_mobile{
+  margin-left: 5%;
+ }
+
+ .forloginpage{
+  padding-top: 0rem!important;
+  padding-bottom: 0px!important;
+  width: 100%;
+  min-width: -webkit-fill-available;
+ }
 
 
 

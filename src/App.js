@@ -14,15 +14,17 @@ import Collections from "./pages/Collections";
 import CartMultiStepForm from "./pages/CartMultiStepForm";
 import CartSuccessfulInfo from "./pages/CartSuccessfullInfo";
 import ProductDetails from "./pages/ProductDetails";
-import ProfilePersonalInfo from "./pages/ProfilePersonalInfo";
-import ProfileCart from "./pages/ProfileCart";
-import ProfilePayment from "./pages/ProfilePayment";
+// import ProfilePersonalInfo from "./pages/ProfilePersonalInfo";
+// import ProfileCart from "./pages/ProfileCart";
+// import ProfilePayment from "./pages/ProfilePayment";
+import Profile from  "./pages/ProfileSidebar";
 import EditPersonalInfo from "./pages/EditPersonalInfo";
 import EditPassword from "./pages/EditPassword";
 import ProfileCartDetails from "./pages/ProfileCartDetails"
 import EditPayment from "./pages/EditPayment";
 import SuccessErrorMessages from "./components/SuccessErrorMessages";
 import ProductSearch from "./pages/Search";
+import ProfileSidebar from "./pages/ProfileSidebar";
 
 function App() {
   return (
@@ -40,9 +42,10 @@ function App() {
         <Route path="/category/:categoryId" component={Collections} />
         <Route path="/CartMultiStepForm" component={CartMultiStepForm}/>
         <Route path="/CartSuccessfulInfo" component={CartSuccessfulInfo}/>
-        <Route path="/ProfilePersonalInfo" component={ProfilePersonalInfo}/>
+        <Route path="/Profile" component={ProfileSidebar}/>
+        {/* <Route path="/ProfilePersonalInfo" component={ProfilePersonalInfo}/>
         <Route path="/ProfileCart" component={ProfileCart}/>
-        <Route path="/ProfilePayment" component={ProfilePayment}/>
+        <Route path="/ProfilePayment" component={ProfilePayment}/> */}
         <Route path="/ProductDetails/:productId" component={ProductDetails}/>
         <Route path="/EditPersonalInfo" component={EditPersonalInfo}/>
         <Route path="/EditPassword" component={EditPassword}/>

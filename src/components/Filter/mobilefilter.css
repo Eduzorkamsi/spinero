@@ -1,0 +1,41 @@
+.filters_section {
+    width: 255px;
+    background: transparent;
+    line-height: 18px;
+    visibility: hidden;
+   
+}
+
+.collapse .card.card-body {
+    background: transparent;
+    border: none;
+}
+
+.mobfilterbutton{
+    background-color: transparent;
+    border: none;
+    color: #828282;
+    float: right;
+    margin-top: -55px;
+    margin-right: -52%;
+}
+
+.mobfilterbutton:hover{
+    background-color: transparent;
+    border: none;
+    color: #BA2222;
+}
+
+.mobfilterbutton:focus{
+    background-color: transparent;
+    border: none;
+    color: #BA2222;
+}
+
+
+
+@media (max-width: 426px){
+    .filters_section{
+      visibility: visible;
+    }
+}
