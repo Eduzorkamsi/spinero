@@ -74,7 +74,7 @@ export default (state = initialState, action) => {
       return {
         ...state,
         isLoading: action.isLoading,
-        pendingOrders: action.payload
+        pendingOrders: Array.isArray(action.payload) ? action.payload : []
       }
     case Constants.REQUEST_FAILURE(Constants.PENDING_ORDERS):
       return {

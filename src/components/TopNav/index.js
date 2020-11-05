@@ -44,7 +44,6 @@ function TopNav(props) {
     });
   };
 
-
   return (
     <>
       <nav className="col-md-12 container top-navigation navbar navbar-expand-lg navbar-light py-4 backgroundColor_">
@@ -116,14 +115,14 @@ function TopNav(props) {
                 </li>
                 <li class="nav-item">
                   <button type="button" class="nav-link ml-4 no-background no-border" id="accountDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-           <FamilyIcon active={/ProfilePersonalInfo/i.test(location.pathname)}/>
+           <FamilyIcon active={/profile/i.test(location.pathname)}/>
                   </button>
                   <ul class="dropdown-menu account" aria-labelledby="accountDropdown">
                     {
                       props?.user?._id ? (
                         <>
                           <li class="account_item">
-                            <NavLink className="nav-link ml-4 dropdown-item" to="/ProfilePersonalInfo">
+                            <NavLink className="nav-link ml-4 dropdown-item" to="/profile">
                               Account <i className="fab fa-arrow-right"></i>
                             </NavLink>
                           </li>

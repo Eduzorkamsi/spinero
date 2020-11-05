@@ -19,13 +19,11 @@ const ProfilePayment = (props) => {
 
     return (
         <>
-            <TopNav />
             <div className="profile_payment_info">
-                <ProfilePaymentSidebar />
                 <div className="profile_payment_details">
                     <div className="payment_box1">
                         <p>Card Details</p>
-                        <button className="no-border no-background" onClick={() => history.push("/AddPayment")}>
+                        <button className="no-border no-background" onClick={() => history.push("/profile/payment/new")}>
                             <img src={require("../../assets/icons/minus.svg")} alt="collapse" />
                         </button>
                     </div>
@@ -37,7 +35,6 @@ const ProfilePayment = (props) => {
                     </div>
                 </div>
             </div>
-            <Footer />
         </>
     )
 }

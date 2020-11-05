@@ -23,6 +23,7 @@ import ProfileCartDetails from "./pages/ProfileCartDetails"
 import EditPayment from "./pages/EditPayment";
 import SuccessErrorMessages from "./components/SuccessErrorMessages";
 import ProductSearch from "./pages/Search";
+import ProfileSidebar from "./pages/ProfileSidebar";
 
 function App() {
   return (
@@ -40,16 +41,17 @@ function App() {
         <Route path="/category/:categoryId" component={Collections} />
         <Route path="/CartMultiStepForm" component={CartMultiStepForm}/>
         <Route path="/CartSuccessfulInfo" component={CartSuccessfulInfo}/>
-        <Route path="/ProfilePersonalInfo" component={ProfilePersonalInfo}/>
-        <Route path="/ProfileCart" component={ProfileCart}/>
-        <Route path="/ProfilePayment" component={ProfilePayment}/>
         <Route path="/ProductDetails/:productId" component={ProductDetails}/>
-        <Route path="/EditPersonalInfo" component={EditPersonalInfo}/>
-        <Route path="/EditPassword" component={EditPassword}/>
-        <Route path="/ProfileCartDetails" component={ProfileCartDetails}/>      
+        <Route path="/profile" component={ProfileSidebar} />
         <Route path="/SuccessErrorMessages" component={SuccessErrorMessages}/>
-        <Route path="/AddPayment" component={EditPayment}/>
         <Route path="/ProductSearch" component={ProductSearch}/>
+        {/* <Route path="/ProfilePersonalInfo" component={ProfilePersonalInfo}/> */}
+        {/* <Route path="/ProfileCart" component={ProfileCart}/> */}
+        {/* <Route path="/ProfilePayment" component={ProfilePayment}/> */}
+        {/* <Route path="/EditPersonalInfo" component={EditPersonalInfo}/> */}
+        {/* <Route path="/EditPassword" component={EditPassword}/> */}
+        {/* <Route path="/ProfileCartDetails" component={ProfileCartDetails}/>       */}
+        {/* <Route path="/AddPayment" component={EditPayment}/> */}
       </Switch>
     </Router>
   );

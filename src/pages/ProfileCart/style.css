@@ -1,6 +1,5 @@
 .profile_cart {
-  display: flex;
-  flex-direction: row;
+  display: inline-block;
 }
 
 .profile_cart_info {

@@ -1,3 +1,7 @@
+.profile_person_info {
+  display: inline-block;
+}
+
 .profile_person_info_details {
   display: flex;
   flex-direction: row;

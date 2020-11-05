@@ -4,20 +4,22 @@ import TopNav from "../../components/TopNav";
 import ProfileCartSidebar from "../ProfileSidebar";
 
 import "./style.css"
-import { useLocation } from "react-router-dom";
+import { useLocation, useHistory } from "react-router-dom";
 
 
 
 
 const ProfileCartDetails = () => {
     const location = useLocation();
+    const history = useHistory();
     const order = location.state || {};
 
     return (
         <>
-            <TopNav />
             <div className="profile_cart_details">
-                <ProfileCartSidebar />
+                <div>
+                    <button type="button" onClick={() => { history.push("/profile/orders"); }} className="back__button">Back to Orders</button>
+                </div>
                 <div className="profile_cart_details2">
                     <div className="cart_details_box1">
                         <p>Delivery Details</p>
@@ -47,7 +49,6 @@ const ProfileCartDetails = () => {
                     </div>
                 </div>
             </div>
-            <Footer />
         </>
     )
 }

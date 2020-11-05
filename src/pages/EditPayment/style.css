@@ -1,6 +1,5 @@
 .edit_payment_info{
-    display: flex;
-    flex-direction: row;
+    display: inline-block;
 }
 
 .edit_payment_details{
