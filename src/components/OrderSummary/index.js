@@ -68,7 +68,7 @@ const OrderSummary = (props) => {
             </div>
 
             <button className="box7_checkout no-border no-background" type="button" disabled={!props.enableCheckout} onClick={completeOrder}>
-                <div className="delivery_box7">
+                <div className={`delivery_box7 ${props.enableCheckout ? 'active_checkout' : ''}`}>
                     Check Out
                 </div>
             </button>
