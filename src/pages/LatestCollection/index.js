@@ -8,6 +8,7 @@ import * as actionCreators from "../../redux/actions";
 import { connect } from "react-redux";
 import { useHistory, useLocation } from "react-router-dom";
 import SuccessErrorMessages from "../../components/SuccessErrorMessages";
+import MobileFilter from '../../components/Filter/mobilefilter';
 
 
 const LatestCollection = (props) => {
@@ -39,6 +40,7 @@ const LatestCollection = (props) => {
             <p className="h2 collectionedits" style={{ fontWeight: "bold", color: "#4F4F4F", lineHeight: "59px" }}>
               Latest Collection
             </p>
+            <MobileFilter  setProducts={setProducts} category={category}/>
             <p style={{ color: "#333333", fontSize: "16px" }}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas cras lectus magna sodales
               aenean condimentum auctor aliquet.{" "}

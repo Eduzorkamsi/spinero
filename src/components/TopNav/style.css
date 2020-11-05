@@ -27,6 +27,17 @@ color: #0D0D0D!important;
  background-color: none!important; 
 }
 
+.dropdown-item.active {
+  color: #fff;
+  text-decoration: underline;
+  background-color: transparent;
+  width: auto;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #4F4F4F;
+  background-color: transparent;
+}
 .dropdown-menu.search input:focus, .dropdown-menu.search input:hover {
  
   border: none!important; 

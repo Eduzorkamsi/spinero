@@ -14,9 +14,10 @@ import Collections from "./pages/Collections";
 import CartMultiStepForm from "./pages/CartMultiStepForm";
 import CartSuccessfulInfo from "./pages/CartSuccessfullInfo";
 import ProductDetails from "./pages/ProductDetails";
-import ProfilePersonalInfo from "./pages/ProfilePersonalInfo";
-import ProfileCart from "./pages/ProfileCart";
-import ProfilePayment from "./pages/ProfilePayment";
+// import ProfilePersonalInfo from "./pages/ProfilePersonalInfo";
+// import ProfileCart from "./pages/ProfileCart";
+// import ProfilePayment from "./pages/ProfilePayment";
+import Profile from  "./pages/ProfileSidebar";
 import EditPersonalInfo from "./pages/EditPersonalInfo";
 import EditPassword from "./pages/EditPassword";
 import ProfileCartDetails from "./pages/ProfileCartDetails"

@@ -168,9 +168,9 @@ export const LoginTopNav = () => {
 
   return (
     <>
-      <nav className="container top-navigation navbar navbar-expand-lg navbar-light py-4 backgroundColor_">
+      <nav className="container top-navigation navbar navbar-expand-lg navbar-light py-4 backgroundColor_ forloginpage">
       
-        <Link className="navbar-brand" to="#">
+        <Link className="navbar-brand spinero_brand" to="#">
           <img
             alt="logo"
             className="logo"
@@ -181,7 +181,7 @@ export const LoginTopNav = () => {
          <h3 className="the_spinero_mobile">Spinero</h3>
         </Link>
   
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        {/* <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
           </ul>
 
@@ -203,7 +203,7 @@ export const LoginTopNav = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </nav>
     </>
   );
