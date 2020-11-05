@@ -23,7 +23,7 @@ function NextSignIn(props) {
   const doRegister = (e) => {
     e.preventDefault();
     if (password !== passwordConfirm) {
-      alert("Please confirm your password");
+      alert("Please make sure the password matches");
       return;
     }
 

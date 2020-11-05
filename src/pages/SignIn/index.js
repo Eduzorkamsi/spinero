@@ -7,6 +7,9 @@ import { useHistory, useLocation } from "react-router-dom";
 import "./style.css";
 import constants from "../../constants";
 import qs from "qs";
+import { bindActionCreators } from "redux";
+import * as actionCreators from "../../redux/actions";
+import { connect } from "react-redux";
 
 function SignIn(props) {
   const history = useHistory();
@@ -43,7 +46,7 @@ function SignIn(props) {
       history.push('/')
     }
 
-  }, []);
+  }, [location.search]);
 
   return (
     <>
@@ -154,4 +157,8 @@ function SignIn(props) {
   );
 }
 
-export default SignIn;
+const mapStateToProps = state => ({});
+
+const mapDispatchToProps = dispatch => bindActionCreators(actionCreators, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn);
