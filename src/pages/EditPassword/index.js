@@ -33,7 +33,7 @@ const EditPassword = (props) => {
         } finally {
             setTimeout(() => {
                 shouldShowSuccessErrorMessage(undefined);
-                history.push("/ProfilePersonalInfo");
+                history.push("/profile/personalinfo");
             }, 3000);
         }
     };
@@ -42,10 +42,9 @@ const EditPassword = (props) => {
         showSuccessErrorMessage ?
             <SuccessErrorMessages type={showSuccessErrorMessage.type} error={showSuccessErrorMessage.error} /> :
             <>
-                <TopNav />
                 <div className="edit_password_info">
                     <div>
-                        <ProfileSidebar />
+                    <button type="button" onClick={() => { history.push("/profile/personalinfo");}} className="back__button">Back to Personal Info</button>
                     </div>
                     <div className="edit_password_details">
                         <div className="profile_picture">
@@ -77,7 +76,6 @@ const EditPassword = (props) => {
                         </div>
                     </div>
                 </div>
-                <Footer />
             </>
 
     )

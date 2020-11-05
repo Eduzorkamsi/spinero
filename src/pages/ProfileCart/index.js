@@ -19,9 +19,7 @@ const ProfileCart = (props) => {
 
     return (
         <>
-            <TopNav />
             <div className="profile_cart">
-                <ProfileCartSidebar />
                 <div className="profile_cart_info">
                     <>
                         <div className="profile_cart_info_box6">
@@ -57,7 +55,7 @@ const ProfileCart = (props) => {
                                             }
                                         </div>
                                         <div className="profile_cart_info_box8">
-                                            <NavLink to={{ pathname: "/ProfileCartDetails", state: order}}><h5>View Shipping Details</h5></NavLink>
+                                            <NavLink to={{ pathname: "/profile/orders/info", state: order}}><h5>View Shipping Details</h5></NavLink>
                                             <h6>${order.total}</h6>
                                         </div>
                                     </div>
@@ -99,7 +97,7 @@ const ProfileCart = (props) => {
                                             }
                                         </div>
                                         <div className="profile_cart_info_box8">
-                                        <NavLink to={{ pathname: "/ProfileCartDetails", state: order}}><h5>View Shipping Details</h5></NavLink>
+                                        <NavLink to={{ pathname: "/profile/orders/info", state: order}}><h5>View Shipping Details</h5></NavLink>
                                             <h6>${order.total}</h6>
                                         </div>
                                     </div>
@@ -109,7 +107,6 @@ const ProfileCart = (props) => {
                     </>
                 </div>
             </div>
-            <Footer />
         </>
 
     )

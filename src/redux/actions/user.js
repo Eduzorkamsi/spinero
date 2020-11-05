@@ -21,7 +21,7 @@ export const login = (userDetails, runAfter) => dispatch => {
       error,
       isLoading: false
     });
-    alert("wrong credentials")
+    alert("Invalid username or password. Please confirm credentials or signup for an account.")
   });
 };
 
@@ -45,7 +45,7 @@ export const register = (userDetails, runAfter) => dispatch => {
       error,
       isLoading: false
     });
-    alert("failed validation")
+    alert("Unable to complete registration. Please try again");
   });
 };
 

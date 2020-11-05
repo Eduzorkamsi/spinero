@@ -1,6 +1,5 @@
 .edit_personal_info {
-    display: flex;
-    flex-direction: row;
+    display: inline-block;
     margin-bottom: 40px;
 }
 

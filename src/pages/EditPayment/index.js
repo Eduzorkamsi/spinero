@@ -57,7 +57,7 @@ const EditPayment = (props) => {
         } finally {
             setTimeout(() => {
                 shouldShowSuccessErrorMessage(undefined);
-                history.push("/ProfilePayment");
+                history.push("/profile/payment");
             }, 3000);
         }
     };
@@ -66,9 +66,10 @@ const EditPayment = (props) => {
         showSuccessErrorMessage ?
             <SuccessErrorMessages type={showSuccessErrorMessage.type} error={showSuccessErrorMessage.error} /> :
         <>
-            <TopNav />
             <div className="edit_payment_info">
-                <ProfilePaymentSidebar />
+                <div>
+                <button type="button" onClick={() => { history.push("/profile/payment");}} className="back__button">Back to Personal Info</button>
+                </div>
                 <div className="edit_payment_details">
 
                     <form onSubmit={saveBillingInformation}>
@@ -120,7 +121,6 @@ const EditPayment = (props) => {
 
                 </div>
             </div>
-            <Footer />
         </>
     )
 }

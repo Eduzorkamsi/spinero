@@ -13,16 +13,14 @@ const ProfilePersonalInfo = (props) => {
     return (
         <>
             <div className="profile_person_info">
-                <TopNav />
                 <div className="profile_person_info_details">
-                    <div><ProfileSidebar /></div>
                     <div className="personal_information">
                         <div className="profile_picture">
                             <img src={require("../../assets/images/profileface.svg")} alt="my avatar" />
                         </div>
                         <div className="profile_box1">
                             <p>Personal Information</p>
-                            <NavLink to="/EditPersonalInfo">
+                            <NavLink to="/profile/personalinfo/update">
                                 <img src={require("../../assets/icons/edit.svg")} alt="edit personal information" />
                             </NavLink>
                         </div>
@@ -42,7 +40,7 @@ const ProfilePersonalInfo = (props) => {
                         </div>
                         <div className="profile_box3">
                             <p>Password</p>
-                            <NavLink to="/EditPassword">
+                            <NavLink to="/profile/changepassword">
                                 <img src={require("../../assets/icons/edit.svg")} alt="change password" />
                             </NavLink>
                         </div>
@@ -54,7 +52,7 @@ const ProfilePersonalInfo = (props) => {
                         </div>
                         <div className="profile_box5">
                             <p>Shipping Address</p>
-                            <NavLink to="/EditPersonalInfo">
+                            <NavLink to="/profile/personalinfo/update">
                                 <img src={require("../../assets/icons/edit.svg")} alt="edit shipping address" />
                             </NavLink>
                         </div>
@@ -101,7 +99,6 @@ const ProfilePersonalInfo = (props) => {
                         }
                     </div>
                 </div>
-                <Footer />
             </div>
         </>
     )

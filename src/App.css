@@ -27,6 +27,36 @@ button.no-border:focus, button.no-border:active {
   background: none;
 }
 
+.no-display {
+  display: none!important;
+}
+
+.back__button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: none;
+  display: none;
+  margin-left: 15px;
+  margin-top: 20px;
+}
+
+.back__button:before {
+  content: "";
+  display: inline-block;
+  height: 13px;
+  width: 8px;
+  background: url(./assets/icons/back.svg);
+  margin-right: 15px;
+}
+
+@media (max-width: 426px){
+  .back__button{
+    display: initial;
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
