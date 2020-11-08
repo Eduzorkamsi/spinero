@@ -1,8 +1,11 @@
 import React from "react";
 import TopNav from "../../components/TopNav";
 import "./style.css";
+import { useHistory } from "react-router-dom";
 
-export default function Header({ title, body, buttonTitle, categoryTypes }) {
+export default function Header({ title, body, buttonTitle, categoryTypes = [] }) {
+  const history = useHistory();
+
   return (
     <>
       <div className="container-fluid">
@@ -26,6 +29,13 @@ export default function Header({ title, body, buttonTitle, categoryTypes }) {
                   type="button"
                   className="btn btn-dark btn-lg px-5 "
                   style={{ backgroundColor: "#fff", color: "#0D0D0D" }}
+                  onClick={() => {
+                    const shuffled = Math.round(Math.random() * categoryTypes.length);
+
+                    if (!categoryTypes[shuffled]) return;
+
+                    history.push(`/category/${(categoryTypes[shuffled] || {})._id}`, categoryTypes[shuffled]);
+                  }}
                 >
                   {buttonTitle}
                 </button>

@@ -205,7 +205,7 @@ const Home = (props) => {
         </div>
         <div className="row">
           <div className="col pl-4 pr-4 pb-5 pt-5">
-            <Card />
+            <Card categoryProducts={categoryProducts} />
           </div>
         </div>
         <div className="menSection pt-5 mt-5">
@@ -241,7 +241,7 @@ const Home = (props) => {
           </div>
         </div>
       </div>
-      <Footer />
+      <Footer categoryTypes={props.categoryTypes} />
     </>
   );
 };

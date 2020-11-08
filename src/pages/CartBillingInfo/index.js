@@ -23,7 +23,7 @@ const CartBillingInfo = (props) => {
             setStripeToken(token);
             makeOrder();
         } else {
-            alert("An error occurred. Please confirm the details entered and try again.");
+            alert("An error occurred. Please confirm the card information entered and try again.");
         }
     };
 

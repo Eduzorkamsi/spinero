@@ -50,10 +50,10 @@ const EditPayment = (props) => {
                 });
                 shouldShowSuccessErrorMessage({ type: "SUCCESS" });
             } else {
-                shouldShowSuccessErrorMessage({ type: "ERROR", error: "An error occurred. Please confirm the details entered and try again." });
+                shouldShowSuccessErrorMessage({ type: "ERROR", error: "An error occurred. Please confirm the billing information entered and try again." });
             }
         } catch (error) {
-            shouldShowSuccessErrorMessage({ type: "ERROR", error: "An error occurred. Please confirm the details entered and try again." });
+            shouldShowSuccessErrorMessage({ type: "ERROR", error: "An error occurred. Please confirm the card information entered and try again." });
         } finally {
             setTimeout(() => {
                 shouldShowSuccessErrorMessage(undefined);

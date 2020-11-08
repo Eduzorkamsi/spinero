@@ -44,7 +44,7 @@ function CategoryCollections(props) {
             <p className="h2 collectionedits" style={{ fontWeight: "bold", color: "#4F4F4F", lineHeight: "59px", textTransform: "capitalize" }}>
               {categoryName} Collection
           </p>
-          <MobileFilter  gender={categoryName} setProducts={setProducts} categoryType={categoryId}/>
+            <MobileFilter gender={categoryName} setProducts={setProducts} categoryType={categoryId} />
             <p style={{ color: "#333333", fontSize: "16px" }}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas cras lectus magna sodales
             aenean condimentum auctor aliquet.{" "}
