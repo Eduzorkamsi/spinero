@@ -53,6 +53,7 @@ color: #0D0D0D!important;
   border: none;
   background-color: #ffffff;
   margin-left: 20px;
+ 
 }
 
 .dropdown-menu.search input{
@@ -144,6 +145,18 @@ color: #0D0D0D!important;
     padding-top: 0rem!important;
     padding-bottom: 0px!important;
   }
+
+    /* .navbar-expand-lg .navbar-nav .dropdown-menu.search {
+        margin-left: -30%!important;
+    }
+
+    .dropdown-menu.search input {
+        max-width: 96vw;
+        padding: 10px;
+        margin-left: 45px;
+        height: 100vh ;
+    
+} */
   
 
  
