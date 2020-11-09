@@ -89,8 +89,8 @@ const ProductDetails = (props) => {
               <div className="product_size">
                 <ul>
                   {
-                    product?.sizes?.map((size, i) => (
-                      <li key={i} onClick={() => { setSize(size) }} className="capitalize-text">{size}</li>
+                    product?.sizes?.map((s, i) => (
+                      <li key={i} className={`capitalize-text ${size === s ? "active__size" : ""}`} style={{ cursor: 'pointer' }} onClick={() => { setSize(s) }}>{s}</li>
                     ))
                   }
                 </ul>
@@ -102,8 +102,8 @@ const ProductDetails = (props) => {
               <div className="product_color_palette">
                 <ul>
                   {
-                    product?.colours?.map((colour, i) => (
-                      <li key={i} className="product_color1" onClick={() => { setColour(colour) }} style={{ background: `${colour}` }}></li>
+                    product?.colours?.map((c, i) => (
+                      <li key={i} className={`product_color1 ${colour === c ? "active__colour" : ""}`}><button onClick={() => { setColour(c) }} className="no-border" style={{ background: `${c}`, cursor: 'pointer', height: "20px", width: "20px" }}></button></li>
                     ))
                   }
                 </ul>

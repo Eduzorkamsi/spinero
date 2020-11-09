@@ -14,52 +14,43 @@ import SuccessErrorMessages from "../../components/SuccessErrorMessages";
 
 const Home = (props) => {
   const history = useHistory();
-  const [displayCartSuccess, shouldDisplayCartSuccess] = useState();
+  const [wishlist, setWishlist] = useState([]);
   const [categoryProducts, setCategoryProducts] = useState({});
   const [latestCollection, setLatestCollection] = useState([]);
 
-  const getCartSuccessDisplay = () => (<SuccessErrorMessages type="CART" />);
+  // const getCartSuccessDisplay = () => (<SuccessErrorMessages type="CART" />);
 
   const getCategoryProducts = name => {
     return (categoryProducts[name.toLowerCase()] || { items: [] }).items.map(product => {
       return (
-        displayCartSuccess && displayCartSuccess === product._id ?
-          getCartSuccessDisplay() :
-          <div className="col mb-4" key={product._id}>
-            <div className="card" id="item_card">
-              <img src={product.images[0].url} className="card-img-top" alt="items" onClick={() => {
+        <div className="col mb-4" key={product._id}>
+          <div className="card item_card">
+            <img src={product.images[0].url} className="card-img-top" alt="items" onClick={() => {
+              history.push(`/ProductDetails/${product._id}`, product);
+            }} />
+            <button className={`no-border no-background wishlist__button`} onClick={() => {
+              props.addToWishlist(product);
+              setWishlist(Object.assign({}, wishlist, { [product._id]: true }));
+            }}>
+              <i className={`${wishlist[product._id] ? "fas" : "far"} fa-lg fa-heart`}></i>
+            </button>
+            <div className="card-body _card-content-padding">
+              <button type="button" className="no-border no-background card-title" onClick={() => {
                 history.push(`/ProductDetails/${product._id}`, product);
-              }} />
-              <div className="card-body _card-content-padding">
-                <button type="button" className="no-border no-background card-title" onClick={() => {
+              }} >{product.name}</button>
+              <p className="card-text" style={{ fontWeight: "bold" }}>
+                $ {product.price}
+              </p>
+              <button
+                className="add-to-cart"
+                type="button"
+                onClick={() => {
                   history.push(`/ProductDetails/${product._id}`, product);
-                }} >{product.name}</button>
-                <p className="card-text" style={{ fontWeight: "bold" }}>
-                  $ {product.price}
-                </p>
-                <button
-                  className="add-to-cart"
-                  type="button"
-                  onClick={() => {
-                    props.addToCart(
-                      {
-                        id: product._id,
-                        name: product.name,
-                        price: product.price,
-                        color: "red",
-                        size: "M",
-                        image: product.images[0].url
-                      }
-                    );
-                    shouldDisplayCartSuccess(product._id);
-                    setTimeout(() => {
-                      shouldDisplayCartSuccess(undefined);
-                    }, 2000);
-                  }}
-                >Add to Cart</button>
-              </div>
+                }}
+              >Shop this</button>
             </div>
           </div>
+        </div>
       );
     })
   };
@@ -137,8 +128,8 @@ const Home = (props) => {
             <p className="h2" style={{ fontWeight: "bold", color: "#BA2222", lineHeight: "59px" }}>
               Latest Collection
             </p>
-            </div>
-            <div className="col-lg-2 col-md-6 col-sm-6 col-xs-6 comarg ">
+          </div>
+          <div className="col-lg-2 col-md-6 col-sm-6 col-xs-6 comarg ">
             <div className="d-flex justify-content-around">
               <Link to="/collections">
                 <p className="lorem_check" style={{ color: "#FF0000", textDecorationLine: "underline", fontWeight: "bold" }}>
@@ -147,11 +138,11 @@ const Home = (props) => {
               </Link>
             </div>
           </div>
-            <p className="lorem2" style={{ color: "#333333", fontSize: "16px" }}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas cras lectus magna sodales
+          <p className="lorem2" style={{ color: "#333333", fontSize: "16px" }}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas cras lectus magna sodales
               aenean condimentum auctor aliquet.{" "}
-            </p>
-         
+          </p>
+
 
         </div>
         <div className="row row-cols-1 row-cols-md-2 ">
@@ -178,7 +169,7 @@ const Home = (props) => {
                 <p className="h2" style={{ fontWeight: "bold", color: "#BA2222", lineHeight: "59px" }}>
                   Women
                 </p>
-                
+
               </div>
               <div className="col-lg-2 col-md-6 col-sm-6 col-xs-6  ">
                 <div className="d-flex justify-content-around">
@@ -187,16 +178,16 @@ const Home = (props) => {
                       pathname: `/category/${(categoryProducts["women"] || { id: "" }).id}`,
                       state: (categoryProducts["women"] || { info: {} }).info
                     }}
-                    className="lorem_check" style={{ color: "#FF0000", fontWeight: "bold" , marginTop: "15px"}}
+                    className="lorem_check" style={{ color: "#FF0000", fontWeight: "bold", marginTop: "15px" }}
                   >
                     Check it out
                   </Link>
                 </div>
               </div>
               <p className="lorem3" style={{ color: "#333333", fontSize: "16px" }}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas cras lectus magna sodales
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas cras lectus magna sodales
                   aenean condimentum auctor aliquet.{" "}
-                </p>
+              </p>
             </div>
             <div className="row row-cols-1 row-cols-md-4 pt-3">
               {getCategoryProducts("women")}
@@ -215,7 +206,7 @@ const Home = (props) => {
                 <p className="h2" style={{ fontWeight: "bold", color: "#BA2222", lineHeight: "59px" }}>
                   Men
                 </p>
-              
+
               </div>
               <div className="col-lg-2 col-md-6 col-sm-6 col-xs-6  ">
                 <div className="d-flex justify-content-around">
@@ -224,16 +215,16 @@ const Home = (props) => {
                       pathname: `/category/${(categoryProducts["men"] || { id: "" }).id}`,
                       state: (categoryProducts["men"] || { info: {} }).info
                     }}
-                    className="lorem_check" style={{ color: "#FF0000", fontWeight: "bold" , margintTop: "15px" }}
+                    className="lorem_check" style={{ color: "#FF0000", fontWeight: "bold", margintTop: "15px" }}
                   >
                     Check it out
                   </Link>
                 </div>
               </div>
               <p className="lorem4" style={{ color: "#333333", fontSize: "16px" }}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas cras lectus magna sodales
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas cras lectus magna sodales
                   aenean condimentum auctor aliquet.{" "}
-                </p>
+              </p>
             </div>
             <div className="row row-cols-1 row-cols-md-4 pt-3">
               {getCategoryProducts("men")}
@@ -248,7 +239,8 @@ const Home = (props) => {
 
 const mapStateToProps = state => ({
   ...state.home,
-  product: state.product || {}
+  product: state.product || {},
+  user: state.user || {}
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators(actionCreators, dispatch);

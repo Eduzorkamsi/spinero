@@ -14,7 +14,7 @@ function CategoryCollections(props) {
   const location = useLocation();
   const history = useHistory();
   const [products, setProducts] = useState();
-  const [displayCartSuccess, shouldDisplayCartSuccess] = useState();
+  const [wishlist, setWishlist] = useState([]);
 
   const { categoryId } = urlParams.params;
   const categoryInfo = location.state;
@@ -52,43 +52,34 @@ function CategoryCollections(props) {
             <div className="row row-cols-1 row-cols-md-3 pt-3">
               {(products || props.product.categoryTypeProducts).map((data, index) => {
                 return (
-                  displayCartSuccess && displayCartSuccess === data._id ?
-                    getCartSuccessDisplay() :
-                    <div className="col mb-4" key={index} onClick={() => { }}>
-                      <div className="card" id="item_card">
-                        <img src={data.images[0].url} className="card-img-top" alt="items" onClick={() => {
+                  <div className="col mb-4" key={index} onClick={() => { }}>
+                    <div className="card item_card">
+                      <img src={data.images[0].url} className="card-img-top" alt="items" onClick={() => {
+                        history.push(`/ProductDetails/${data._id}`, data);
+                      }} />
+                      <button className={`no-border no-background wishlist__button`} onClick={() => {
+                        props.addToWishlist(data);
+                        setWishlist(Object.assign({}, wishlist, { [data._id]: true }));
+                      }}>
+                        <i className={`${wishlist[data._id] ? "fas" : "far"} fa-lg fa-heart`}></i>
+                      </button>
+                      <div className="card-body">
+                        <button type="button" className="no-border no-background card-title" onClick={() => {
                           history.push(`/ProductDetails/${data._id}`, data);
-                        }} />
-                        <div className="card-body">
-                          <button type="button" className="no-border no-background card-title" onClick={() => {
+                        }} >{data.name}</button>
+                        <p className="card-text" style={{ fontWeight: "bold" }}>
+                          $ {data.price}
+                        </p>
+                        <button
+                          className="add-to-cart"
+                          type="button"
+                          onClick={() => {
                             history.push(`/ProductDetails/${data._id}`, data);
-                          }} >{data.name}</button>
-                          <p className="card-text" style={{ fontWeight: "bold" }}>
-                            $ {data.price}
-                          </p>
-                          <button
-                            className="add-to-cart"
-                            type="button"
-                            onClick={() => {
-                              props.addToCart(
-                                {
-                                  id: data._id,
-                                  name: data.name,
-                                  price: data.price,
-                                  color: "red",
-                                  size: "M",
-                                  image: data.images[0].url
-                                }
-                              );
-                              shouldDisplayCartSuccess(data._id);
-                              setTimeout(() => {
-                                shouldDisplayCartSuccess(undefined);
-                              }, 2000);
-                            }}
-                          >Add to Cart</button>
-                        </div>
+                          }}
+                        >Shop this</button>
                       </div>
                     </div>
+                  </div>
                 );
               })}
             </div>
