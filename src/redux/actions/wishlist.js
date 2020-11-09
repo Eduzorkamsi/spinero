@@ -1,6 +1,13 @@
 import Axios from 'axios';
 import Constants from '../../constants';
 
+Axios.interceptors.response.use(response => response, error => {
+  if (401 === error.response.status && !/login/i.test(window.location.pathname)) {
+      window.location.pathname = "/login";
+  }
+  return error;
+});
+
 export const addToWishlist = (product) => dispatch => {
   dispatch({
     type: Constants.REQUEST(Constants.ADD_TO_WISHLIST),

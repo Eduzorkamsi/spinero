@@ -1,6 +1,13 @@
 import Constants from "../../constants";
 import Axios from "axios";
 
+Axios.interceptors.response.use(response => response, error => {
+  if (401 === error.response.status && !/login/i.test(window.location.pathname)) {
+    window.location.pathname = "/login";
+  }
+  return error;
+});
+
 export const createStripeCharge = details => dispatch => {
   dispatch({
     type: Constants.REQUEST(Constants.CREATE_STRIPE_CHARGE),
