@@ -18,12 +18,18 @@ export const login = (userDetails, runAfter) => dispatch => {
   }).catch(error => {
     dispatch({
       type: Constants.REQUEST_FAILURE(Constants.SIGNIN),
-      error,
+      error: "Invalid username or password. Please confirm credentials or signup for an account.",
       isLoading: false
     });
-    alert("Invalid username or password. Please confirm credentials or signup for an account.")
+    setTimeout(() => {
+      dispatch(clearError());
+    }, 3000);
   });
 };
+
+export const clearError = () => ({
+  type: Constants.CLEAR_USER_ERROR
+})
 
 export const register = (userDetails, runAfter) => dispatch => {
   dispatch({
@@ -42,10 +48,12 @@ export const register = (userDetails, runAfter) => dispatch => {
   }).catch(error => {
     dispatch({
       type: Constants.REQUEST_FAILURE(Constants.SIGNUP),
-      error,
+      error: "Unable to complete registration. Please try again",
       isLoading: false
     });
-    alert("Unable to complete registration. Please try again");
+    setTimeout(() => {
+      dispatch(clearError());
+    }, 3000);
   });
 };
 
@@ -69,6 +77,9 @@ export const socialLogin = (type, query, runAfter) => dispatch => {
       error,
       isLoading: false
     });
+    setTimeout(() => {
+      dispatch(clearError());
+    }, 3000);
   });
 };
 
@@ -96,6 +107,9 @@ export const updateUserProfileDetail = (newUserDetail) => dispatch => {
         error,
         isLoading: false
       });
+      setTimeout(() => {
+        dispatch(clearError());
+      }, 3000);
       throw error;
     });
 };
@@ -132,6 +146,9 @@ export const updateUserPassword = (passwordInfo) => dispatch => {
         isLoading: false,
         error,
       });
+      setTimeout(() => {
+        dispatch(clearError());
+      }, 3000);
       throw error;
     });
 };
@@ -159,6 +176,9 @@ export const getUserSavedCardDetails = () => dispatch => {
       error,
       isLoading: false
     });
+    setTimeout(() => {
+      dispatch(clearError());
+    }, 3000);
   });
 };
 
@@ -188,6 +208,9 @@ export const saveCardAndBillingInfo = (cardDetail) => dispatch => {
         error,
         isLoading: false
       });
+      setTimeout(() => {
+        dispatch(clearError());
+      }, 3000);
       throw error;
     });
 };
@@ -215,5 +238,8 @@ export const deleteSavedCard = cardId => dispatch => {
       error,
       isLoading: false
     });
+    setTimeout(() => {
+      dispatch(clearError());
+    }, 3000);
   });
 };

@@ -144,6 +144,11 @@ export default (state = {}, action) => {
         isLoading: action.isLoading,
         error: action.error
       }
+    case Constants.CLEAR_USER_ERROR:
+      return {
+        ...state,
+        error: undefined
+      };
     default: {
       return state;
     }
