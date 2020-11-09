@@ -6,7 +6,6 @@ import { useRouteMatch, useLocation, useHistory } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import * as actionCreators from "../../redux/actions";
 import { connect } from 'react-redux';
-import SuccessErrorMessages from '../../components/SuccessErrorMessages';
 import MobileFilter from '../../components/Filter/mobilefilter';
 
 function CategoryCollections(props) {
@@ -14,13 +13,11 @@ function CategoryCollections(props) {
   const location = useLocation();
   const history = useHistory();
   const [products, setProducts] = useState();
-  const [wishlist, setWishlist] = useState([]);
+  const [wishlist, setWishlist] = useState({});
 
   const { categoryId } = urlParams.params;
   const categoryInfo = location.state;
   const categoryName = (categoryInfo.name || "").toLowerCase();
-
-  const getCartSuccessDisplay = () => (<SuccessErrorMessages type="CART" />);
 
   useEffect(() => {
     props.getProductsByCategoryType(categoryId);

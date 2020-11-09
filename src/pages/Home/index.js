@@ -10,15 +10,12 @@ import Footer from "../../components/Footer";
 import { Link, NavLink as button, useHistory } from "react-router-dom";
 import Axios from "axios";
 import constants from "../../constants";
-import SuccessErrorMessages from "../../components/SuccessErrorMessages";
 
 const Home = (props) => {
   const history = useHistory();
-  const [wishlist, setWishlist] = useState([]);
+  const [wishlist, setWishlist] = useState({});
   const [categoryProducts, setCategoryProducts] = useState({});
   const [latestCollection, setLatestCollection] = useState([]);
-
-  // const getCartSuccessDisplay = () => (<SuccessErrorMessages type="CART" />);
 
   const getCategoryProducts = name => {
     return (categoryProducts[name.toLowerCase()] || { items: [] }).items.map(product => {

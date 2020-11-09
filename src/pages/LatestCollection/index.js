@@ -7,7 +7,6 @@ import { bindActionCreators } from "redux";
 import * as actionCreators from "../../redux/actions";
 import { connect } from "react-redux";
 import { useHistory, useLocation } from "react-router-dom";
-import SuccessErrorMessages from "../../components/SuccessErrorMessages";
 import MobileFilter from '../../components/Filter/mobilefilter';
 
 
@@ -15,9 +14,7 @@ const LatestCollection = (props) => {
   const history = useHistory();
   const { category } = useLocation().state || {};
   const [products, setProducts] = useState();
-  const [wishlist, setWishlist] = useState([]);
-
-  // const getCartSuccessDisplay = () => (<SuccessErrorMessages type="CART" />);
+  const [wishlist, setWishlist] = useState({});
 
   useEffect(() => {
     props.getLatestCollection(1);
