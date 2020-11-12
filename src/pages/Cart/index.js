@@ -6,6 +6,7 @@ import { NavLink, useHistory } from "react-router-dom";
 import { bindActionCreators } from "redux";
 import * as actionCreators from "../../redux/actions";
 import { connect } from "react-redux";
+import { CartMobile } from "./indexmobile";
 
 const Cart = (props) => {
   const history = useHistory();
@@ -28,6 +29,7 @@ const Cart = (props) => {
             <li className="cart_li">Price</li>
           </ul>
         </div>
+        <CartMobile/>
         <div className="div2">
           {props.cart.products.map((product, i) => (
             <div className="media" key={i}>
@@ -91,6 +93,7 @@ const Cart = (props) => {
             </div>
           ))}
         </div>
+        
         <div className="div3">
           <div className="mob_check_cart">
             <NavLink to="/CartMultiStepForm" classname="check_cart" href="">

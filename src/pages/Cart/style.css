@@ -187,7 +187,11 @@ img.mr-3 {
   font-size:large;
   
 }
-
+@media (min-width: 426px){
+  .div2_mobile{
+    display: none;
+  }
+}
 @media (max-width: 426px) {
 img.mr-3{
   margin-right: -15px!important;
@@ -198,6 +202,10 @@ img.mr-3{
   }
 
   .div1 {
+    display: none;
+  }
+
+  .div2{
     display: none;
   }
 
