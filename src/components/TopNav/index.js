@@ -90,9 +90,19 @@ function TopNav(props) {
             <div className="icon_nav" id="navbarIcon">
               <ul className="navbar-nav">
                 <li class="nav-item">
-                  <button type="button" className="nav-link ml-4 no-background no-border" id="searchDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <SearchIcon active={/ProductSearch/i.test(location.pathname)}/>
-                                  </button>
+                <div id="myOverlay" class="overlay">
+  <span class="closebtn" onclick="closeSearch()" title="Close Overlay">×</span>
+  <div class="overlay-content">
+    {/* <form action="/action_page.php"> */}
+      <input type="text" placeholder="Search.." name="search"/>
+      <button type="submit"><i class="fa fa-search"></i></button>
+    {/* </form> */}
+  </div>
+</div>
+
+                  {/* <button type="button" className="nav-link ml-4 no-background no-border" id="searchDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> */}
+                  <button class="openBtn" onclick="openSearch()"><SearchIcon active={/ProductSearch/i.test(location.pathname)}/></button> 
+                                  {/* </button> */}
                   <ul className="col-lg-9 dropdown-menu search" aria-labelledby="searchDropdown">
                     <li className="search_item">
                       <form onSubmit={e => { e.preventDefault(); history.push("/ProductSearch", { searchText }) }}>
@@ -151,6 +161,7 @@ function TopNav(props) {
     </>
   );
 }
+
 
 const mapStateToProps = state => ({
   ...state.home,
