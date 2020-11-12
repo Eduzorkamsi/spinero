@@ -98,7 +98,7 @@ const MobileFilter = (props) => {
                     <li className="titlecase-text">{props.gender}</li>
                   ) : (
                     <>
-                      <li>
+                      <li className={filter.categoryType === "Men" ? "active__filter" : ""}>
                         <button
                           className="no-border no-background"
                           onClick={() =>
@@ -109,7 +109,7 @@ const MobileFilter = (props) => {
                           Men
                         </button>
                       </li>
-                      <li>
+                      <li className={filter.categoryType === "Women" ? "active__filter" : ""}>
                         <button
                           className="no-border no-background"
                           onClick={() =>
@@ -155,11 +155,10 @@ const MobileFilter = (props) => {
                       !props.categoryType
                     ) {
                       acc.push(
-                        <li key={category._id}>
+                        <li key={category._id} className={filter.category === (category[props.categorySelector] || category._id) ? "active__filter" : ""}>
                           <button
                             className="no-border no-background titlecase-text"
                             style={{
-                              lineHeight: "18px",
                               marginBottom: "20px",
                               color: "#828282",
                             }}

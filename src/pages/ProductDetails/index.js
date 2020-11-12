@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Footer from "..//../components/Footer";
 import TopNav from "../../components/TopNav";
 import "./style.css";
-import { useLocation, useRouteMatch } from "react-router-dom";
+import { useLocation, useRouteMatch, useHistory } from "react-router-dom";
 import Axios from "axios";
 import constants from "../../constants";
 import { bindActionCreators } from "redux";
@@ -11,9 +11,11 @@ import { connect } from "react-redux";
 
 const ProductDetails = (props) => {
   const location = useLocation();
+  const history = useHistory();
   const routeParams = useRouteMatch().params;
   const [product, setProduct] = useState(location.state || {});
   const [similarProducts, setSimilarProducts] = useState([]);
+  const [wishlist, setWishlist] = useState({});
   const [size, setSize] = useState("M");
   const [colour, setColour] = useState();
   const [quantity, setQuantity] = useState(1);
@@ -27,7 +29,7 @@ const ProductDetails = (props) => {
   }
 
   useEffect(() => {
-    if (!Object.keys(product).length) {
+    if (!Object.keys((location.state || {})).length) {
       Axios.get(`${constants.BASE_API}/api/product/${routeParams.productId}`).then(res => res.data && res.data.data).then((data = {}) => {
         setProduct(data);
       }).catch(error => {
@@ -35,7 +37,7 @@ const ProductDetails = (props) => {
       });
     }
 
-  }, []);
+  }, [routeParams.productId, location.state]);
 
   useEffect(() => {
     findSimilarProducts();
@@ -89,8 +91,8 @@ const ProductDetails = (props) => {
               <div className="product_size">
                 <ul>
                   {
-                    product?.sizes?.map((size, i) => (
-                      <li key={i} onClick={() => { setSize(size) }} className="capitalize-text">{size}</li>
+                    product?.sizes?.map((s, i) => (
+                      <li key={i} className={`capitalize-text ${size === s ? "active__size" : ""}`} style={{ cursor: 'pointer' }} onClick={() => { setSize(s) }}>{s}</li>
                     ))
                   }
                 </ul>
@@ -102,8 +104,8 @@ const ProductDetails = (props) => {
               <div className="product_color_palette">
                 <ul>
                   {
-                    product?.colours?.map((colour, i) => (
-                      <li key={i} className="product_color1" onClick={() => { setColour(colour) }} style={{ background: `${colour}` }}></li>
+                    product?.colours?.map((c, i) => (
+                      <li key={i} className={`product_color1 ${colour === c ? "active__colour" : ""}`}><button onClick={() => { setColour(c) }} className="no-border" style={{ background: `${c}`, cursor: 'pointer', height: "20px", width: "20px" }}></button></li>
                     ))
                   }
                 </ul>
@@ -149,7 +151,7 @@ const ProductDetails = (props) => {
           <div className="similar_items">
             {
               similarProducts?.map(product => (
-                <div key={product.id} className="similar_item1">
+                <div key={product.id} className="similar_item1 item_card">
                   <img style={{ width: "255px", height: "340px" }} src={product.images[0].url} alt="Similar item" />
                   <p className="p1">{product.name}</p>
                   <p className="p2">${product.price}</p>
@@ -157,18 +159,9 @@ const ProductDetails = (props) => {
                     className="no-border no-background add-to-cart"
                     type="button"
                     onClick={() => {
-                      props.addToCart(
-                        {
-                          id: product.id,
-                          name: product.name,
-                          price: product.price,
-                          color: "red",
-                          size: "M",
-                          image: product.images[0].url
-                        }
-                      )
+                      history.push(`/ProductDetails/${product.id}`);
                     }}
-                  >Add to Cart</button>
+                  >Shop this</button>
                 </div>
               ))
             }

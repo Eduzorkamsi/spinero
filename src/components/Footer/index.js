@@ -1,8 +1,20 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./style.css";
 
-const Footer = () => {
+const Footer = ({ categoryTypes = [] }) => {
+  const showCategoryTypes = () => {
+    return categoryTypes.map((categoryType, i) => {
+      return (
+        <li key={i}>
+          <NavLink className="titlecase-text" to={{ pathname: `/category/${categoryType._id}`, state: categoryType }}>
+            {categoryType.name.toLowerCase().replace(/\b(\w)/g, x => x.toUpperCase())}
+          </NavLink>
+        </li>
+      )
+    });
+  };
+
   return (
     <>
       <div className="footer " style={{ backgroundColor: "#0D0D0D", color: "#fff", padding: "3%", }}>
@@ -13,20 +25,17 @@ const Footer = () => {
                 <li>
                   <Link to="/">Home</Link>
                 </li>
+                {
+                  showCategoryTypes()
+                }
                 <li>
-                  <Link to="/women">Women</Link>
-                </li>
-                <li>
-                  <Link to="/men">Men</Link>
-                </li>
-                <li>
-                <Link to="/collections">Latest Collection</Link>
+                  <Link to="/collections">Latest Collection</Link>
                 </li>
               </ul>
             </div>
           </div>
           <div className="border_bottom_for_mobile">
-            
+
           </div>
           <div className="row">
             <div className="col-md-12 ">

@@ -21,7 +21,7 @@ const EditPassword = (props) => {
         e.preventDefault();
 
         if (newPassword !== confirmPassword) {
-            alert("Confirm new password");
+            shouldShowSuccessErrorMessage({ type: "ERROR", error: "New password and confirmation do not match." });
             return;
         }
 
@@ -44,7 +44,7 @@ const EditPassword = (props) => {
             <>
                 <div className="edit_password_info">
                     <div>
-                    <button type="button" onClick={() => { history.push("/profile/personalinfo");}} className="back__button">Back to Personal Info</button>
+                        <button type="button" onClick={() => { history.push("/profile/personalinfo"); }} className="back__button">Back to Personal Info</button>
                     </div>
                     <div className="edit_password_details">
                         <div className="profile_picture">

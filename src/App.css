@@ -51,6 +51,16 @@ button.no-border:focus, button.no-border:active {
   margin-right: 15px;
 }
 
+.item_card {
+  position: relative;
+}
+
+.item_card .wishlist__button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
 @media (max-width: 426px){
   .back__button{
     display: initial;

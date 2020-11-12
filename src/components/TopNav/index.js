@@ -181,7 +181,7 @@ export const LoginTopNav = () => {
     <>
       <nav className="container top-navigation navbar navbar-expand-lg navbar-light py-4 backgroundColor_ forloginpage">
       
-        <Link className="navbar-brand spinero_brand" to="#">
+        <Link className="navbar-brand spinero_brand" to="/">
           <img
             alt="logo"
             className="logo"

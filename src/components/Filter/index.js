@@ -66,8 +66,8 @@ const Filter = (props) => {
                                         props.gender ?
                                             <li className="titlecase-text">{props.gender}</li> :
                                             <>
-                                                <li><button className="no-border no-background" onClick={() => setFilter({ ...filter, categoryType: "Men" })} type="button">Men</button></li>
-                                                <li><button className="no-border no-background" onClick={() => setFilter({ ...filter, categoryType: "Women" })} type="button">Women</button></li>
+                                                <li className={filter.categoryType === "Men" ? "active__filter" : ""}><button className="no-border no-background" onClick={() => setFilter({ ...filter, categoryType: "Men" })} type="button">Men</button></li>
+                                                <li className={filter.categoryType === "Women" ? "active__filter" : ""}><button className="no-border no-background" onClick={() => setFilter({ ...filter, categoryType: "Women" })} type="button">Women</button></li>
                                             </>
                                     }
                                 </ul>
@@ -89,10 +89,10 @@ const Filter = (props) => {
                                         categories.reduce((acc, category) => {
                                             if (props.categoryType === category?.type?._id || !props.categoryType) {
                                                 acc.push(
-                                                    <li key={category._id}>
+                                                    <li key={category._id} className={filter.category === (category[props.categorySelector] || category._id) ? "active__filter" : ""}>
                                                         <button
                                                             className="no-border no-background titlecase-text"
-                                                            style={{ lineHeight: "18px", marginBottom: "20px", color: "#828282" }}
+                                                            style={{ marginBottom: "20px", color: "#828282" }}
                                                             onClick={() => setFilter({ ...filter, category: category[props.categorySelector] || category._id })}
                                                             type="button">
                                                             {category.name.toLowerCase()}
