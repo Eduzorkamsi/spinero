@@ -103,7 +103,7 @@ function TopNav(props) {
           <div className="icon_nav" id="navbarIcon">
             <ul className="navbar-nav">
          <SearchOverlay/>
-               {/* <li class="nav-item">
+                <li class="nav-item overlay_search_desktop">
                 <button
                   type="button"
                   className="nav-link no-background no-border searchoverlay"
@@ -145,7 +145,7 @@ function TopNav(props) {
                     </form>
                   </li>
                 </ul>
-              </li>  */}
+              </li>  
               <li class="nav-item">
                 <NavLink className="nav-link ml-4" to="/wishlist">
                   <Heart active={/wishlist/i.test(location.pathname)} />

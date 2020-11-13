@@ -1,5 +1,4 @@
 import React, { useRef, useState } from "react";
-import "./overlay.css";
 import SearchIcon from "../searchicon";
 import Button from "react-bootstrap/Button";
 import Overlay from "react-bootstrap/Overlay";
@@ -11,7 +10,8 @@ function SearchOverlay() {
 
   return (
     <>
-      <Button variant="" ref={target} onClick={() => setShow(!show)}>
+    <div className="overlay_search_mobile">
+    <Button variant="" ref={target} onClick={() => setShow(!show)}>
         <SearchIcon />
       </Button>
       <Overlay target={target.current} show={show} placement="right">
@@ -21,9 +21,9 @@ function SearchOverlay() {
             style={{
               backgroundColor: "white",
               textAlign: "center",
-              width: "112.5%",
+              width: "100%",
               height: "100vh",
-              marginLeft: "-90%",
+              marginLeft: "-36%",
               color: "green",
               borderRadius: 3,
               ...props.style,
@@ -48,7 +48,7 @@ function SearchOverlay() {
             </button>
             <input
             style={{
-              width:"30%",
+              width:"60%",
             }}
               className="searchInput"
               type="text"
@@ -57,6 +57,8 @@ function SearchOverlay() {
           </div>
         )}
       </Overlay>
+    </div>
+      
     </>
   );
 }

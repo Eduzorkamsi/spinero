@@ -141,7 +141,17 @@ color: #0D0D0D!important;
 }
 }
 
+@media (min-width: 426px){
+  .overlay_search_mobile{
+    display: none;
+  }
+}
+
 @media (max-width: 426px){
+.overlay_search_desktop{
+  display: none;
+}
+
   .backgroundColor_ {
     box-sizing: content-box;
     max-width: 79.5%;
