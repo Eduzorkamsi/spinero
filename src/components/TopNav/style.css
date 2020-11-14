@@ -89,6 +89,11 @@ color: #0D0D0D!important;
   width: 100%
 }
 
+.navbar-nav .dropdown-menu {
+  position: absolute;
+  float: none;
+}
+
 /* .overlaySearch {
   transition: .5s ease;
   opacity: 1;
@@ -183,10 +188,7 @@ color: #0D0D0D!important;
   .navbar-expand-lg .navbar-nav .account {
     margin-left: 20%;
 }
-.navbar-nav .dropdown-menu {
-    position: absolute;
-    float: none;
-}
+
  
  } 
 
