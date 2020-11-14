@@ -166,3 +166,45 @@
     
 }
 
+@media (min-width: 426px){
+    .fixed_search_for_mobile{
+      display: none;
+      visibility: hidden;
+    }
+  }
+  
+  @media (max-width: 426px){
+  .fixed_search_for_desktop{
+    display: none;
+    visibility: hidden;
+  }
+}
+  
+
+@media (max-width:426px){
+    .product_search{
+        margin-left: -40%;
+        
+    }
+
+    .search_results{
+        margin-left: -10%;
+        margin-right: -100%;
+    }
+
+    .search_results h3{
+        font-size: 24px;
+    }
+
+    .result_next{
+        border-top: none;
+    }
+
+    .result_box1{
+        width: 100%;
+    }
+
+    .add-to-cart{
+        width: max-content;
+    }
+}

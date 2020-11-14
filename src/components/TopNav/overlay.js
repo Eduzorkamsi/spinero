@@ -3,6 +3,7 @@ import SearchIcon from "../searchicon";
 import Button from "react-bootstrap/Button";
 import Overlay from "react-bootstrap/Overlay";
 import { useHistory } from "react-router-dom";
+import { nodeName } from "jquery";
 
 function SearchOverlay() {
   const history = useHistory();
@@ -38,13 +39,15 @@ function SearchOverlay() {
                   ...props.style,
                 }}
               >
+                <img style={{marginRight:"51px"}} src={require("../../assets/icons/backsearch.svg")} />
                 <button
                   style={{
                     backgroundColor: "transparent",
                     border: "none",
-                    marginRight: "21px"
+                    marginRight: "21px",
                   }}
-                  type="submit">
+                  type="submit"
+                >
                   <img
                     alt="logo"
                     className="search_logo"
@@ -54,6 +57,7 @@ function SearchOverlay() {
                 <input
                   style={{
                     width: "60%",
+                    border: "none",
                   }}
                   className="searchInput"
                   type="text"
@@ -66,7 +70,6 @@ function SearchOverlay() {
           )}
         </Overlay>
       </div>
-
     </>
   );
 }

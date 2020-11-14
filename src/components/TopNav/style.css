@@ -157,6 +157,10 @@ color: #0D0D0D!important;
   display: none;
 }
 
+.overlay_search_mobile{
+  background-color: #FBFBFB;
+}
+
   .backgroundColor_ {
     box-sizing: content-box;
     max-width: 79.5%;
