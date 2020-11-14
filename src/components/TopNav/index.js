@@ -9,7 +9,7 @@ import Heart from "../heart/heart";
 import CartIcon from "../carticon/carticon";
 import FamilyIcon from "../FamilyIcon/familyicon";
 import SearchIcon from "../searchicon";
-import  SearchOverlay  from "./overlay";
+import SearchOverlay from "./overlay";
 
 function TopNav(props) {
   const history = useHistory();
@@ -102,8 +102,8 @@ function TopNav(props) {
         <div className="my-2 my-lg-0">
           <div className="icon_nav" id="navbarIcon">
             <ul className="navbar-nav">
-         <SearchOverlay/>
-                <li class="nav-item overlay_search_desktop">
+              <SearchOverlay />
+              <li class="nav-item overlay_search_desktop">
                 <button
                   type="button"
                   className="nav-link no-background no-border searchoverlay"
@@ -145,7 +145,7 @@ function TopNav(props) {
                     </form>
                   </li>
                 </ul>
-              </li>  
+              </li>
               <li class="nav-item">
                 <NavLink className="nav-link ml-4" to="/wishlist">
                   <Heart active={/wishlist/i.test(location.pathname)} />
@@ -192,15 +192,15 @@ function TopNav(props) {
                       </li>
                     </>
                   ) : (
-                    <li class="nav-item">
-                      <NavLink
-                        className="nav-link ml-4 dropdown-item"
-                        to="/login"
-                      >
-                        Sign in
+                      <li class="nav-item">
+                        <NavLink
+                          className="nav-link ml-4 dropdown-item"
+                          to="/login"
+                        >
+                          Sign in
                       </NavLink>
-                    </li>
-                  )}
+                      </li>
+                    )}
                 </ul>
               </li>
             </ul>

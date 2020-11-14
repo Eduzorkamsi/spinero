@@ -1,11 +1,30 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import TopNav from "../../components/TopNav";
 import "./style.css";
 import { useHistory } from "react-router-dom";
 
-export default function Header({ title, body, buttonTitle, categoryTypes = [] }) {
+export default function Header({ title, body, buttonTitle, categoryTypes = [], categoryProducts = {} }) {
   const history = useHistory();
+  const [product, setProduct] = useState({});
+  const [category, setCategory] = useState({});
+  
+  useEffect(() => {
+    let shuffled = Math.round(Math.random() * categoryTypes.length);
+    
+    if (categoryTypes[shuffled]) {
+      setCategory(categoryTypes[shuffled]);
+      const selected = categoryProducts[categoryTypes[shuffled]?.name?.toLowerCase()];
 
+      if (selected) {
+        shuffled = Math.round(Math.random() * selected.items.length);
+
+        if (selected.items[shuffled]) {
+          setProduct(selected.items[shuffled]);
+        }
+      }
+    }
+  }, [categoryTypes, categoryProducts]);
+  
   return (
     <>
       <div className="container-fluid">
@@ -14,14 +33,14 @@ export default function Header({ title, body, buttonTitle, categoryTypes = [] })
           <div className="col-lg-12 col-md-12 header-banner">
             <div className="content">
               <p className="h1 d-flex justify-content-center titlecase-text" style={{ fontWeight: "bold", color: "#fff" }}>
-                {title}
+                {product.name}
               </p>
               <div className="d-flex justify-content-center">
                 <p
                   className="lead text-wrap text-center align-center "
                   style={{ width: "25rem", color: "#FBFBFB", fontWeight: "normal" }}
                 >
-                  {body}
+                  {product.description}
                 </p>
               </div>
               <div className="d-flex justify-content-center pt-5">
@@ -30,11 +49,7 @@ export default function Header({ title, body, buttonTitle, categoryTypes = [] })
                   className="btn btn-dark btn-lg px-5 "
                   style={{ backgroundColor: "#fff", color: "#0D0D0D" }}
                   onClick={() => {
-                    const shuffled = Math.round(Math.random() * categoryTypes.length);
-
-                    if (!categoryTypes[shuffled]) return;
-
-                    history.push(`/category/${(categoryTypes[shuffled] || {})._id}`, categoryTypes[shuffled]);
+                    history.push(`/category/${category._id}`, category);
                   }}
                 >
                   {buttonTitle}

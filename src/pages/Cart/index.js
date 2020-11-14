@@ -29,7 +29,7 @@ const Cart = (props) => {
             <li className="cart_li">Price</li>
           </ul>
         </div>
-        <CartMobile/>
+        <CartMobile {...props}/>
         <div className="div2">
           {props.cart.products.map((product, i) => (
             <div className="media" key={i}>

@@ -116,6 +116,7 @@ const Home = (props) => {
             }
             buttonTitle={"Shop Now"}
             categoryTypes={props.categoryTypes}
+            categoryProducts={categoryProducts}
           />
         </div>
       </div>
