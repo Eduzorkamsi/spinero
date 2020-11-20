@@ -26,7 +26,7 @@ const Filter = (props) => {
             props.findProducts(...params);
         } else {
             const filterKeys = Object.keys(filter);
-            let url = `${constants.BASE_API}/api/product/search/price?`;
+            let url = `${constants.BASE_API}/api/product/search/price?pageNumber=1&pageSize=500&`;
             filterKeys.forEach((key, i) => {
                 url += `${key}=${filter[key]}&`;
             });
