@@ -39,7 +39,9 @@ function SearchOverlay() {
                   ...props.style,
                 }}
               >
-                <img style={{marginRight:"51px"}} src={require("../../assets/icons/backsearch.svg")} />
+                <button type="button" onClick={() => setShow(false)} className="no-border no-background">
+                  <img style={{ marginRight: "51px" }} src={require("../../assets/icons/backsearch.svg")} alt="Back" />
+                </button>
                 <button
                   style={{
                     backgroundColor: "transparent",
