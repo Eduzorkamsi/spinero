@@ -31,7 +31,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "start:prod": "npm run build && npx serve -l 3000 -s build",
+    "pm2:server": "pm2 start --name 'spinero_client' npm -- run start:prod"
   },
   "eslintConfig": {
     "extends": "react-app"
