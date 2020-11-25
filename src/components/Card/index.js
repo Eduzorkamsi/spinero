@@ -22,7 +22,7 @@ const Card = ({ categoryProducts = {} }) => {
 
   return (
     <>
-      <div className="container">
+      <div className="container productView">
         <div className="row">
           <div className="col-md-12" style={{ border: "1px solid #E0E0E0", padding: "2%" }}>
             <div className="card" style={{ border: "none" }}>
