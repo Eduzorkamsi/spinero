@@ -1,5 +1,5 @@
 export default {
-  BASE_API: "https://spinero-dev.tk",
+  BASE_API: "https://api.spineroshop.com",
   STRIPE_KEY: "pk_test_SHtOo1jkIwAZFyZ4lVT5IA4f00kUrIiuUG",
   PAYPAL_CLIENT_ID: "Af7y1D8P8g8QN9VIgW49gF22UhUP-Q09z8RE7MVpF0_h7WRTVujkS-INtW6Ffhie21CxjmxnBIoprT7l",
   REQUEST: type => `${type}_REQUEST`,

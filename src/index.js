@@ -26,10 +26,12 @@ async function init() {
                 }
             }).then(resp => resp.json()).then(resp => resp.data);
 
-            localStorage.setItem('token', userInfo.token);
-            localStorage.setItem('refresh_token', userInfo.refresh_token);
-            localStorage.setItem('name', userInfo?.user?.name);
-            localStorage.setItem("lastRefresh", new Date());
+            if (userInfo) {
+                localStorage.setItem('token', userInfo.token);
+                localStorage.setItem('refresh_token', userInfo.refresh_token);
+                localStorage.setItem('name', userInfo?.user?.name);
+                localStorage.setItem("lastRefresh", new Date());
+            }
         }
 
         Axios.interceptors.response.use(response => response, error => {
