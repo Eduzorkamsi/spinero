@@ -159,8 +159,8 @@ const Home = (props) => {
           })}
         </div>
 
-        <div className="womenSection ">
-          <div className="container pt-5 pb-5">
+        <div className="womenSection">
+          <div className="container pt-5 pb-5 womenS">
             <div className="row">
               <div className="col-lg-10 col-md-6 col-sm-6 col-xs-6">
                 <p className="h2" style={{ fontWeight: "bold", color: "#BA2222", lineHeight: "59px" }}>
