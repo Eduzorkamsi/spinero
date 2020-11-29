@@ -137,8 +137,7 @@ const Home = (props) => {
             </div>
           </div>
           <p className="lorem2" style={{ color: "#333333", fontSize: "16px" }}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas cras lectus magna sodales
-              aenean condimentum auctor aliquet.{" "}
+            Here you find our latest collection on offer.
           </p>
 
 
@@ -183,8 +182,7 @@ const Home = (props) => {
                 </div>
               </div>
               <p className="lorem3" style={{ color: "#333333", fontSize: "16px" }}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas cras lectus magna sodales
-                  aenean condimentum auctor aliquet.{" "}
+                Explore our female collections
               </p>
             </div>
             <div className="row row-cols-1 row-cols-md-4 pt-3">
@@ -220,8 +218,7 @@ const Home = (props) => {
                 </div>
               </div>
               <p className="lorem4" style={{ color: "#333333", fontSize: "16px" }}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas cras lectus magna sodales
-                  aenean condimentum auctor aliquet.{" "}
+                Explore our male collections.
               </p>
             </div>
             <div className="row row-cols-1 row-cols-md-4 pt-3">

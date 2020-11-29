@@ -43,8 +43,7 @@ function CategoryCollections(props) {
           </p>
             <MobileFilter gender={categoryName} setProducts={setProducts} categoryType={categoryId} />
             <p style={{ color: "#333333", fontSize: "16px" }}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas cras lectus magna sodales
-            aenean condimentum auctor aliquet.{" "}
+              Explore collections
             </p>
             <div className="row row-cols-1 row-cols-md-3 pt-3">
               {(products || props.product.categoryTypeProducts).map((data, index) => {

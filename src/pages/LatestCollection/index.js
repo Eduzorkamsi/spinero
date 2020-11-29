@@ -39,8 +39,7 @@ const LatestCollection = (props) => {
             </p>
             <MobileFilter setProducts={setProducts} category={category} />
             <p style={{ color: "#333333", fontSize: "16px" }}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas cras lectus magna sodales
-              aenean condimentum auctor aliquet.{" "}
+              Explore our latest collections
             </p>
             <div className="row row-cols-1 row-cols-md-3 pt-3">
               {(products || props.latestProducts || []).map((data, index) => {
