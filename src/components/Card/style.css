@@ -7,6 +7,37 @@
   margin-left: -20px;
 }
 
+.cardsrow{
+  width: 70vw;
+}
+
+@media(max-width:991px) and (min-width: 769px){
+  .cardsrow{
+    width: 67.5vw;
+  }
+
+  .top-text-wrap{
+    margin-top: 25vh;
+  }
+}
+
+@media (max-width:768px)and (min-width:480px){
+  .cardsrow{
+    width: 85vw;
+  }
+
+  .top-text-wrap{
+    margin-top: 25vh;
+  }
+
+
+}
+@media (max-width:479px){
+  .cardsrow{
+    width: 86vw;
+  }
+}
+
 @media (max-width:992px){
   .text-wrap{
     word-break: break-all;

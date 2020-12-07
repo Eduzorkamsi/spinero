@@ -175,7 +175,7 @@ const Home = (props) => {
                       pathname: `/category/${(categoryProducts["women"] || { id: "" }).id}`,
                       state: (categoryProducts["women"] || { info: {} }).info
                     }}
-                    className="lorem_check" style={{ color: "#FF0000", fontWeight: "bold", marginTop: "15px" }}
+                    className="lorem_check loremwomen" style={{ color: "#FF0000", fontWeight: "bold", marginTop: "15px" ,}}
                   >
                     Check it out
                   </Link>
@@ -185,7 +185,7 @@ const Home = (props) => {
                 Explore our female collections
               </p>
             </div>
-            <div className="row row-cols-1 row-cols-md-4 pt-3">
+            <div className="row row-cols-1 row-cols-md-4 pt-3 cardwomen">
               {getCategoryProducts("women")}
             </div>
           </div>
@@ -211,7 +211,7 @@ const Home = (props) => {
                       pathname: `/category/${(categoryProducts["men"] || { id: "" }).id}`,
                       state: (categoryProducts["men"] || { info: {} }).info
                     }}
-                    className="lorem_check" style={{ color: "#FF0000", fontWeight: "bold", margintTop: "15px" }}
+                    className="lorem_check loremmen" style={{ color: "#FF0000", fontWeight: "bold", margintTop: "15px" }}
                   >
                     Check it out
                   </Link>
@@ -221,7 +221,7 @@ const Home = (props) => {
                 Explore our male collections.
               </p>
             </div>
-            <div className="row row-cols-1 row-cols-md-4 pt-3">
+            <div className="row row-cols-1 row-cols-md-4 pt-3 cardmen">
               {getCategoryProducts("men")}
             </div>
           </div>

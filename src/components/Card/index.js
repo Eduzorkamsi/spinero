@@ -23,16 +23,16 @@ const Card = ({ categoryProducts = {} }) => {
   return (
     <>
       <div className="container productView">
-        <div className="row">
-          <div className="col-md-12" style={{ border: "1px solid #E0E0E0", padding: "2%" }}>
-            <div className="card" style={{ border: "none" }}>
+        <div className="row cardsrow">
+          <div className="col-md-12" style={{ border: "1px solid #E0E0E0", padding: "2%",  }}>
+            <div className="card" style={{ border: "none",  }}>
               <div className="row no-gutters">
                 <div className="col-sm-5">
                   <img className="card-img" src={product.images && `${product.images[0].url}`} alt="Suresh Dasari Card" />
                 </div>
                 <div className="col-sm-7 ">
                   <div className="card-body " style={{ marginLeft: "10%", paddingTop: "10%" }}>
-                    <h3 className="card-title" style={{ fontWeight: "bold" }}>
+                    <h3 className="card-title top-text-wrap" style={{ fontWeight: "bold" }}>
                       {product.name}
                     </h3>
                     <p
