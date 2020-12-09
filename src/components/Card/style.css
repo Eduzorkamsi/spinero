@@ -10,6 +10,77 @@
 .cardsrow{
   width: 70vw;
 }
+@media(min-width: 2560px){
+  .cardsrow{
+    width: 42.4vw;
+  }
+
+  .top-text-wrap{
+    margin-top: 10vh;
+  }
+}
+
+@media(min-width: 1920px) and (max-width: 2559px){
+  .cardsrow{
+    width: 56.5vw;
+  }
+
+  .top-text-wrap{
+    margin-top: 20vh;
+  }
+}
+
+@media(min-width: 1660px) and (max-width:1919px){
+  .cardsrow{
+    width: 64.5vw;
+  }
+
+  .top-text-wrap{
+    margin-top: 20vh;
+  }
+}
+
+@media (min-width: 1440px)and (max-width: 1535px){
+  .cardsrow{
+    width: 75vw;
+  }
+
+  .top-text-wrap{
+    margin-top: 20vh;
+  }
+}
+
+@media (min-width:1366px) and (max-width: 1439px){
+  .cardsrow{
+    width: 79vw;
+  }
+
+  .top-text-wrap{
+    margin-top: 20vh;
+  }
+
+}
+
+@media(min-width:1279px)and (max-width:1365px){
+  .cardsrow{
+    width: 84.7vw;
+  }
+
+  .top-text-wrap{
+    margin-top: 20vh;
+  }
+}
+
+@media(min-width:1024px)and (max-width:1279px){
+  .cardsrow{
+    width: 88vw;
+  }
+
+  .top-text-wrap{
+    margin-top: 25vh;
+  }
+
+}
 
 @media(max-width:991px) and (min-width: 769px){
   .cardsrow{

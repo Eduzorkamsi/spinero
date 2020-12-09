@@ -39,6 +39,7 @@
 
 .card-img-top{
   height: 240px;
+  object-fit: contain;
 }
 
 .lorem2{
@@ -69,6 +70,186 @@
 
 .womenS{
   margin-left: -16px;
+}
+
+.cardwomen{
+  width: 145vw;
+}
+
+
+.cardmen{
+  width: 142vw;
+}
+
+@media(min-width: 2560px){
+.card-title{
+  font-size: 24px;
+}
+
+.card-text{
+  font-size: 24px;
+}
+
+.add-to-cart{
+  font-size: 24px;
+}
+
+  #_cardText{
+font-size: 24px;
+  }
+
+.h2{
+  font-size: 44px;
+}
+
+.lorem2{
+  font-size:24px!important;
+}
+
+.lorem3{
+  font-size: 24px!important;
+}
+
+.lorem4{
+  font-size: 24px!important;
+}
+
+  .lorem_check {
+    font-size: 24px;
+    margin-left: 1.5vh;
+  }
+
+  .loremwomen{
+    margin-left: 6vh;
+  }
+
+  .loremmen{
+    margin-left: 4vh;
+  }
+
+  .cardwomen{
+    width: 87.5vw;
+  }
+
+  .cardmen{
+    width: 86.4vw;
+  }
+}
+
+@media (min-width:1920px) and (max-width:2559px){
+  .cardwomen{
+    width: 117vw;
+  }
+
+  .cardmen{
+    width: 113.5vw;
+  }
+}
+
+@media (min-width: 1660px) and (max-width: 1919px){
+  .cardwomen{
+    width: 133.5vw;
+  }
+
+  .cardmen{
+    width: 129.5vw;
+  }
+}
+
+@media (min-width: 1440px) and (max-width: 1535px) {
+  .lorem_check {
+    font-size: 14px;
+    margin-left: 10vh;
+  }
+
+  .loremwomen{
+    margin-left: 18vh;
+  }
+
+  .loremmen{
+    margin-left: 14vh;
+  }
+
+  .cardwomen{
+    width: 155vw;
+  }
+
+  .cardmen{
+    width: 153vw;
+  }
+}
+
+@media (min-width:1366px)and (max-width:1439px){
+
+  .lorem_check {
+    font-size: 14px;
+    margin-left: 10vh;
+  }
+
+  .loremwomen{
+    margin-left: 18vh;
+  }
+
+  .loremmen{
+    margin-left: 14vh;
+  }
+
+  .cardwomen{
+    width: 163vw;
+  }
+
+  .cardmen{
+    width: 161vw;
+  }
+
+}
+
+@media (min-width:1279px) and (max-width:1365px){
+
+  .lorem_check {
+    font-size: 14px;
+    margin-left: 10vh;
+  }
+
+  .loremwomen{
+    margin-left: 18vh;
+  }
+
+  .loremmen{
+    margin-left: 14vh;
+  }
+
+  .cardwomen{
+    width: 175vw;
+  }
+
+  .cardmen{
+    width: 172.5vw;
+  }
+
+}
+
+@media(min-width:1023px) and (max-width: 1279px){
+  .lorem_check {
+    font-size: 14px;
+    margin-left: 7vh;
+  }
+
+  .loremwomen{
+    margin-left: 14vh;
+  }
+
+  .loremmen{
+    margin-left: 9vh;
+  }
+
+  .cardwomen{
+    width: 183vw;
+  }
+
+  .cardmen{
+    width: 180vw;
+  }
 }
 
 @media(max-width:991px) and (min-width: 769px){
